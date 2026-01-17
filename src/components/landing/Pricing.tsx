@@ -1,14 +1,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Check, Building2 } from "lucide-react";
+import { Check, Building2, Users } from "lucide-react";
 
 const included = [
-  "24 horas de formación (6h nivelación + 16h avanzado)",
-  "Sesiones online en directo + presenciales",
-  "Acompañamiento académico continuo",
-  "Acceso al Campus Bespoke con grabaciones",
+  "22 horas de formación (6h nivelación + 16h programa)",
+  "4 sesiones online en directo",
+  "2 sesiones presenciales en Madrid",
+  "Campus virtual con grabaciones",
   "Materiales y plantillas descargables",
-  "Diploma acreditativo",
+  "Diploma Bespoke",
 ];
 
 const Pricing = () => {
@@ -16,7 +16,7 @@ const Pricing = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="precio" className="section-padding bg-secondary">
+    <section id="precio" className="section-padding bg-card">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -28,7 +28,7 @@ const Pricing = () => {
             Inversión
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-12">
-            Una habilidad con retorno inmediato
+            Precio y plazas disponibles
           </h2>
 
           <motion.div
@@ -46,9 +46,15 @@ const Pricing = () => {
                 <p className="text-muted-foreground">Pago único · IVA incluido</p>
               </div>
 
-              <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-primary/5 border border-primary/10 mb-8">
-                <Building2 className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-foreground font-medium">Bonificable por Fundae para empresas</span>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-primary/5 border border-primary/10">
+                  <Users className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span className="text-foreground font-bold">Solo 20 plazas</span>
+                </div>
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-muted/50 border border-border">
+                  <Building2 className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span className="text-foreground font-medium">Bonificable por Fundae</span>
+                </div>
               </div>
 
               <div className="grid gap-3 text-left mb-8">
@@ -66,14 +72,8 @@ const Pricing = () => {
                 href="#inscripcion"
                 className="block w-full bg-primary text-primary-foreground py-4 rounded-xl font-bold text-lg hover:bg-accent transition-colors"
               >
-                Reservar Plaza
+                Quiero mi plaza
               </a>
-            </div>
-
-            <div className="bg-muted/50 p-6 border-t border-border">
-              <p className="text-muted-foreground text-sm">
-                Una inversión en una habilidad técnica con impacto directo en tu perfil profesional.
-              </p>
             </div>
           </motion.div>
         </motion.div>

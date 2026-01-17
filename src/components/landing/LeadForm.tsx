@@ -7,8 +7,9 @@ interface LeadData {
   nombre: string;
   email: string;
   telefono: string;
-  empresa: string;
   perfil: string;
+  modalidad: string;
+  status: string;
   timestamp: string;
 }
 
@@ -16,9 +17,15 @@ const perfilOptions = [
   "Graduado universitario buscando primer empleo",
   "Profesional en banca o finanzas",
   "Consultor/a",
-  "Profesional de sector industrial",
+  "Profesional de sector técnico/industrial",
   "Emprendedor/a o empresario/a",
   "Otro",
+];
+
+const modalidadOptions = [
+  "Presencial (Madrid)",
+  "Online",
+  "Me es indiferente",
 ];
 
 const LeadForm = () => {
@@ -32,8 +39,8 @@ const LeadForm = () => {
     nombre: "",
     email: "",
     telefono: "",
-    empresa: "",
     perfil: "",
+    modalidad: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -68,9 +75,10 @@ const LeadForm = () => {
       return;
     }
 
-    // Crear objeto lead con timestamp
+    // Crear objeto lead con timestamp y status CRM
     const leadData: LeadData = {
       ...formData,
+      status: "nuevo_lead", // Pipeline: nuevo_lead → contactado → interesado → reserva_pendiente → alumno_confirmado
       timestamp: new Date().toISOString(),
     };
 
@@ -79,9 +87,12 @@ const LeadForm = () => {
     existingLeads.push(leadData);
     localStorage.setItem("bespoke_leads", JSON.stringify(existingLeads));
 
-    // Simular envío a API/Webhook (aquí se integraría Brevo)
-    console.log("Lead guardado:", leadData);
-    console.log("Ready for Brevo webhook integration");
+    // Ready for Brevo webhook integration
+    // await fetch('YOUR_BREVO_WEBHOOK_URL', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify(leadData)
+    // });
 
     // Éxito
     setTimeout(() => {
@@ -95,7 +106,7 @@ const LeadForm = () => {
   };
 
   return (
-    <section id="inscripcion" className="section-padding bg-secondary">
+    <section id="inscripcion" className="section-padding bg-primary/5">
       <div className="section-container" ref={ref}>
         <div className="max-w-2xl mx-auto">
           <motion.div
@@ -108,7 +119,7 @@ const LeadForm = () => {
               Inscripción
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Reserva tu plaza ahora
+              Solicita tu plaza
             </h2>
             <p className="text-muted-foreground text-lg">
               Completa el formulario y nos pondremos en contacto contigo
@@ -151,7 +162,7 @@ const LeadForm = () => {
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-2">
-                      Email profesional *
+                      Email *
                     </label>
                     <input
                       type="email"
@@ -182,21 +193,6 @@ const LeadForm = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="empresa" className="block text-sm font-semibold text-foreground mb-2">
-                      Empresa <span className="text-muted-foreground font-normal">(opcional)</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="empresa"
-                      name="empresa"
-                      value={formData.empresa}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                      placeholder="Nombre de tu empresa"
-                    />
-                  </div>
-
-                  <div>
                     <label htmlFor="perfil" className="block text-sm font-semibold text-foreground mb-2">
                       Perfil profesional *
                     </label>
@@ -217,6 +213,26 @@ const LeadForm = () => {
                     </select>
                   </div>
 
+                  <div>
+                    <label htmlFor="modalidad" className="block text-sm font-semibold text-foreground mb-2">
+                      ¿Cómo prefieres asistir?
+                    </label>
+                    <select
+                      id="modalidad"
+                      name="modalidad"
+                      value={formData.modalidad}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer"
+                    >
+                      <option value="">Selecciona una opción</option>
+                      {modalidadOptions.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
                   <button
                     type="submit"
                     disabled={isSubmitting}
@@ -230,7 +246,7 @@ const LeadForm = () => {
                     ) : (
                       <>
                         <Send className="w-5 h-5" />
-                        Quiero reservar mi plaza
+                        Solicitar plaza
                       </>
                     )}
                   </button>

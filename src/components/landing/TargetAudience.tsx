@@ -1,28 +1,28 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { GraduationCap, Briefcase, Building2, Target } from "lucide-react";
+import { GraduationCap, Briefcase, LineChart, Target } from "lucide-react";
 
 const profiles = [
   {
     icon: GraduationCap,
-    title: "Graduados en ADE, Finanzas, Ingeniería o Economía",
-    description: "Que quieran acceder a roles financieros con una competencia técnica diferencial",
+    title: "Graduados en ADE, Finanzas o Ingeniería",
+    description: "Que quieran acceder a consultoría o banca",
   },
   {
     icon: Briefcase,
-    title: "Consultores técnicos o financieros",
-    description: "Que quieran aprender a construir modelos sólidos y estructurados",
+    title: "Profesionales técnicos",
+    description: "Que necesitan entender la lógica financiera de proyectos",
   },
   {
-    icon: Building2,
-    title: "Profesionales de sectores intensivos en inversión",
-    description: "Infraestructura, energía, transporte, real estate y similares",
+    icon: LineChart,
+    title: "Consultores o analistas",
+    description: "Que quieran dominar Excel financiero profesional",
   },
   {
     icon: Target,
-    title: "Perfiles que necesitan entender valoraciones",
-    description: "Cómo se valoran activos y proyectos en el mundo real",
+    title: "Perfiles sin experiencia previa",
+    description: "Que quieran adquirir una skill premium diferencial",
   },
 ];
 
@@ -43,11 +43,8 @@ const TargetAudience = () => {
             ¿Para quién es?
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance max-w-4xl mx-auto">
-            Diseñado para profesionales sin experiencia previa en modelización
+            Este programa es para ti si...
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Que quieran adquirir una herramienta clave para su crecimiento profesional
-          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-12">
@@ -80,7 +77,7 @@ const TargetAudience = () => {
           className="bg-primary/5 border border-primary/10 rounded-2xl p-8 text-center"
         >
           <p className="text-lg text-foreground font-medium">
-            <span className="text-primary font-bold">No necesitas experiencia previa en modelización</span> — incluimos fase preparatoria opcional para que todos partan desde el mismo nivel.
+            <span className="text-primary font-bold">Si sabes usar Excel de forma básica</span>, puedes aprender modelización financiera profesional.
           </p>
         </motion.div>
       </div>
