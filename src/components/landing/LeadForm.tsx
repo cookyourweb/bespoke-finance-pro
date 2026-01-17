@@ -1,0 +1,251 @@
+import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { useToast } from "@/hooks/use-toast";
+import { Send, CheckCircle } from "lucide-react";
+
+interface LeadData {
+  nombre: string;
+  email: string;
+  telefono: string;
+  empresa: string;
+  perfil: string;
+  timestamp: string;
+}
+
+const perfilOptions = [
+  "Graduado universitario buscando primer empleo",
+  "Profesional en banca o finanzas",
+  "Consultor/a",
+  "Profesional de sector industrial",
+  "Emprendedor/a o empresario/a",
+  "Otro",
+];
+
+const LeadForm = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { toast } = useToast();
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const [formData, setFormData] = useState({
+    nombre: "",
+    email: "",
+    telefono: "",
+    empresa: "",
+    perfil: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Validación básica
+    if (!formData.nombre || !formData.email || !formData.telefono || !formData.perfil) {
+      toast({
+        title: "Campos incompletos",
+        description: "Por favor, completa todos los campos obligatorios.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Validación de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Email inválido",
+        description: "Por favor, introduce un email válido.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Crear objeto lead con timestamp
+    const leadData: LeadData = {
+      ...formData,
+      timestamp: new Date().toISOString(),
+    };
+
+    // Guardar en localStorage (simulando CRM)
+    const existingLeads = JSON.parse(localStorage.getItem("bespoke_leads") || "[]");
+    existingLeads.push(leadData);
+    localStorage.setItem("bespoke_leads", JSON.stringify(existingLeads));
+
+    // Simular envío a API/Webhook (aquí se integraría Brevo)
+    console.log("Lead guardado:", leadData);
+    console.log("Ready for Brevo webhook integration");
+
+    // Éxito
+    setTimeout(() => {
+      setIsSubmitted(true);
+      setIsSubmitting(false);
+      toast({
+        title: "¡Solicitud recibida!",
+        description: "Nos pondremos en contacto contigo muy pronto.",
+      });
+    }, 800);
+  };
+
+  return (
+    <section id="inscripcion" className="section-padding bg-secondary">
+      <div className="section-container" ref={ref}>
+        <div className="max-w-2xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
+              Inscripción
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              Reserva tu plaza ahora
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Completa el formulario y nos pondremos en contacto contigo
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            {isSubmitted ? (
+              <div className="bg-card rounded-3xl shadow-card p-12 text-center border border-border">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                  <CheckCircle className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-4">¡Gracias por tu interés!</h3>
+                <p className="text-muted-foreground">
+                  Hemos recibido tu solicitud. Un miembro de nuestro equipo se pondrá en contacto contigo en las próximas 24-48 horas.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="bg-card rounded-3xl shadow-card p-8 lg:p-12 border border-border">
+                <div className="grid gap-6">
+                  <div>
+                    <label htmlFor="nombre" className="block text-sm font-semibold text-foreground mb-2">
+                      Nombre completo *
+                    </label>
+                    <input
+                      type="text"
+                      id="nombre"
+                      name="nombre"
+                      value={formData.nombre}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                      placeholder="Tu nombre"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-2">
+                      Email profesional *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                      placeholder="tu@email.com"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="telefono" className="block text-sm font-semibold text-foreground mb-2">
+                      Teléfono *
+                    </label>
+                    <input
+                      type="tel"
+                      id="telefono"
+                      name="telefono"
+                      value={formData.telefono}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                      placeholder="+34 600 000 000"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="empresa" className="block text-sm font-semibold text-foreground mb-2">
+                      Empresa <span className="text-muted-foreground font-normal">(opcional)</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="empresa"
+                      name="empresa"
+                      value={formData.empresa}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                      placeholder="Nombre de tu empresa"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="perfil" className="block text-sm font-semibold text-foreground mb-2">
+                      Perfil profesional *
+                    </label>
+                    <select
+                      id="perfil"
+                      name="perfil"
+                      value={formData.perfil}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer"
+                      required
+                    >
+                      <option value="">Selecciona tu perfil</option>
+                      {perfilOptions.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-primary text-primary-foreground py-4 rounded-xl font-bold text-lg hover:bg-accent transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
+                        Enviando...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5" />
+                        Quiero reservar mi plaza
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                <p className="text-xs text-muted-foreground text-center mt-6">
+                  Al enviar este formulario, aceptas nuestra política de privacidad y el tratamiento de tus datos.
+                </p>
+              </form>
+            )}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default LeadForm;
