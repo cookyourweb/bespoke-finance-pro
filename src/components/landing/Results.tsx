@@ -1,37 +1,37 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { TrendingUp, Layers, PieChart, Shield, FileSearch, Cpu } from "lucide-react";
+import { TrendingUp, Layers, PieChart, Shield, FileSearch, Sparkles } from "lucide-react";
 
 const outcomes = [
   {
     icon: Layers,
-    title: "Construir modelos financieros desde cero",
-    description: "Con estructura profesional y mejores prácticas del sector",
+    title: "Construir desde cero un modelo financiero completo",
+    description: "En Excel para analizar inversiones reales",
   },
   {
     icon: TrendingUp,
-    title: "Modelar flujos de caja complejos",
-    description: "Incluyendo escenarios y análisis de sensibilidad",
+    title: "Entender cómo valoran activos",
+    description: "Empresas, fondos y consultoras",
   },
   {
     icon: PieChart,
-    title: "Valorar activos",
-    description: "Mediante metodologías reales utilizadas en el mercado",
-  },
-  {
-    icon: Shield,
-    title: "Analizar rentabilidad y riesgos",
-    description: "De proyectos de inversión de forma rigurosa",
+    title: "Evaluar escenarios financieros",
+    description: "Y tomar decisiones con criterio profesional",
   },
   {
     icon: FileSearch,
-    title: "Auditar modelos de terceros",
-    description: "Entender y validar modelos creados por otros profesionales",
+    title: "Interpretar y modificar modelos de terceros",
+    description: "Con seguridad y criterio técnico",
   },
   {
-    icon: Cpu,
-    title: "Dominar Excel como herramienta estratégica",
-    description: "Para análisis financiero avanzado",
+    icon: Shield,
+    title: "Diferenciarte en procesos de selección",
+    description: "Para banca, consultoría, corporate finance o desarrollo de negocio",
+  },
+  {
+    icon: Sparkles,
+    title: "Añadir una skill altamente demandada",
+    description: "Escasa en el mercado y muy valorada",
   },
 ];
 
@@ -52,11 +52,11 @@ const Results = () => {
             Resultados
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance max-w-4xl mx-auto">
-            Al finalizar el programa serás capaz de
+            Cuando termines este programa serás capaz de
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {outcomes.map((outcome, index) => {
             const Icon = outcome.icon;
             return (
@@ -76,17 +76,6 @@ const Results = () => {
             );
           })}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="bg-primary-foreground/10 rounded-2xl p-8 lg:p-12 text-center border border-primary-foreground/20"
-        >
-          <p className="text-xl lg:text-2xl font-medium leading-relaxed">
-            Esto no es solo aprender Excel. Es adquirir una <span className="font-bold">competencia clave</span> utilizada por analistas financieros, consultores y equipos de inversión.
-          </p>
-        </motion.div>
       </div>
     </section>
   );

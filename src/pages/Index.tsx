@@ -3,6 +3,7 @@ import Hero from "@/components/landing/Hero";
 import TargetAudience from "@/components/landing/TargetAudience";
 import Results from "@/components/landing/Results";
 import ProgramStructure from "@/components/landing/ProgramStructure";
+import Calendar from "@/components/landing/Calendar";
 import Pricing from "@/components/landing/Pricing";
 import CTASection from "@/components/landing/CTASection";
 import LeadForm from "@/components/landing/LeadForm";
@@ -17,6 +18,7 @@ const Index = () => {
         <TargetAudience />
         <Results />
         <ProgramStructure />
+        <Calendar />
         <Pricing />
         <CTASection />
         <LeadForm />

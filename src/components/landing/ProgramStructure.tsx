@@ -5,27 +5,27 @@ import { Clock, Users, Video, Award, BookOpen, Headphones } from "lucide-react";
 const features = [
   {
     icon: Video,
-    title: "Online en directo",
-    description: "Sesiones interactivas con profesores expertos",
+    title: "4 sesiones online en directo",
+    description: "Interactivas con profesores expertos",
   },
   {
     icon: Users,
-    title: "Sesiones presenciales",
-    description: "Workshops intensivos prácticos",
-  },
-  {
-    icon: Headphones,
-    title: "Acompañamiento continuo",
-    description: "Soporte académico durante todo el programa",
+    title: "2 sesiones presenciales intensivas",
+    description: "Hotel Westin Cuzco, Madrid",
   },
   {
     icon: BookOpen,
-    title: "Campus Virtual",
-    description: "Grabaciones y materiales siempre disponibles",
+    title: "Campus virtual",
+    description: "Con grabaciones y materiales",
+  },
+  {
+    icon: Headphones,
+    title: "Acompañamiento directo",
+    description: "De la directora académica",
   },
   {
     icon: Award,
-    title: "Diploma acreditativo",
+    title: "Diploma Bespoke",
     description: "Certificación al completar el programa",
   },
 ];
@@ -47,7 +47,7 @@ const ProgramStructure = () => {
             Estructura
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Programa completo de 24 horas
+            Programa completo de 22 horas
           </h2>
         </motion.div>
 
@@ -63,9 +63,9 @@ const ProgramStructure = () => {
                   <Clock className="w-3 h-3 text-primary" />
                 </div>
                 <div className="bg-secondary/50 rounded-2xl p-6 border border-border">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-wider">Fase 1 · Opcional</span>
+                  <span className="text-sm font-semibold text-primary uppercase tracking-wider">Fase 1 · Preparación opcional</span>
                   <h3 className="text-xl font-bold text-foreground mt-2 mb-2">Nivelación en Excel Financiero</h3>
-                  <p className="text-muted-foreground mb-3">Fundamentos esenciales para empezar con base sólida</p>
+                  <p className="text-muted-foreground mb-3">Para partir todos desde el mismo punto</p>
                   <div className="flex items-center gap-2 text-primary font-bold">
                     <Clock className="w-4 h-4" />
                     <span>6 horas</span>
@@ -78,9 +78,9 @@ const ProgramStructure = () => {
                   <Clock className="w-3 h-3 text-primary-foreground" />
                 </div>
                 <div className="bg-primary/5 rounded-2xl p-6 border border-primary/20">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-wider">Fase 2 · Core</span>
-                  <h3 className="text-xl font-bold text-foreground mt-2 mb-2">Modelización Financiera Avanzada</h3>
-                  <p className="text-muted-foreground mb-3">Construcción de un modelo completo desde cero paso a paso</p>
+                  <span className="text-sm font-semibold text-primary uppercase tracking-wider">Fase 2 · Programa principal</span>
+                  <h3 className="text-xl font-bold text-foreground mt-2 mb-2">Modelización Financiera Aplicada</h3>
+                  <p className="text-muted-foreground mb-3">Construcción completa de un modelo financiero aplicado a inversión real</p>
                   <div className="flex items-center gap-2 text-primary font-bold">
                     <Clock className="w-4 h-4" />
                     <span>16 horas</span>
@@ -95,7 +95,7 @@ const ProgramStructure = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h3 className="text-xl font-bold text-foreground mb-6">Metodología Blended</h3>
+            <h3 className="text-xl font-bold text-foreground mb-6">Metodología</h3>
             <div className="grid gap-4">
               {features.map((feature, index) => {
                 const Icon = feature.icon;

@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 const benefits = [
-  "Construirás un modelo financiero completo desde una hoja en blanco",
-  "Aprenderás a valorar activos y proyectos de forma estructurada",
-  "Serás capaz de analizar modelos de terceros con criterio profesional",
-  "Adquirirás una habilidad directamente aplicable en banca, consultoría y corporate finance",
+  "No necesitas experiencia previa en modelización",
+  "Método práctico aplicado a casos reales",
+  "Formación premium con sesiones online + presenciales",
+  "Solo 20 plazas",
 ];
 
 const Hero = () => {
@@ -25,7 +25,7 @@ const Hero = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6"
           >
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-medium">Programa de Alto Rendimiento</span>
+            <span className="text-sm font-medium">Programa Premium</span>
           </motion.div>
 
           <motion.h1
@@ -34,7 +34,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-foreground leading-tight mb-6 text-balance"
           >
-            Domina la Modelización Financiera desde Cero y Construye Modelos Profesionales como los Analistas de Banca y Consultoría
+            Construye Modelos Financieros Profesionales en Excel y accede a roles de alto valor
           </motion.h1>
 
           <motion.p
@@ -43,7 +43,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl leading-relaxed"
           >
-            Aprende paso a paso a crear modelos financieros reales utilizados para valorar activos, analizar proyectos y estructurar operaciones — incluso si nunca has modelado antes.
+            Aprende paso a paso — incluso si partes de cero — a analizar inversiones reales como lo hacen consultores, banca de inversión y Project Finance.
           </motion.p>
 
           <motion.div
@@ -72,16 +72,14 @@ const Hero = () => {
               href="#inscripcion"
               className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-4 rounded-lg font-bold text-lg hover:bg-accent transition-all shadow-card hover:shadow-card-hover"
             >
-              Reservar Plaza
+              Reserva tu plaza
             </a>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <div className="flex -space-x-2">
-                <div className="w-8 h-8 rounded-full bg-primary/20 border-2 border-card" />
-                <div className="w-8 h-8 rounded-full bg-primary/30 border-2 border-card" />
-                <div className="w-8 h-8 rounded-full bg-primary/40 border-2 border-card" />
-              </div>
-              <span className="text-sm font-medium">Solo 20 plazas · Grupo reducido</span>
-            </div>
+            <a
+              href="#inscripcion"
+              className="inline-flex items-center justify-center border-2 border-primary text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-primary/5 transition-all"
+            >
+              Solicita información
+            </a>
           </motion.div>
         </div>
       </div>
