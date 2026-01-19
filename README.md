@@ -60,49 +60,119 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## 🚀 Lead Capture & CRM Integration
+## 🚀 Lead Capture & Scalable B2C CRM System
 
-This project includes an automated lead capture system with:
+This project includes a **complete B2C CRM system** built for scalability:
 
-### Features
-- ✅ **Lead Form**: Captures name, email, phone, professional profile, and preferences
-- ✅ **Brevo CRM Integration**: Automatically syncs leads to Brevo (Sendinblue)
-- ✅ **WhatsApp Integration**: Redirects leads to WhatsApp for appointment booking
-- ✅ **Professional WhatsApp Agent**: Detailed prompt for AI-powered conversation setter
-- ✅ **Local Backup**: Stores leads in localStorage as fallback
-- ✅ **Lead Pipeline**: Tracks leads through 5 stages (nuevo_lead → contactado → interesado → reserva_pendiente → alumno_confirmado)
+### 🎯 Architecture
 
-### Quick Setup
+```
+Frontend (Landing) → Supabase (Primary DB) → Brevo (Email Marketing)
+                          ↓
+                   WhatsApp Agent (AI)
+```
 
-1. **Copy environment variables**:
+### ✨ Features
+
+**📊 Complete CRM Database** (Supabase PostgreSQL):
+- ✅ **Leads Management**: Full lead lifecycle tracking with scoring
+- ✅ **Conversations**: Multi-channel (WhatsApp, email, phone, web chat)
+- ✅ **Messages**: Complete message history with AI metadata
+- ✅ **Appointments**: Calendar and meeting management
+- ✅ **Students & Enrollments**: Student lifecycle management
+- ✅ **Activities Timeline**: Complete interaction history
+- ✅ **Analytics Events**: Event tracking and funnel analysis
+
+**🤖 AI-Powered WhatsApp Agent**:
+- ✅ **Automated Conversations**: Natural language processing
+- ✅ **Appointment Booking**: Automatic meeting scheduling
+- ✅ **Lead Qualification**: Intelligent lead scoring
+- ✅ **Context Aware**: Maintains conversation history
+
+**📧 Email Marketing Integration**:
+- ✅ **Brevo CRM Sync**: Secondary sync for email campaigns
+- ✅ **Automated Workflows**: Drip campaigns and follow-ups
+- ✅ **Segmentation**: Target specific audiences
+
+**📈 Analytics & Tracking**:
+- ✅ **UTM Tracking**: Campaign attribution
+- ✅ **Event Analytics**: User behavior tracking
+- ✅ **Lead Scoring**: Automatic qualification
+- ✅ **Conversion Funnels**: Pipeline analytics
+
+**🛡️ Reliability**:
+- ✅ **Triple Backup**: Supabase + Brevo + localStorage
+- ✅ **Graceful Degradation**: Works even if services fail
+- ✅ **Edge Functions**: Serverless backend infrastructure
+
+### 🚀 Quick Setup
+
+#### 1. Install Dependencies
 ```bash
+npm install
+```
+
+#### 2. Configure Supabase (Primary Database)
+```bash
+# Copy environment template
 cp .env.example .env
 ```
 
-2. **Configure Brevo**:
-   - Get your API Key from [Brevo](https://app.brevo.com/)
-   - Create a contact list and get the List ID
-   - Add to `.env`:
-     ```
-     VITE_BREVO_API_KEY=your_api_key_here
-     VITE_BREVO_LIST_ID=your_list_id_here
-     ```
+Follow the complete guide: **[SUPABASE_SETUP.md](./SUPABASE_SETUP.md)**
 
-3. **Configure WhatsApp**:
-   - Add your WhatsApp number to `.env`:
-     ```
-     VITE_WHATSAPP_PHONE_NUMBER=34612345678
-     ```
+Quick steps:
+- Create project at [supabase.com](https://supabase.com)
+- Run migration script (creates all tables)
+- Add credentials to `.env`:
+  ```
+  VITE_SUPABASE_URL=https://xxxxx.supabase.co
+  VITE_SUPABASE_ANON_KEY=eyJhbG...
+  ```
 
-4. **Read full documentation**:
-   - See [`LEAD_CAPTURE_SETUP.md`](./LEAD_CAPTURE_SETUP.md) for complete setup guide
-   - See [`WHATSAPP_AGENT_PROMPT.md`](./WHATSAPP_AGENT_PROMPT.md) for WhatsApp agent configuration
+#### 3. Configure Brevo (Email Marketing - Optional)
+- Get API Key from [Brevo](https://app.brevo.com/)
+- Add to `.env`:
+  ```
+  VITE_BREVO_API_KEY=xkeysib-...
+  VITE_BREVO_LIST_ID=2
+  ```
 
-### Files Added
-- `src/services/brevo.service.ts` - Brevo API integration
+#### 4. Configure WhatsApp
+- Add your number to `.env`:
+  ```
+  VITE_WHATSAPP_PHONE_NUMBER=34612345678
+  ```
+
+#### 5. Start Development Server
+```bash
+npm run dev
+```
+
+### 📚 Complete Documentation
+
+- **[SUPABASE_SETUP.md](./SUPABASE_SETUP.md)** - Complete Supabase CRM setup (START HERE)
+- **[LEAD_CAPTURE_SETUP.md](./LEAD_CAPTURE_SETUP.md)** - Lead capture & Brevo integration
+- **[WHATSAPP_AGENT_PROMPT.md](./WHATSAPP_AGENT_PROMPT.md)** - AI WhatsApp agent configuration
+
+### 📁 New Files & Structure
+
+**Database Schema**:
+- `supabase/migrations/001_initial_schema.sql` - Complete database schema (10 tables)
+
+**Services**:
+- `src/services/supabase.service.ts` - Supabase integration (primary DB)
+- `src/services/brevo.service.ts` - Brevo API integration (email marketing)
 - `src/services/whatsapp.service.ts` - WhatsApp integration
-- `LEAD_CAPTURE_SETUP.md` - Complete setup guide
-- `WHATSAPP_AGENT_PROMPT.md` - Professional WhatsApp agent prompt
+
+**Backend**:
+- `supabase/functions/whatsapp-webhook/index.ts` - WhatsApp AI agent (Edge Function)
+
+**Documentation**:
+- `SUPABASE_SETUP.md` - Complete setup guide
+- `LEAD_CAPTURE_SETUP.md` - Lead capture guide
+- `WHATSAPP_AGENT_PROMPT.md` - AI agent prompt
+
+**Configuration**:
 - `.env.example` - Environment variables template
 
 ## How can I deploy this project?

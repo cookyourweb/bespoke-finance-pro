@@ -1,7 +1,8 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Send, CheckCircle } from "lucide-react";
+import { supabaseService } from "@/services/supabase.service";
 import { brevoService } from "@/services/brevo.service";
 import { whatsappService } from "@/services/whatsapp.service";
 
@@ -36,7 +37,7 @@ const LeadForm = () => {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
@@ -44,6 +45,20 @@ const LeadForm = () => {
     perfil: "",
     modalidad: "",
   });
+
+  // Track page view on mount
+  useEffect(() => {
+    const utmParams = supabaseService.getUTMParams();
+    supabaseService.trackEvent({
+      event_name: 'page_view',
+      event_category: 'engagement',
+      properties: {
+        page: 'lead_form',
+        ...utmParams
+      },
+      ...utmParams
+    });
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -77,30 +92,96 @@ const LeadForm = () => {
       return;
     }
 
-    // Crear objeto lead con timestamp y status CRM
-    const leadData: LeadData = {
-      ...formData,
-      status: "nuevo_lead", // Pipeline: nuevo_lead → contactado → interesado → reserva_pendiente → alumno_confirmado
+    // Track form submission attempt
+    await supabaseService.trackEvent({
+      event_name: 'form_submitted',
+      event_category: 'conversion',
+      properties: {
+        perfil: formData.perfil,
+        modalidad: formData.modalidad
+      }
+    });
+
+    // Obtener UTM parameters
+    const utmParams = supabaseService.getUTMParams();
+
+    // Mapear perfil profesional al formato de Supabase
+    const perfilMap: Record<string, string> = {
+      "Graduado universitario buscando primer empleo": "graduado",
+      "Profesional en banca o finanzas": "profesional_finanzas",
+      "Consultor/a": "consultor",
+      "Profesional de sector técnico/industrial": "profesional_tecnico",
+      "Emprendedor/a o empresario/a": "emprendedor",
+      "Otro": "otro"
+    };
+
+    // Crear objeto lead con todos los datos
+    const leadDataForSupabase = {
+      nombre: formData.nombre,
+      email: formData.email,
+      telefono: formData.telefono,
+      perfil_profesional: perfilMap[formData.perfil] || formData.perfil,
+      modalidad_preferida: formData.modalidad || undefined,
+      status: "nuevo_lead",
+      source: "landing",
+      landing_page: window.location.href,
+      ...utmParams
+    };
+
+    // Para Brevo (formato legacy)
+    const leadDataForBrevo: LeadData = {
+      nombre: formData.nombre,
+      email: formData.email,
+      telefono: formData.telefono,
+      perfil: formData.perfil,
+      modalidad: formData.modalidad,
+      status: "nuevo_lead",
       timestamp: new Date().toISOString(),
     };
 
     try {
-      // 1. Guardar en localStorage (backup)
+      // 1. Guardar en localStorage (backup local)
       const existingLeads = JSON.parse(localStorage.getItem("bespoke_leads") || "[]");
-      existingLeads.push(leadData);
+      existingLeads.push(leadDataForBrevo);
       localStorage.setItem("bespoke_leads", JSON.stringify(existingLeads));
 
-      // 2. Registrar en Brevo CRM
-      const brevoResponse = await brevoService.createContact(leadData);
+      // 2. SUPABASE - Base de datos principal (Source of Truth)
+      const supabaseResponse = await supabaseService.createLead(leadDataForSupabase);
 
-      if (brevoResponse.success) {
-        console.log('✅ Lead registrado en Brevo exitosamente');
+      let leadId: string | undefined;
+
+      if (supabaseResponse.success) {
+        console.log('✅ Lead guardado en Supabase (DB principal)');
+        leadId = supabaseResponse.data?.id;
       } else {
-        console.warn('⚠️ Error al registrar en Brevo:', brevoResponse.error);
-        // Continuar aunque Brevo falle (tenemos backup en localStorage)
+        console.warn('⚠️ Error al guardar en Supabase:', supabaseResponse.error);
+        // Continuar aunque Supabase falle (tenemos localStorage)
       }
 
-      // 3. Éxito - Mostrar mensaje y ofrecer WhatsApp
+      // 3. BREVO - CRM secundario para email marketing
+      const brevoResponse = await brevoService.createContact(leadDataForBrevo);
+
+      if (brevoResponse.success) {
+        console.log('✅ Lead sincronizado con Brevo (email marketing)');
+      } else {
+        console.warn('⚠️ Error al sincronizar con Brevo:', brevoResponse.error);
+        // No es crítico si falla Brevo, ya tenemos el lead en Supabase
+      }
+
+      // 4. Track conversion event
+      if (leadId) {
+        await supabaseService.trackEvent({
+          lead_id: leadId,
+          event_name: 'lead_created',
+          event_category: 'conversion',
+          properties: {
+            source: 'landing_form',
+            perfil: formData.perfil
+          }
+        });
+      }
+
+      // 5. Éxito - Mostrar mensaje y ofrecer WhatsApp
       setIsSubmitted(true);
       setIsSubmitting(false);
 
@@ -109,13 +190,22 @@ const LeadForm = () => {
         description: "Nos pondremos en contacto contigo muy pronto.",
       });
 
-      // 4. Auto-abrir WhatsApp después de 2 segundos (opcional)
+      // 6. Auto-abrir WhatsApp después de 2 segundos (opcional)
       setTimeout(() => {
         const shouldOpenWhatsApp = window.confirm(
           "¿Quieres agendar una llamada ahora mismo por WhatsApp? 📱"
         );
 
         if (shouldOpenWhatsApp) {
+          // Track WhatsApp click
+          if (leadId) {
+            supabaseService.trackEvent({
+              lead_id: leadId,
+              event_name: 'whatsapp_clicked',
+              event_category: 'engagement'
+            });
+          }
+
           whatsappService.redirectToWhatsApp({
             nombre: formData.nombre,
             email: formData.email,
@@ -126,6 +216,15 @@ const LeadForm = () => {
 
     } catch (error) {
       console.error('❌ Error al procesar el formulario:', error);
+
+      // Track error
+      await supabaseService.trackEvent({
+        event_name: 'form_error',
+        event_category: 'error',
+        properties: {
+          error: error instanceof Error ? error.message : 'Unknown error'
+        }
+      });
 
       toast({
         title: "Error al enviar",
