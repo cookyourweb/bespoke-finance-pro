@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
 const painPoints = [
-  "Usas Excel todos los días, pero no te sientes realmente sólido",
-  "Ves oportunidades interesantes y sabes que te falta nivel técnico",
-  "Trabajas con modelos que no has construido tú",
-  "En reuniones, otros hablan de modelos financieros y tú escuchas",
-  "Sientes que tu carrera podría ir más rápido",
+  "Usas Excel a diario, pero no sabrías construir un modelo completo desde cero",
+  "Dependes de plantillas que no entiendes del todo",
+  "Ves ofertas interesantes, pero sabes que te falta nivel técnico",
+  "En reuniones financieras, otros dominan el modelo y tú no",
+  "Sientes que tu carrera podría avanzar mucho más rápido",
 ];
 
 const PainPoints = () => {
@@ -20,7 +20,7 @@ const PainPoints = () => {
           className="max-w-3xl mx-auto"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-12 text-center">
-            Lo que le pasa a mucha gente en finanzas
+            La realidad de muchos profesionales en finanzas
           </h2>
 
           <div className="space-y-5">
@@ -38,6 +38,16 @@ const PainPoints = () => {
               </motion.div>
             ))}
           </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.5 }}
+            className="text-center text-primary font-semibold text-lg mt-10"
+          >
+            Si te reconoces aquí, este programa es para ti
+          </motion.p>
         </motion.div>
       </div>
     </section>
