@@ -1,12 +1,11 @@
 import Header from "@/components/landing/Header";
 import Hero from "@/components/landing/Hero";
-import TargetAudience from "@/components/landing/TargetAudience";
-import Results from "@/components/landing/Results";
-import ProgramStructure from "@/components/landing/ProgramStructure";
-import Calendar from "@/components/landing/Calendar";
-import Pricing from "@/components/landing/Pricing";
-import CTASection from "@/components/landing/CTASection";
-import LeadForm from "@/components/landing/LeadForm";
+import PainPoints from "@/components/landing/PainPoints";
+import Transformation from "@/components/landing/Transformation";
+import PracticalSkills from "@/components/landing/PracticalSkills";
+import ForWho from "@/components/landing/ForWho";
+import Format from "@/components/landing/Format";
+import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
 
 const Index = () => {
@@ -15,13 +14,12 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <TargetAudience />
-        <Results />
-        <ProgramStructure />
-        <Calendar />
-        <Pricing />
-        <CTASection />
-        <LeadForm />
+        <PainPoints />
+        <Transformation />
+        <PracticalSkills />
+        <ForWho />
+        <Format />
+        <FinalCTA />
       </main>
       <Footer />
     </div>

@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { MessageCircle, Video, Users, Headphones } from "lucide-react";
 
 const features = [
-  { icon: Video, label: "Online" },
-  { icon: Users, label: "Sesiones en directo" },
-  { icon: Headphones, label: "Grupo reducido" },
-  { icon: MessageCircle, label: "Acompañamiento académico" },
+  { icon: Video, label: "Modalidad blended: sesiones online + presenciales" },
+  { icon: Users, label: "Sesiones presenciales en Madrid" },
+  { icon: Headphones, label: "Grupo reducido para asegurar acompañamiento" },
+  { icon: MessageCircle, label: "Acompañamiento académico durante el programa" },
 ];
 
 const Format = () => {
@@ -23,7 +23,7 @@ const Format = () => {
             Formato del programa
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             {features.map((feature, index) => (
               <motion.div
                 key={index}

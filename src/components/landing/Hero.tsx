@@ -26,7 +26,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl leading-relaxed"
           >
-            Enero es cuando muchos deciden subir de nivel.
+            Enero es cuando muchos deciden subir de nivel profesional.
             <br />
             En finanzas, eso empieza por dominar Excel de verdad.
           </motion.p>

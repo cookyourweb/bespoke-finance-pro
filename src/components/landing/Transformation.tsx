@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 const transformations = [
-  "Entiendes lo que haces, no solo lo replicas",
-  "Analizas empresas e inversiones con criterio",
-  "Tu perfil profesional sube de nivel",
-  "Dejas de sentirte 'junior' en Excel",
-  "Accedes a más oportunidades profesionales",
+  "Entiendes qué hay detrás de los números, no solo el resultado",
+  "Tomas decisiones financieras con criterio profesional",
+  "Analizas empresas e inversiones con seguridad",
+  "Tu perfil deja de ser 'junior' en Excel",
+  "Accedes a más y mejores oportunidades profesionales",
 ];
 
 const Transformation = () => {
@@ -21,7 +21,7 @@ const Transformation = () => {
           className="max-w-3xl mx-auto"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-12 text-center">
-            Lo que cambia cuando dominas modelos financieros reales
+            Cuando dominas modelos financieros reales…
           </h2>
 
           <div className="space-y-5">
