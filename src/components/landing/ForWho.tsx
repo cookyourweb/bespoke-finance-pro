@@ -23,7 +23,7 @@ const careerPaths = [
 
 const ForWho = () => {
   return (
-    <section className="py-20 md:py-28 bg-secondary">
+    <section id="para-quien" className="py-20 md:py-28 bg-secondary">
       <div className="section-container">
         <div className="max-w-4xl mx-auto">
           <motion.h2

@@ -25,19 +25,21 @@ const Header = () => {
           </div>
 
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#programa" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
-              Programa
+            <a href="#aprendizaje" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+              Qué aprenderás
             </a>
-            <a href="#resultados" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
-              Resultados
+            <a href="#para-quien" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+              Para quién
             </a>
-            <a href="#precio" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
-              Precio
+            <a href="#formato" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+              Formato
             </a>
           </nav>
 
           <a
-            href="#inscripcion"
+            href="https://wa.me/34600000000"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-primary text-primary-foreground px-4 py-2 md:px-6 md:py-2.5 rounded-lg font-semibold text-sm hover:bg-accent transition-colors"
           >
             Reservar Plaza

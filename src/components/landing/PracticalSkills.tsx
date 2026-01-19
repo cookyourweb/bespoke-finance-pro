@@ -18,7 +18,7 @@ const learnings = [
 
 const PracticalSkills = () => {
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section id="aprendizaje" className="py-20 md:py-28 bg-background">
       <div className="section-container">
         <div className="max-w-4xl mx-auto space-y-20">
           {/* Problems you'll solve */}

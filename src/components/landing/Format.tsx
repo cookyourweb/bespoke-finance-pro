@@ -10,7 +10,7 @@ const features = [
 
 const Format = () => {
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section id="formato" className="py-20 md:py-28 bg-background">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
