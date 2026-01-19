@@ -2,6 +2,8 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Send, CheckCircle } from "lucide-react";
+import { brevoService } from "@/services/brevo.service";
+import { whatsappService } from "@/services/whatsapp.service";
 
 interface LeadData {
   nombre: string;
@@ -82,27 +84,57 @@ const LeadForm = () => {
       timestamp: new Date().toISOString(),
     };
 
-    // Guardar en localStorage (simulando CRM)
-    const existingLeads = JSON.parse(localStorage.getItem("bespoke_leads") || "[]");
-    existingLeads.push(leadData);
-    localStorage.setItem("bespoke_leads", JSON.stringify(existingLeads));
+    try {
+      // 1. Guardar en localStorage (backup)
+      const existingLeads = JSON.parse(localStorage.getItem("bespoke_leads") || "[]");
+      existingLeads.push(leadData);
+      localStorage.setItem("bespoke_leads", JSON.stringify(existingLeads));
 
-    // Ready for Brevo webhook integration
-    // await fetch('YOUR_BREVO_WEBHOOK_URL', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(leadData)
-    // });
+      // 2. Registrar en Brevo CRM
+      const brevoResponse = await brevoService.createContact(leadData);
 
-    // Éxito
-    setTimeout(() => {
+      if (brevoResponse.success) {
+        console.log('✅ Lead registrado en Brevo exitosamente');
+      } else {
+        console.warn('⚠️ Error al registrar en Brevo:', brevoResponse.error);
+        // Continuar aunque Brevo falle (tenemos backup en localStorage)
+      }
+
+      // 3. Éxito - Mostrar mensaje y ofrecer WhatsApp
       setIsSubmitted(true);
       setIsSubmitting(false);
+
       toast({
         title: "¡Solicitud recibida!",
         description: "Nos pondremos en contacto contigo muy pronto.",
       });
-    }, 800);
+
+      // 4. Auto-abrir WhatsApp después de 2 segundos (opcional)
+      setTimeout(() => {
+        const shouldOpenWhatsApp = window.confirm(
+          "¿Quieres agendar una llamada ahora mismo por WhatsApp? 📱"
+        );
+
+        if (shouldOpenWhatsApp) {
+          whatsappService.redirectToWhatsApp({
+            nombre: formData.nombre,
+            email: formData.email,
+            telefono: formData.telefono
+          });
+        }
+      }, 2000);
+
+    } catch (error) {
+      console.error('❌ Error al procesar el formulario:', error);
+
+      toast({
+        title: "Error al enviar",
+        description: "Hubo un problema. Por favor, intenta nuevamente o contáctanos por WhatsApp.",
+        variant: "destructive",
+      });
+
+      setIsSubmitting(false);
+    }
   };
 
   return (
