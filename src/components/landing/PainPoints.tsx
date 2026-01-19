@@ -1,11 +1,27 @@
 import { motion } from "framer-motion";
+import { AlertCircle, FileQuestion, TrendingDown, Users, Clock } from "lucide-react";
 
 const painPoints = [
-  "Usas Excel a diario, pero no sabrías construir un modelo completo desde cero",
-  "Dependes de plantillas que no entiendes del todo",
-  "Ves ofertas interesantes, pero sabes que te falta nivel técnico",
-  "En reuniones financieras, otros dominan el modelo y tú no",
-  "Sientes que tu carrera podría avanzar mucho más rápido",
+  {
+    text: "Usas Excel a diario, pero no sabrías construir un modelo completo desde cero",
+    icon: FileQuestion,
+  },
+  {
+    text: "Dependes de plantillas que no entiendes del todo",
+    icon: AlertCircle,
+  },
+  {
+    text: "Ves ofertas interesantes, pero sabes que te falta nivel técnico",
+    icon: TrendingDown,
+  },
+  {
+    text: "En reuniones financieras, otros dominan el modelo y tú no",
+    icon: Users,
+  },
+  {
+    text: "Sientes que tu carrera podría avanzar mucho más rápido",
+    icon: Clock,
+  },
 ];
 
 const PainPoints = () => {
@@ -23,7 +39,7 @@ const PainPoints = () => {
             La realidad de muchos profesionales en finanzas
           </h2>
 
-          <div className="space-y-5">
+          <div className="space-y-4">
             {painPoints.map((point, index) => (
               <motion.div
                 key={index}
@@ -31,10 +47,10 @@ const PainPoints = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="flex items-start gap-4 p-5 rounded-xl bg-secondary/50 border border-border"
+                className="flex items-start gap-4 p-5 rounded-xl bg-destructive/10 border border-destructive/20"
               >
-                <span className="text-primary font-bold text-xl">–</span>
-                <span className="text-lg text-foreground">{point}</span>
+                <point.icon className="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" />
+                <span className="text-lg text-foreground">{point.text}</span>
               </motion.div>
             ))}
           </div>
