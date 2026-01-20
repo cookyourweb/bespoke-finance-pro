@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn + Waalaxy: Configuración para Bespoke</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: #333;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #0a66c2;
+            border-bottom: 3px solid #0a66c2;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #004182;
+            margin-top: 40px;
+            border-left: 4px solid #0a66c2;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #003159;
+            margin-top: 30px;
+        }
+        .answer-box {
+            background: #e7f3ff;
+            border: 2px solid #0a66c2;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            font-size: 1.1em;
+        }
+        .comparison-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .option-card {
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #e5e7eb;
+        }
+        .option-manual {
+            background: #fef3c7;
+            border-color: #f59e0b;
+        }
+        .option-waalaxy {
+            background: #d1fae5;
+            border-color: #10b981;
+        }
+        .advantages {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .disadvantages {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .recommended {
+            background: #ecfdf5;
+            border: 2px solid #10b981;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #e5e7eb;
+        }
+        th {
+            background: #f3f4f6;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        tr:nth-child(even) {
+            background: #f9fafb;
+        }
+        .step-box {
+            background: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+        .profile-example {
+            background: #fff7ed;
+            border-left: 4px solid #f97316;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .checklist {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .checklist ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .checklist li:before {
+            content: "☐ ";
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+        .star {
+            color: #f59e0b;
+            font-size: 1.2em;
+        }
+        .highlight {
+            background: #fef3c7;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        ul {
+            line-height: 1.8;
+        }
+        ol {
+            line-height: 1.8;
+        }
+        .warning {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .info {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        /* Estilos de impresión para PDF A4 */
+        @media print {
+            @page {
+                size: A4;
+                margin: 2cm 1.5cm;
+            }
+
+            body {
+                background: white;
+                max-width: 100%;
+                padding: 0;
+                margin: 0;
+                font-size: 10pt;
+                line-height: 1.4;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 0;
+                border-radius: 0;
+            }
+
+            h1 {
+                font-size: 18pt;
+                page-break-after: avoid;
+                margin-top: 0;
+            }
+
+            h2 {
+                font-size: 14pt;
+                page-break-after: avoid;
+                margin-top: 20pt;
+            }
+
+            h3 {
+                font-size: 12pt;
+                page-break-after: avoid;
+                margin-top: 15pt;
+            }
+
+            h4 {
+                font-size: 11pt;
+                page-break-after: avoid;
+            }
+
+            blockquote {
+                page-break-inside: avoid;
+            }
+
+            /* Mantener bloques juntos */
+            .answer-box, .comparison-box, .option-card,
+            .advantages, .disadvantages, .recommended,
+            .step-box, .profile-example, .checklist,
+            .warning, .info, table {
+                page-break-inside: avoid;
+            }
+
+            /* Simplificar fondos para impresión */
+            .answer-box {
+                background: white !important;
+                border: 2px solid #0a66c2;
+            }
+
+            .option-card {
+                background: white !important;
+                border: 1px solid #333;
+            }
+
+            .option-manual {
+                border-color: #f59e0b !important;
+            }
+
+            .option-waalaxy {
+                border-color: #10b981 !important;
+            }
+
+            .advantages {
+                background: white !important;
+                border: 1px solid #10b981;
+            }
+
+            .disadvantages {
+                background: white !important;
+                border: 1px solid #ef4444;
+            }
+
+            .recommended {
+                background: white !important;
+                border: 2px solid #10b981;
+            }
+
+            .step-box {
+                background: white !important;
+                border: 1px solid #0ea5e9;
+            }
+
+            .profile-example {
+                background: white !important;
+                border: 1px solid #f97316;
+            }
+
+            .warning {
+                background: white !important;
+                border: 1px solid #ef4444;
+            }
+
+            .info {
+                background: white !important;
+                border: 1px solid #3b82f6;
+            }
+
+            .code-block {
+                background: #f5f5f5 !important;
+                color: #000 !important;
+                border: 1px solid #ddd;
+                font-size: 9pt;
+                page-break-inside: avoid;
+            }
+
+            table {
+                font-size: 9pt;
+                border-collapse: collapse;
+            }
+
+            th, td {
+                border: 1px solid #333;
+                padding: 8px 6px;
+            }
+
+            th {
+                background: #f0f0f0 !important;
+            }
+
+            tr:nth-child(even) {
+                background: #f9f9f9 !important;
+            }
+
+            /* Evitar que elementos se corten */
+            ul, ol {
+                page-break-inside: avoid;
+            }
+
+            li {
+                page-break-inside: avoid;
+            }
+
+            .highlight {
+                background: #ffffcc !important;
+            }
+
+            .checklist li:before {
+                content: "☐ ";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔵 LINKEDIN + WAALAXY: CONFIGURACIÓN PARA BESPOKE</h1>
+
+        <h2>🎯 TU PREGUNTA</h2>
+        <blockquote style="font-style: italic; color: #666; border-left: 4px solid #ddd; padding-left: 20px;">
+            "¿Recomiendas usar Waalaxy? ¿Con qué perfil se darían de alta?"
+        </blockquote>
+
+        <div class="answer-box">
+            <h3>✅ RESPUESTA CORTA</h3>
+            <p><strong>SÍ, recomiendo Waalaxy</strong> (60€/mes) porque:</p>
+            <ul>
+                <li>3x más eficiente que manual</li>
+                <li>30-60 min/día vs 2-3 horas/día</li>
+                <li>Resultados más consistentes</li>
+            </ul>
+            <p><strong>Perfil a usar:</strong></p>
+            <ul>
+                <li>✅ <strong>Perfil PERSONAL</strong> de alguien de Bespoke</li>
+                <li>❌ NO perfil corporativo de la empresa</li>
+                <li>Idealmente: Fundador, Director, o Profesor principal</li>
+            </ul>
+        </div>
+
+        <h2>📊 COMPARATIVA: MANUAL vs. WAALAXY</h2>
+
+        <div class="comparison-box">
+            <div class="option-card option-manual">
+                <h3>OPCIÓN 1: MANUAL (GRATIS)</h3>
+                <p><strong>Tiempo:</strong> 2-3 horas/día</p>
+                <p><strong>Resultados:</strong> 2-5 alumnos/mes</p>
+                <div class="advantages">
+                    <strong>✅ Ventajas:</strong>
+                    <ul>
+                        <li>Gratis</li>
+                        <li>100% control</li>
+                        <li>Muy personalizado</li>
+                    </ul>
+                </div>
+                <div class="disadvantages">
+                    <strong>❌ Desventajas:</strong>
+                    <ul>
+                        <li>MUY lento</li>
+                        <li>Requiere 2-3h/día</li>
+                        <li>Agotador</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="option-card option-waalaxy">
+                <h3>OPCIÓN 2: WAALAXY <span class="star">⭐</span></h3>
+                <p><strong>Tiempo:</strong> 30-60 min/día</p>
+                <p><strong>Resultados:</strong> 3-12 alumnos/mes</p>
+                <div class="advantages">
+                    <strong>✅ Ventajas:</strong>
+                    <ul>
+                        <li>3x más rápido</li>
+                        <li>Solo 30-60 min/día</li>
+                        <li>Consistente</li>
+                        <li>Dashboard métricas</li>
+                    </ul>
+                </div>
+                <div class="disadvantages">
+                    <strong>❌ Desventajas:</strong>
+                    <ul>
+                        <li>Cuesta 60€/mes</li>
+                        <li>Configuración 1h</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="recommended">
+            <h3>🎯 MI RECOMENDACIÓN: WAALAXY</h3>
+            <p><strong>Por qué:</strong></p>
+            <ul>
+                <li>Inversión: 60€/mes</li>
+                <li>Ahorro de tiempo: 1.5-2h/día (valorado en 300-400€/mes a 20€/hora)</li>
+                <li>Mejores resultados: 2x más alumnos</li>
+                <li><span class="highlight">ROI claro: Con 1 alumno extra/mes (2,990€) pagas 49 meses de Waalaxy</span></li>
+            </ul>
+            <p><strong>Para Bespoke tiene sentido porque:</strong></p>
+            <ul>
+                <li>No tienen tiempo para 2-3h/día en LinkedIn</li>
+                <li>60€/mes es nada comparado con el valor de 1 alumno</li>
+                <li>Consistencia garantizada (el sistema no se cansa)</li>
+            </ul>
+        </div>
+
+        <h2>👤 ¿CON QUÉ PERFIL DE LINKEDIN?</h2>
+
+        <h3>✅ OPCIÓN CORRECTA: PERFIL PERSONAL</h3>
+        <p><strong>Debe ser el perfil PERSONAL de alguien de Bespoke:</strong></p>
+
+        <div class="step-box">
+            <h4>1️⃣ FUNDADOR / DIRECTOR <span class="star">⭐ MEJOR OPCIÓN</span></h4>
+            <ul>
+                <li>Más autoridad</li>
+                <li>Más credibilidad</li>
+                <li>Mayor tasa de aceptación</li>
+                <li>Ejemplo: "Juan García - Fundador de Bespoke School of Finance"</li>
+            </ul>
+        </div>
+
+        <div class="step-box">
+            <h4>2️⃣ PROFESOR PRINCIPAL / EXPERTO</h4>
+            <ul>
+                <li>Experto reconocido en finanzas</li>
+                <li>Genera confianza técnica</li>
+                <li>Ejemplo: "María López - Profesora de Finanzas Corporativas | Bespoke School"</li>
+            </ul>
+        </div>
+
+        <div class="step-box">
+            <h4>3️⃣ RESPONSABLE COMERCIAL / MARKETING</h4>
+            <ul>
+                <li>Dedicado a captación</li>
+                <li>Disponible para responder rápido</li>
+                <li>Ejemplo: "Pedro Martínez - Business Development | Bespoke School of Finance"</li>
+            </ul>
+        </div>
+
+        <h3>❌ NO USAR: PERFIL CORPORATIVO</h3>
+        <div class="warning">
+            <p><strong>Por qué NO usar página de empresa:</strong></p>
+            <ul>
+                <li>Menor tasa de aceptación (15-20% vs 30-40%)</li>
+                <li>Menos personal (nadie quiere conectar con "una empresa")</li>
+                <li>LinkedIn penaliza más a empresas por spam</li>
+                <li>Conversiones más bajas</li>
+            </ul>
+        </div>
+
+        <h4>Comparativa:</h4>
+        <table>
+            <tr>
+                <th>Métrica</th>
+                <th>Perfil Personal</th>
+                <th>Página Empresa</th>
+            </tr>
+            <tr>
+                <td>Tasa aceptación</td>
+                <td style="background: #d1fae5;"><strong>30-40%</strong></td>
+                <td>15-20%</td>
+            </tr>
+            <tr>
+                <td>Tasa respuesta</td>
+                <td style="background: #d1fae5;"><strong>15-25%</strong></td>
+                <td>5-10%</td>
+            </tr>
+            <tr>
+                <td>Credibilidad</td>
+                <td style="background: #d1fae5;"><strong>⭐⭐⭐⭐⭐</strong></td>
+                <td>⭐⭐</td>
+            </tr>
+            <tr>
+                <td>Conversión final</td>
+                <td style="background: #d1fae5;"><strong>10-20%</strong></td>
+                <td>5-8%</td>
+            </tr>
+        </table>
+        <p><strong>Conclusión: SIEMPRE perfil personal.</strong></p>
+
+        <h2>🔧 SETUP PASO A PASO</h2>
+
+        <div class="step-box">
+            <h3>PASO 1: ELEGIR LA PERSONA</h3>
+            <p><strong>Criterios:</strong></p>
+            <ul>
+                <li>✅ Tiene perfil LinkedIn activo</li>
+                <li>✅ Dispone de 30-60 min/día</li>
+                <li>✅ Quiere ser la "cara" de Bespoke</li>
+                <li>✅ Puede responder mensajes rápido</li>
+            </ul>
+            <p><strong>Preguntas para decidir:</strong></p>
+            <ol>
+                <li>¿Quién es la persona más visible/conocida de Bespoke?</li>
+                <li>¿Quién tiene mejor perfil de LinkedIn?</li>
+                <li>¿Quién puede dedicar 30-60 min/día a esto?</li>
+                <li>¿Quién disfruta networking?</li>
+            </ol>
+        </div>
+
+        <div class="step-box">
+            <h3>PASO 2: OPTIMIZAR PERFIL LINKEDIN</h3>
+
+            <h4>FOTO DE PERFIL</h4>
+            <ul>
+                <li>✅ Profesional</li>
+                <li>✅ Buena calidad</li>
+                <li>✅ Fondo neutro</li>
+                <li>✅ Sonriente y cercano</li>
+                <li>❌ Logo de empresa (es perfil personal)</li>
+            </ul>
+
+            <h4>TITULAR (MUY IMPORTANTE)</h4>
+            <div class="warning">
+                <p>No poner solo: <em>"Fundador en Bespoke School of Finance"</em></p>
+            </div>
+
+            <div class="profile-example">
+                <p><strong>✅ Poner propuesta de valor:</strong></p>
+                <div class="code-block">"Ayudo a profesionales junior a dominar finanzas corporativas |
+Fundador Bespoke School of Finance | Modelización Financiera | Valoración"</div>
+
+                <p><strong>O más directo:</strong></p>
+                <div class="code-block">"Formación práctica en Finanzas Corporativas para profesionales |
+Ex-[Empresa reconocida] | Fundador @Bespoke School"</div>
+            </div>
+
+            <p><strong>Palabras clave a incluir:</strong></p>
+            <ul>
+                <li>Finanzas corporativas</li>
+                <li>Modelización financiera</li>
+                <li>Valoración de empresas</li>
+                <li>M&A (si aplica)</li>
+                <li>Excel financiero</li>
+                <li>El nombre "Bespoke School of Finance"</li>
+            </ul>
+
+            <h4>SOBRE MÍ (RESUMEN)</h4>
+            <div class="profile-example">
+                <p><strong>Estructura recomendada:</strong></p>
+                <div class="code-block">👋 Soy [Nombre], fundador de Bespoke School of Finance.
+
+🎯 Ayudo a profesionales junior en finanzas a acelerar su carrera
+dominando modelización financiera, valoración y análisis avanzado.
+
+📊 Con +[X] años en [sector/empresas], he visto que la diferencia
+entre un analista junior y uno senior no es el título, sino las
+habilidades técnicas correctas.
+
+🎓 Por eso creé Bespoke: formación práctica e intensiva que te
+prepara para los retos reales de consultoría, M&A, y corporate finance.
+
+💼 He trabajado en: [Empresas reconocidas]
+📚 He formado a +[X] profesionales que ahora trabajan en [empresas top]
+
+¿Quieres dar el siguiente paso en tu carrera financiera?
+📩 Envíame un mensaje o visita: [landing]</div>
+            </div>
+
+            <h4>ACTIVIDAD (IMPORTANTE)</h4>
+            <p><strong>Antes de empezar captación, publicar 3-5 posts:</strong></p>
+
+            <div class="profile-example">
+                <p><strong>Post 1: Presentación</strong></p>
+                <div class="code-block">Después de [X] años en [sector], decidí crear Bespoke School of Finance.
+
+¿Por qué?
+
+Porque vi demasiados analistas brillantes estancados por no dominar
+las herramientas técnicas correctas: modelización, valoración, Excel avanzado.
+
+Ahora ayudo a profesionales como tú a dar el salto que necesitas.
+
+¿Estás listo para el siguiente nivel?</div>
+
+                <p><strong>Post 2: Valor educativo</strong></p>
+                <div class="code-block">5 errores que veo en juniors al hacer un modelo DCF:
+
+1. No proyectar flujos de caja, sino P&L
+2. Ignorar working capital
+3. WACC mal calculado
+4. Terminal value sin sentido
+5. No hacer análisis de sensibilidad
+
+¿Cometes alguno de estos?</div>
+
+                <p><strong>Post 3: Caso de éxito</strong></p>
+                <div class="code-block">Hace 6 meses, María era analista junior en [empresa].
+
+Hoy lidera proyectos de valoración complejos.
+
+¿Qué cambió?
+
+Hizo nuestro curso intensivo de modelización financiera.
+
+8 semanas de práctica real, no teoría.
+
+Si María pudo, tú también.</div>
+            </div>
+
+            <p><strong>Frecuencia:</strong> 2-3 posts/semana durante captación</p>
+        </div>
+
+        <div class="step-box">
+            <h3>PASO 3: CREAR CUENTA WAALAXY</h3>
+
+            <h4>A. Registro</h4>
+            <ol>
+                <li>Ir a: <a href="https://www.waalaxy.com/" target="_blank">https://www.waalaxy.com/</a></li>
+                <li>Clic "Start free trial" (7 días gratis)</li>
+                <li>Crear cuenta con email de Bespoke</li>
+                <li><strong>NO necesitan tarjeta para trial</strong></li>
+            </ol>
+
+            <h4>B. Elegir plan</h4>
+            <table>
+                <tr>
+                    <th>Plan</th>
+                    <th>Precio</th>
+                    <th>Características</th>
+                </tr>
+                <tr>
+                    <td><strong>PRO</strong></td>
+                    <td>40€/mes</td>
+                    <td>
+                        • 100 invitaciones/semana<br>
+                        • Secuencias básicas<br>
+                        • Suficiente para empezar
+                    </td>
+                </tr>
+                <tr style="background: #d1fae5;">
+                    <td><strong>BUSINESS <span class="star">⭐</span></strong></td>
+                    <td>60€/mes</td>
+                    <td>
+                        • 200 invitaciones/semana<br>
+                        • Secuencias ilimitadas<br>
+                        • Multi-secuencias<br>
+                        • Importación CSV
+                    </td>
+                </tr>
+            </table>
+            <p><strong>Mi recomendación:</strong> Empezar con PRO (40€/mes), subir a Business (60€/mes) si funciona bien.</p>
+
+            <h4>C. Instalar extensión Chrome</h4>
+            <ol>
+                <li>Waalaxy te redirige automáticamente</li>
+                <li>Añadir extensión a Chrome</li>
+                <li>Hacer login en LinkedIn</li>
+                <li>Waalaxy detecta tu sesión de LinkedIn</li>
+                <li>✅ Conectado</li>
+            </ol>
+        </div>
+
+        <div class="step-box">
+            <h3>PASO 4: CONFIGURAR PRIMERA CAMPAÑA</h3>
+
+            <h4>A. Buscar perfiles objetivo en LinkedIn</h4>
+            <div class="code-block">Palabras clave: "Financial Analyst" OR "Estudiante Economía" OR "Consultor Junior"
+Ubicación: España
+Nivel: Estudiante, Nivel inicial, Asociado
+Sector: Consultoría, Servicios financieros, Banca</div>
+
+            <h4>B. Importar leads a Waalaxy</h4>
+            <ol>
+                <li>Clic en icono Waalaxy (esquina superior derecha LinkedIn)</li>
+                <li>"Import from search"</li>
+                <li>Seleccionar búsqueda guardada</li>
+                <li>Importar primeros 50-100 leads</li>
+            </ol>
+
+            <h4>C. Crear secuencia</h4>
+            <div class="info">
+                <p><strong>Secuencia recomendada:</strong></p>
+                <div class="code-block">PASO 1: Visitar perfil (Día 0)
+   ↓ Esperar 2 días
+PASO 2: Enviar solicitud de conexión SIN nota (Día 2)
+   ↓ Si acepta (esperar 3 días)
+PASO 3: Mensaje 1 - Apertura suave (Día 5)
+   ↓ Si no responde (esperar 4 días)
+PASO 4: Mensaje 2 - Valor + oferta (Día 9)
+   ↓ Si no responde (esperar 5 días)
+PASO 5: Mensaje 3 - Último intento (Día 14)</div>
+            </div>
+
+            <h4>D. Plantillas de mensajes</h4>
+            <div class="profile-example">
+                <p><strong>MENSAJE 1 (Post-conexión - Día 5)</strong></p>
+                <div class="code-block">Hola {firstName},
+
+Gracias por conectar! Vi que estás en {company} como {jobTitle}.
+
+Yo ayudo a profesionales junior en finanzas a dominar modelización
+financiera y valoración.
+
+¿Cómo va todo por {company}?
+
+Saludos,
+[Nombre]</div>
+
+                <p><strong>MENSAJE 2 (Follow-up - Día 9)</strong></p>
+                <div class="code-block">Hola {firstName},
+
+Por si te interesa: lanzamos un programa intensivo de finanzas corporativas
+para perfiles como el tuyo (junior en {company}).
+
+8 semanas prácticas: modelización, valoración, Excel avanzado.
+
+¿Te gustaría que te pase más info?
+
+Saludos!</div>
+
+                <p><strong>MENSAJE 3 (Último intento - Día 14)</strong></p>
+                <div class="code-block">Hola {firstName},
+
+Última oportunidad para info del programa de finanzas.
+
+Si no es para ti, sin problema! Pero si te interesa acelerar tu carrera,
+aquí estoy.
+
+Éxito en {company}!
+
+Saludos,
+[Nombre]</div>
+            </div>
+
+            <h4>E. Configurar límites seguros</h4>
+            <div class="warning">
+                <p><strong>En Waalaxy Settings:</strong></p>
+                <ul>
+                    <li>Invitaciones/día: <strong>20-25</strong> (máximo seguro)</li>
+                    <li>Mensajes/día: <strong>15-20</strong></li>
+                    <li>Horario: 9:00-18:00 (horario laboral)</li>
+                    <li>Días: Lunes-Viernes (no fines de semana)</li>
+                </ul>
+                <p><strong>¿Por qué estos límites?</strong></p>
+                <ul>
+                    <li>LinkedIn permite 100 invitaciones/semana</li>
+                    <li>Si envías 25/día x 5 días = 125/semana → RIESGO</li>
+                    <li>Recomendado: 20-25/día = 100-125/semana → SEGURO</li>
+                    <li>Waalaxy respeta límites automáticamente</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="step-box">
+            <h3>PASO 5: ACTIVAR Y MONITORIZAR</h3>
+
+            <h4>A. Activar campaña</h4>
+            <ol>
+                <li>Revisar configuración</li>
+                <li>Clic "Start campaign"</li>
+                <li>✅ Waalaxy empieza a trabajar automáticamente</li>
+            </ol>
+
+            <h4>B. Qué pasa ahora (automático):</h4>
+            <ul>
+                <li><strong>Día 0:</strong> Waalaxy visita 25 perfiles</li>
+                <li><strong>Día 2:</strong> Waalaxy envía 25 solicitudes de conexión</li>
+                <li><strong>Día 5:</strong> Si aceptan, envía Mensaje 1 automáticamente</li>
+                <li><strong>Día 9:</strong> Si no responden, envía Mensaje 2 automáticamente</li>
+                <li><strong>Día 14:</strong> Si no responden, envía Mensaje 3 automáticamente</li>
+            </ul>
+
+            <h4>C. Tu trabajo diario (30-60 min):</h4>
+            <ol>
+                <li>Revisar respuestas en Waalaxy dashboard</li>
+                <li>Responder manualmente a los interesados</li>
+                <li>Derivar a WhatsApp si muestran interés</li>
+                <li>Registrar en CRM los leads cualificados</li>
+            </ol>
+        </div>
+
+        <h2>📊 RESULTADOS ESPERADOS (PRIMERA SEMANA)</h2>
+        <div class="info">
+            <div class="code-block">DÍA 1-2:
+Waalaxy visita perfiles + envía solicitudes
+Tú: Solo revisas que funciona (5 min)
+
+DÍA 3-5:
+Primeras aceptaciones (25-35%)
+Waalaxy envía Mensaje 1 automáticamente
+Tú: Solo revisas (5 min)
+
+DÍA 6-7:
+Primeras respuestas (15-25% de los que aceptaron)
+Tú: Respondes a interesados (30 min)
+
+RESULTADO SEMANA 1:
+- 100 solicitudes enviadas
+- 30-35 aceptadas
+- 5-8 respuestas
+- 2-4 interesados reales</div>
+        </div>
+
+        <h2>🎯 RECOMENDACIÓN FINAL PARA BESPOKE</h2>
+        <div class="recommended">
+            <h3>SETUP IDEAL:</h3>
+            <p><strong>Perfil a usar:</strong></p>
+            <ul>
+                <li>Fundador o Director de Bespoke</li>
+                <li>Optimizar perfil ANTES de empezar</li>
+                <li>Publicar 3-5 posts de valor</li>
+            </ul>
+
+            <p><strong>Herramienta:</strong></p>
+            <ul>
+                <li>Waalaxy Plan PRO: 40€/mes (para empezar)</li>
+                <li>Upgrade a Business (60€/mes) si funciona bien</li>
+            </ul>
+
+            <p><strong>Tiempo requerido:</strong></p>
+            <ul>
+                <li>Setup inicial: 2-3 horas (una vez)</li>
+                <li>Gestión diaria: 30-60 min</li>
+            </ul>
+
+            <p><strong>Inversión:</strong></p>
+            <ul>
+                <li>Waalaxy: 40-60€/mes</li>
+                <li>Tiempo: 30-60 min/día</li>
+            </ul>
+
+            <p><strong>Resultados esperados:</strong></p>
+            <ul>
+                <li>Mes 1: 20-40 leads cualificados</li>
+                <li>Mes 2-3: 30-60 leads cualificados</li>
+                <li>Conversión: 3-12 alumnos/mes</li>
+            </ul>
+
+            <p><strong>ROI:</strong></p>
+            <ul>
+                <li>Inversión: 60€/mes</li>
+                <li>1 alumno = 2,990€</li>
+                <li>Necesitas solo 1 alumno cada 50 meses para ROI positivo</li>
+                <li><span class="highlight">Esperado: 3-12 alumnos/mes → ROI 14,850-59,400%</span></li>
+            </ul>
+        </div>
+
+        <h2>✅ CHECKLIST DE SETUP</h2>
+        <div class="checklist">
+            <h3>Pre-Waalaxy:</h3>
+            <ul>
+                <li>Elegir persona de Bespoke</li>
+                <li>Optimizar foto perfil LinkedIn</li>
+                <li>Optimizar titular (propuesta de valor)</li>
+                <li>Optimizar "Sobre mí"</li>
+                <li>Publicar 3 posts de valor</li>
+                <li>Tener landing lista</li>
+            </ul>
+
+            <h3>Waalaxy:</h3>
+            <ul>
+                <li>Crear cuenta Waalaxy (trial 7 días)</li>
+                <li>Instalar extensión Chrome</li>
+                <li>Conectar con LinkedIn</li>
+                <li>Crear primera búsqueda en LinkedIn</li>
+                <li>Importar 50-100 leads</li>
+                <li>Configurar secuencia (visitar → conectar → mensajes)</li>
+                <li>Personalizar plantillas mensajes</li>
+                <li>Configurar límites seguros (20-25/día)</li>
+                <li>Activar campaña</li>
+            </ul>
+
+            <h3>Post-activación:</h3>
+            <ul>
+                <li>Revisar dashboard diariamente (30-60 min)</li>
+                <li>Responder a interesados</li>
+                <li>Derivar a WhatsApp</li>
+                <li>Registrar leads en CRM</li>
+            </ul>
+        </div>
+
+        <h2>💡 PREGUNTAS FRECUENTES</h2>
+
+        <div class="info">
+            <h4>¿Puedo usar mi perfil personal si no soy el fundador?</h4>
+            <p>✅ <strong>Sí</strong>, siempre que:</p>
+            <ul>
+                <li>Seas parte visible de Bespoke</li>
+                <li>Puedas dedicar 30-60 min/día</li>
+                <li>Te sientas cómodo siendo la "cara" de la captación</li>
+            </ul>
+        </div>
+
+        <div class="info">
+            <h4>¿Puedo tener 2 personas haciendo captación?</h4>
+            <p>✅ <strong>Sí</strong>, pero:</p>
+            <ul>
+                <li>Cada una con su cuenta Waalaxy (60€/mes x 2 = 120€/mes)</li>
+                <li>Cuidado de no contactar mismos leads</li>
+                <li>Coordinar mensajes para no parecer spam</li>
+            </ul>
+        </div>
+
+        <div class="warning">
+            <h4>¿Qué pasa si mi perfil no está muy completo?</h4>
+            <p>⚠️ <strong>Completarlo ANTES de empezar captación</strong></p>
+            <ul>
+                <li>Perfil incompleto = tasa aceptación baja (10-15% vs 30-40%)</li>
+                <li>Vale la pena invertir 2-3 horas optimizándolo</li>
+            </ul>
+        </div>
+
+        <div class="info">
+            <h4>¿Puedo empezar manual y luego añadir Waalaxy?</h4>
+            <p>✅ <strong>Sí, totalmente</strong></p>
+            <ul>
+                <li>Empezar manual 1-2 semanas</li>
+                <li>Ver resultados</li>
+                <li>Si es muy pesado → Añadir Waalaxy</li>
+            </ul>
+        </div>
+
+        <div class="info">
+            <h4>¿Waalaxy es seguro? ¿No me banean?</h4>
+            <p>✅ <strong>Seguro si respetas límites</strong></p>
+            <ul>
+                <li>20-25 invitaciones/día → SEGURO</li>
+                <li>+50 invitaciones/día → RIESGO</li>
+                <li>Waalaxy imita comportamiento humano</li>
+                <li>Miles de usuarios sin problemas</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
