@@ -2,9 +2,14 @@
 
 ---
 
-## ✅ TODO LISTO PARA ENVIAR
+## ✅ VERSIÓN MEJORADA Y ESTRATÉGICA
 
-Has pedido un presupuesto simplificado y realista de 400€ para enviar a Bespoke School of Finance.
+Has pedido un presupuesto profesional de 400€ para Bespoke School of Finance.
+
+**ACABAMOS DE MEJORARLO ESTRATÉGICAMENTE** con tres ajustes clave:
+1. ✅ Alcance clarísimo: 1 curso activado, sistema para todos
+2. ✅ Fase 2 como plan estratégico (no lista de servicios sueltos)
+3. ✅ Pago 100% upfront (más profesional)
 
 **TODO ESTÁ PREPARADO.** Solo tienes que seguir estos pasos:
 
@@ -49,9 +54,30 @@ Has pedido un presupuesto simplificado y realista de 400€ para enviar a Bespok
 
 ---
 
+### 🎤 GUÍAS ESTRATÉGICAS (MUY RECOMENDADAS):
+
+#### 5. 🎯 **MEJORAS_PRESUPUESTO_ESTRATEGICO.md** ⭐⭐⭐
+**QUÉ ES:** Comparativa ANTES vs. DESPUÉS de los ajustes estratégicos
+**QUÉ VERÁS:**
+- Los 3 cambios clave que hemos hecho
+- Por qué cada cambio mejora tu posicionamiento
+- Frases que ahora puedes decir con confianza
+**CUÁNDO LEER:** AHORA MISMO (5 minutos, vale oro)
+
+#### 6. 🎤 **DISCURSO_ESTRATEGICO_BESPOKE.md** ⭐⭐
+**QUÉ ES:** Guión completo para defender la propuesta
+**QUÉ INCLUYE:**
+- Las 3 ideas clave que DEBES transmitir
+- Discurso sección por sección
+- Manejo de objeciones (con respuestas exactas)
+- Estructura de llamada de 15-20 min
+**CUÁNDO LEER:** Antes de presentar la propuesta o tener la reunión
+
+---
+
 ### DOCUMENTOS OPCIONALES (NO ENVIAR INICIALMENTE):
 
-#### 5. 📊 **BENEFICIOS_CRM_INTEGRACION.md**
+#### 7. 📊 **BENEFICIOS_CRM_INTEGRACION.md**
 **QUÉ ES:** Explicación detallada del CRM y sus beneficios
 **CUÁNDO ENVIAR:**
 - ✅ Si el cliente pregunta "¿Por qué un CRM?"
@@ -188,12 +214,25 @@ Estos archivos existen en el proyecto pero NO los uses para este envío:
 
 ## 🚀 SIGUIENTE PASO
 
-**AHORA MISMO:**
-1. Lee `GUIA_ENVIO_PROPUESTA.md` (5 minutos)
-2. Lee `COMO_CONVERTIR_A_WORD.md` si quieres convertir a Word/PDF
-3. Prepara el email con `EMAIL_ENVIO_PRESUPUESTO.md`
-4. Adjunta `PRESUPUESTO_BESPOKE_FINAL.html` (o su versión convertida)
-5. **ENVÍA** 📨
+**AHORA MISMO (ORDEN RECOMENDADO):**
+
+### PASO 1: Entender las mejoras (5 min)
+1. ✅ Lee `MEJORAS_PRESUPUESTO_ESTRATEGICO.md` (ANTES vs. DESPUÉS)
+2. ✅ Entenderás por qué ahora la propuesta es mucho más fuerte
+
+### PASO 2: Preparar el envío (10 min)
+3. ✅ Lee `GUIA_ENVIO_PROPUESTA.md` (qué enviar y cuándo)
+4. ✅ Lee `COMO_CONVERTIR_A_WORD.md` si quieres convertir a Word/PDF
+5. ✅ Prepara el email con `EMAIL_ENVIO_PRESUPUESTO.md`
+6. ✅ Adjunta `PRESUPUESTO_BESPOKE_FINAL.html` (o su versión convertida)
+
+### PASO 3: Preparar la defensa (15 min, ANTES de reunión)
+7. ✅ Lee `DISCURSO_ESTRATEGICO_BESPOKE.md` (guión completo)
+8. ✅ Memoriza las 3 ideas clave
+9. ✅ Repasa manejo de objeciones
+
+### PASO 4: Enviar
+10. ✅ **ENVÍA** 📨
 
 ---
 
