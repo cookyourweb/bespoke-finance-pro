@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Express: Captación LinkedIn Híbrida (Waalaxy + Manual)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: #333;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #0a66c2;
+            border-bottom: 3px solid #0a66c2;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #004182;
+            margin-top: 40px;
+            border-left: 4px solid #0a66c2;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #003159;
+            margin-top: 30px;
+        }
+        h4 {
+            color: #1e3a8a;
+            margin-top: 20px;
+        }
+        .objective-box {
+            background: #e7f3ff;
+            border: 2px solid #0a66c2;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            font-size: 1.05em;
+        }
+        .warning-box {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+        .strategy-card {
+            background: #f0f9ff;
+            border: 2px solid #0ea5e9;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        .strategy-recommended {
+            background: #ecfdf5;
+            border: 2px solid #10b981;
+        }
+        .advantages {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .disadvantages {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .results-box {
+            background: #fefce8;
+            border-left: 4px solid #eab308;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+        .workflow-step {
+            background: #f8fafc;
+            border-left: 3px solid #64748b;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            font-size: 0.95em;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #e5e7eb;
+        }
+        th {
+            background: #f3f4f6;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        tr:nth-child(even) {
+            background: #f9fafb;
+        }
+        .highlight-row {
+            background: #fef3c7 !important;
+            font-weight: 600;
+        }
+        .star {
+            color: #f59e0b;
+            font-size: 1.2em;
+        }
+        .checkmark {
+            color: #10b981;
+        }
+        .crossmark {
+            color: #ef4444;
+        }
+        ul, ol {
+            line-height: 1.8;
+        }
+        .recommendation-box {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        .roi-box {
+            background: #ecfdf5;
+            border: 2px solid #10b981;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .path-box {
+            background: #ede9fe;
+            border: 2px solid #8b5cf6;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        /* Estilos de impresión para PDF A4 */
+        @media print {
+            @page {
+                size: A4;
+                margin: 2cm 1.5cm;
+            }
+
+            body {
+                background: white;
+                max-width: 100%;
+                padding: 0;
+                margin: 0;
+                font-size: 10pt;
+                line-height: 1.4;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 0;
+                border-radius: 0;
+            }
+
+            h1 {
+                font-size: 18pt;
+                page-break-after: avoid;
+                margin-top: 0;
+            }
+
+            h2 {
+                font-size: 14pt;
+                page-break-after: avoid;
+                margin-top: 20pt;
+            }
+
+            h3 {
+                font-size: 12pt;
+                page-break-after: avoid;
+                margin-top: 15pt;
+            }
+
+            h4 {
+                font-size: 11pt;
+                page-break-after: avoid;
+            }
+
+            /* Mantener bloques juntos */
+            .objective-box, .warning-box, .strategy-card,
+            .advantages, .disadvantages, .results-box,
+            .workflow-step, .recommendation-box, .roi-box,
+            .path-box, table {
+                page-break-inside: avoid;
+            }
+
+            /* Simplificar fondos para impresión */
+            .objective-box {
+                background: white !important;
+                border: 2px solid #0a66c2;
+            }
+
+            .warning-box {
+                background: white !important;
+                border: 1px solid #ef4444;
+            }
+
+            .strategy-card {
+                background: white !important;
+                border: 1px solid #0ea5e9;
+            }
+
+            .strategy-recommended {
+                border: 2px solid #10b981 !important;
+            }
+
+            .advantages {
+                background: white !important;
+                border: 1px solid #10b981;
+            }
+
+            .disadvantages {
+                background: white !important;
+                border: 1px solid #ef4444;
+            }
+
+            .results-box {
+                background: white !important;
+                border: 1px solid #eab308;
+            }
+
+            .code-block {
+                background: #f5f5f5 !important;
+                color: #000 !important;
+                border: 1px solid #ddd;
+                font-size: 8pt;
+                page-break-inside: avoid;
+            }
+
+            .workflow-step {
+                background: white !important;
+                border: 1px solid #64748b;
+            }
+
+            .recommendation-box {
+                background: white !important;
+                border: 2px solid #f59e0b;
+            }
+
+            .roi-box {
+                background: white !important;
+                border: 2px solid #10b981;
+            }
+
+            .path-box {
+                background: white !important;
+                border: 2px solid #8b5cf6;
+            }
+
+            table {
+                font-size: 8pt;
+                border-collapse: collapse;
+            }
+
+            th, td {
+                border: 1px solid #333;
+                padding: 6px 4px;
+            }
+
+            th {
+                background: #f0f0f0 !important;
+            }
+
+            tr:nth-child(even) {
+                background: #f9f9f9 !important;
+            }
+
+            .highlight-row {
+                background: #ffffcc !important;
+            }
+
+            /* Evitar que elementos se corten */
+            ul, ol {
+                page-break-inside: avoid;
+            }
+
+            li {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 PLAN EXPRESS: CAPTACIÓN LINKEDIN HÍBRIDA</h1>
+        <p style="font-size: 1.1em; text-align: center; color: #666; margin-bottom: 30px;">
+            <strong>ESTRATEGIA: WAALAXY (25/día automático) + MANUAL (adicionales)</strong>
+        </p>
+
+        <div class="objective-box">
+            <h2 style="margin-top: 0;">🎯 OBJETIVO</h2>
+            <p>Maximizar captación de leads en LinkedIn combinando <strong>automatización segura + trabajo manual</strong> para alcanzar el límite máximo semanal de LinkedIn (100 conexiones/semana) sin riesgo de baneo.</p>
+        </div>
+
+        <div class="warning-box">
+            <h2 style="margin-top: 0;">⚖️ LÍMITES DE LINKEDIN (IMPORTANTE)</h2>
+            <p><strong>LinkedIn permite:</strong></p>
+            <ul>
+                <li><span class="checkmark">✅</span> <strong>100 invitaciones/semana</strong> (límite oficial)</li>
+                <li><span class="checkmark">✅</span> <strong>20 invitaciones/día</strong> (límite diario oficial)</li>
+                <li>⚠️ Si superas 100/semana → Riesgo de restricción temporal</li>
+                <li>⚠️ Si superas 50/día → Riesgo ALTO de baneo</li>
+            </ul>
+            <p><strong>Por tanto, nuestro límite seguro:</strong></p>
+            <ul>
+                <li><strong>100 invitaciones/semana = 20/día</strong> (si trabajas 5 días)</li>
+                <li>O <strong>25 invitaciones/día</strong> (si trabajas 4 días y descansas viernes)</li>
+            </ul>
+        </div>
+
+        <h2>📋 COMPARATIVA DE ESTRATEGIAS</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Métrica</th>
+                    <th>A: Waalaxy 25/día</th>
+                    <th>B: Híbrido 20+5</th>
+                    <th>C: Manual 20/día</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Conexiones/semana</strong></td>
+                    <td>100</td>
+                    <td>125</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td><strong>Tiempo/día</strong></td>
+                    <td>30-60 min</td>
+                    <td>60-90 min</td>
+                    <td>2-3 horas</td>
+                </tr>
+                <tr>
+                    <td><strong>Coste/mes</strong></td>
+                    <td>60 €</td>
+                    <td>60 €</td>
+                    <td>0 €</td>
+                </tr>
+                <tr>
+                    <td><strong>Automatización</strong></td>
+                    <td>100%</td>
+                    <td>80%</td>
+                    <td>0%</td>
+                </tr>
+                <tr>
+                    <td><strong>Riesgo baneo</strong></td>
+                    <td>Muy bajo (1%)</td>
+                    <td>Bajo (5%)</td>
+                    <td>Muy bajo (1%)</td>
+                </tr>
+                <tr>
+                    <td><strong>Aceptaciones/semana</strong></td>
+                    <td>30-35</td>
+                    <td>42-48</td>
+                    <td>35-40</td>
+                </tr>
+                <tr>
+                    <td><strong>Leads/mes</strong></td>
+                    <td>30-60</td>
+                    <td>40-80</td>
+                    <td>30-60</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>Alumnos/mes</strong></td>
+                    <td>12-30</td>
+                    <td>15-40</td>
+                    <td>12-35</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>ROI</strong></td>
+                    <td><span class="star">⭐⭐⭐⭐⭐</span></td>
+                    <td><span class="star">⭐⭐⭐⭐</span></td>
+                    <td><span class="star">⭐⭐⭐</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>📊 ESTRATEGIA A: WAALAXY 25/DÍA (AUTOMÁTICO) <span class="star">⭐ RECOMENDADA</span></h2>
+
+        <div class="strategy-card strategy-recommended">
+            <h3 style="margin-top: 0;">Configuración:</h3>
+            <ul>
+                <li>Waalaxy envía <strong>25 conexiones/día automáticamente</strong> (L-J)</li>
+                <li>Total semana: <strong>100 conexiones/semana</strong></li>
+                <li>Tú solo gestionas respuestas (30-60 min/día)</li>
+            </ul>
+
+            <div class="advantages">
+                <h4>✅ Ventajas:</h4>
+                <ul>
+                    <li>Alcanzas límite máximo semanal (100)</li>
+                    <li>Automático (el sistema trabaja por ti)</li>
+                    <li>Nunca te pasas del límite (Waalaxy lo controla)</li>
+                    <li>Consistente (nunca se olvida)</li>
+                </ul>
+            </div>
+
+            <div class="disadvantages">
+                <h4>❌ Desventajas:</h4>
+                <ul>
+                    <li>Ya estás en límite máximo → No puedes añadir manual</li>
+                    <li>Si añades manual, te pasas de 100/semana → Riesgo baneo</li>
+                </ul>
+            </div>
+
+            <div class="results-box">
+                <h4>Resultado esperado:</h4>
+                <ul>
+                    <li>100 conexiones/semana</li>
+                    <li>30-35 aceptaciones/semana (30-35%)</li>
+                    <li>5-8 respuestas/semana</li>
+                    <li><strong>12-30 alumnos/mes</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>📊 ESTRATEGIA B: WAALAXY 20/DÍA + MANUAL 5/DÍA (HÍBRIDO)</h2>
+
+        <div class="strategy-card">
+            <h3 style="margin-top: 0;">Configuración:</h3>
+            <ul>
+                <li>Waalaxy envía <strong>20 conexiones/día automáticamente</strong> (L-V)</li>
+                <li>Tú envías <strong>5 conexiones/día manualmente</strong> (L-V)</li>
+                <li>Total: <strong>25 conexiones/día = 125/semana</strong></li>
+            </ul>
+
+            <div class="warning-box">
+                <p><strong>⚠️ CUIDADO:</strong> Estás en el límite. LinkedIn permite 100/semana, pero tolera hasta 125/semana si:</p>
+                <ul>
+                    <li>No recibes muchos rechazos</li>
+                    <li>Tu perfil está completo</li>
+                    <li>Llevas tiempo en LinkedIn</li>
+                    <li>No envías spam</li>
+                </ul>
+            </div>
+
+            <div class="advantages">
+                <h4>✅ Ventajas:</h4>
+                <ul>
+                    <li>Maximizas captación (125 vs 100)</li>
+                    <li>Las manuales son MÁS personalizadas (mejor tasa aceptación)</li>
+                    <li>Diversificas (Waalaxy + humano)</li>
+                </ul>
+            </div>
+
+            <div class="disadvantages">
+                <h4>❌ Desventajas:</h4>
+                <ul>
+                    <li>Riesgo bajo de restricción temporal (5% probabilidad)</li>
+                    <li>Requieres 15-20 min extra/día para manual</li>
+                </ul>
+            </div>
+
+            <div class="results-box">
+                <h4>Resultado esperado:</h4>
+                <ul>
+                    <li>125 conexiones/semana</li>
+                    <li>40-45 aceptaciones/semana (32-36%)</li>
+                    <li>8-12 respuestas/semana</li>
+                    <li><strong>15-40 alumnos/mes</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>📊 ESTRATEGIA C: SOLO MANUAL 20/DÍA (SIN WAALAXY)</h2>
+
+        <div class="strategy-card">
+            <h3 style="margin-top: 0;">Configuración:</h3>
+            <ul>
+                <li>Tú envías <strong>20 conexiones/día manualmente</strong> (L-V)</li>
+                <li>Total: <strong>100 conexiones/semana</strong></li>
+            </ul>
+
+            <div class="advantages">
+                <h4>✅ Ventajas:</h4>
+                <ul>
+                    <li>Gratis (sin coste Waalaxy)</li>
+                    <li>100% control</li>
+                    <li>Muy personalizado</li>
+                </ul>
+            </div>
+
+            <div class="disadvantages">
+                <h4>❌ Desventajas:</h4>
+                <ul>
+                    <li>Requiere 2-3 horas/día (buscar perfiles, enviar conexiones, escribir mensajes)</li>
+                    <li>Fácil olvidar seguimientos</li>
+                    <li>NO escala (si quieres más, trabajas más)</li>
+                    <li>Agotador mentalmente</li>
+                </ul>
+            </div>
+
+            <div class="results-box">
+                <h4>Resultado esperado:</h4>
+                <ul>
+                    <li>100 conexiones/semana</li>
+                    <li>35-40 aceptaciones/semana (35-40% por personalización)</li>
+                    <li>8-12 respuestas/semana</li>
+                    <li><strong>12-35 alumnos/mes</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>🔧 SETUP: ESTRATEGIA A (WAALAXY 25/DÍA)</h2>
+
+        <div class="workflow-step">
+            <h3>PASO 1: CONFIGURAR WAALAXY</h3>
+            <p><strong>Límites en Waalaxy:</strong></p>
+            <ul>
+                <li>Invitaciones/día: <strong>25</strong></li>
+                <li>Mensajes/día: <strong>20</strong></li>
+                <li>Horario: <strong>9:00-18:00</strong> (L-J)</li>
+                <li>Días activos: <strong>Lunes a Jueves</strong> (4 días)</li>
+                <li>Viernes: <strong>DESACTIVAR</strong> (día revisión)</li>
+            </ul>
+
+            <p><strong>Secuencia:</strong></p>
+            <div class="code-block">DÍA 0: Visitar perfil
+   ↓ (2 días)
+DÍA 2: Enviar conexión SIN nota
+   ↓ (3 días si acepta)
+DÍA 5: Mensaje 1 - Apertura suave
+   ↓ (4 días si no responde)
+DÍA 9: Mensaje 2 - Valor + oferta
+   ↓ (5 días si no responde)
+DÍA 14: Mensaje 3 - Último intento</div>
+        </div>
+
+        <div class="workflow-step">
+            <h3>PLANTILLAS DE MENSAJES</h3>
+
+            <p><strong>Mensaje 1 (Día 5):</strong></p>
+            <div class="code-block">Hola {firstName},
+
+Gracias por conectar! Vi que estás en {company} como {jobTitle}.
+
+Ayudo a profesionales junior en finanzas a dominar modelización
+financiera y valoración práctica.
+
+¿Cómo va todo en {company}?
+
+Saludos,
+[Tu nombre]</div>
+
+            <p><strong>Mensaje 2 (Día 9):</strong></p>
+            <div class="code-block">Hola {firstName},
+
+Por si te interesa: lanzamos un programa intensivo de finanzas
+corporativas para perfiles como el tuyo.
+
+8 semanas prácticas: modelización, valoración, Excel avanzado.
+
+¿Te gustaría más info?
+
+Saludos!</div>
+
+            <p><strong>Mensaje 3 (Día 14):</strong></p>
+            <div class="code-block">Hola {firstName},
+
+Última oportunidad para info del programa.
+
+Si no es para ti, sin problema! Pero si quieres acelerar tu carrera,
+aquí estoy.
+
+Éxito en {company}!</div>
+        </div>
+
+        <div class="workflow-step">
+            <h3>PASO 2: WORKFLOW DIARIO (30-60 MIN)</h3>
+
+            <p><strong>Lunes a Jueves (30 min):</strong></p>
+            <ol>
+                <li>Abrir Waalaxy dashboard (5 min)</li>
+                <li>Revisar respuestas nuevas (10 min)</li>
+                <li>Responder a interesados manualmente (10 min)</li>
+                <li>Derivar leads cualificados a WhatsApp (5 min)</li>
+            </ol>
+
+            <p><strong>Viernes (60 min):</strong></p>
+            <ol>
+                <li>Revisar métricas semanales (10 min)</li>
+                <li>Responder todos pendientes (20 min)</li>
+                <li>Registrar leads en CRM (15 min)</li>
+                <li>Ajustar mensajes si es necesario (15 min)</li>
+            </ol>
+        </div>
+
+        <h2>💰 ROI POR ESTRATEGIA</h2>
+
+        <div class="roi-box">
+            <h3>ESTRATEGIA A: WAALAXY 25/DÍA</h3>
+            <p><strong>Inversión:</strong></p>
+            <ul>
+                <li>Waalaxy: 60 €/mes</li>
+                <li>Tiempo: 2 horas/semana = 8h/mes</li>
+                <li>Tiempo valorado: 8h x 20€/h = 160€</li>
+                <li><strong>Total: 220 €/mes</strong></li>
+            </ul>
+            <p><strong>Ingresos (conservador):</strong></p>
+            <ul>
+                <li>12 alumnos/mes x 2,990€ = <strong>35,880 €/mes</strong></li>
+            </ul>
+            <p style="font-size: 1.3em; text-align: center; margin: 20px 0;">
+                <strong>ROI: 16,200%</strong> <span class="star">⭐⭐⭐⭐⭐</span>
+            </p>
+        </div>
+
+        <div class="roi-box">
+            <h3>ESTRATEGIA B: HÍBRIDO 20+5</h3>
+            <p><strong>Inversión:</strong></p>
+            <ul>
+                <li>Waalaxy: 60 €/mes</li>
+                <li>Tiempo: 4 horas/semana = 16h/mes</li>
+                <li>Tiempo valorado: 16h x 20€/h = 320€</li>
+                <li><strong>Total: 380 €/mes</strong></li>
+            </ul>
+            <p><strong>Ingresos (conservador):</strong></p>
+            <ul>
+                <li>15 alumnos/mes x 2,990€ = <strong>44,850 €/mes</strong></li>
+            </ul>
+            <p style="font-size: 1.3em; text-align: center; margin: 20px 0;">
+                <strong>ROI: 11,700%</strong> <span class="star">⭐⭐⭐⭐</span>
+            </p>
+        </div>
+
+        <div class="roi-box">
+            <h3>ESTRATEGIA C: SOLO MANUAL</h3>
+            <p><strong>Inversión:</strong></p>
+            <ul>
+                <li>Waalaxy: 0 €</li>
+                <li>Tiempo: 12 horas/semana = 48h/mes</li>
+                <li>Tiempo valorado: 48h x 20€/h = 960€</li>
+                <li><strong>Total: 960 €/mes</strong></li>
+            </ul>
+            <p><strong>Ingresos (conservador):</strong></p>
+            <ul>
+                <li>10 alumnos/mes x 2,990€ = <strong>29,900 €/mes</strong></li>
+            </ul>
+            <p style="font-size: 1.3em; text-align: center; margin: 20px 0;">
+                <strong>ROI: 3,000%</strong> <span class="star">⭐⭐⭐</span>
+            </p>
+        </div>
+
+        <h2>🎯 RECOMENDACIÓN FINAL: PATH PROGRESIVO</h2>
+
+        <div class="path-box">
+            <h3>MES 1: ESTRATEGIA A (WAALAXY 25/DÍA)</h3>
+            <p><strong>Objetivo:</strong> Validar que funciona sin invertir mucho tiempo</p>
+            <p><strong>Setup:</strong></p>
+            <ul>
+                <li>Waalaxy 25/día (L-J)</li>
+                <li>30-60 min/día gestión</li>
+                <li>Objetivo: 8-12 alumnos primer mes</li>
+            </ul>
+            <p><strong>KPIs:</strong></p>
+            <ul>
+                <li>Tasa aceptación: >28%</li>
+                <li>Tasa respuesta: >20%</li>
+                <li>Conversión: >30%</li>
+            </ul>
+        </div>
+
+        <div class="path-box">
+            <h3>MES 2-3: EVALUAR RESULTADOS</h3>
+            <p><strong>Si funciona bien (≥8 alumnos/mes):</strong></p>
+            <p>→ <strong>ESCALAR a Estrategia B (Híbrido 20+5)</strong></p>
+
+            <p><strong>Si funciona regular (4-7 alumnos/mes):</strong></p>
+            <p>→ <strong>Optimizar mensajes y quedarse en Estrategia A</strong></p>
+
+            <p><strong>Si no funciona (&lt;4 alumnos/mes):</strong></p>
+            <p>→ <strong>Revisar perfil, mensajes, targeting</strong></p>
+        </div>
+
+        <div class="path-box">
+            <h3>MES 4+: ESTRATEGIA B (HÍBRIDO) - MODO CRUCERO</h3>
+            <p><strong>Objetivo:</strong> Maximizar captación con tiempo controlado</p>
+            <p><strong>Setup:</strong></p>
+            <ul>
+                <li>Waalaxy 20/día (L-V)</li>
+                <li>Manual 5/día (perfiles TOP)</li>
+                <li>60-90 min/día</li>
+                <li>Objetivo: 15-20 alumnos/mes</li>
+            </ul>
+            <p><strong>Resultado:</strong></p>
+            <ul>
+                <li>Sistema consistente y escalable</li>
+                <li>15-20 alumnos/mes recurrente</li>
+                <li>44,850-59,800 €/mes ingresos</li>
+                <li><strong>Sistema se paga solo</strong> (60€ Waalaxy vs 44,850€ ingresos)</li>
+            </ul>
+        </div>
+
+        <h2>🚨 ADVERTENCIAS Y LÍMITES</h2>
+
+        <div class="warning-box">
+            <h3>⚠️ NO HACER:</h3>
+            <ul>
+                <li><span class="crossmark">❌</span> <strong>NO enviar más de 30 conexiones/día</strong> (riesgo alto baneo)</li>
+                <li><span class="crossmark">❌</span> <strong>NO enviar más de 150 conexiones/semana</strong> (baneo seguro)</li>
+                <li><span class="crossmark">❌</span> <strong>NO usar bots externos</strong> (solo Waalaxy, es seguro)</li>
+                <li><span class="crossmark">❌</span> <strong>NO enviar misma nota a todos</strong> (spam detection)</li>
+                <li><span class="crossmark">❌</span> <strong>NO conectar con perfiles fuera de target</strong> (baja conversión)</li>
+            </ul>
+
+            <h3>✅ HACER:</h3>
+            <ul>
+                <li><span class="checkmark">✅</span> <strong>Respetar límite 100-125/semana</strong></li>
+                <li><span class="checkmark">✅</span> <strong>Personalizar mínimo las manuales</strong></li>
+                <li><span class="checkmark">✅</span> <strong>Responder rápido a interesados</strong> (&lt;24h)</li>
+                <li><span class="checkmark">✅</span> <strong>Derivar pronto a WhatsApp</strong> (no saturar LinkedIn)</li>
+                <li><span class="checkmark">✅</span> <strong>Trackear métricas semanalmente</strong></li>
+            </ul>
+        </div>
+
+        <h2>📈 MÉTRICAS A TRACKEAR</h2>
+
+        <div class="workflow-step">
+            <h3>Dashboard simple (Google Sheets):</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Semana</th>
+                        <th>Invitaciones</th>
+                        <th>Aceptadas</th>
+                        <th>%</th>
+                        <th>Respuestas</th>
+                        <th>%</th>
+                        <th>Leads</th>
+                        <th>Alumnos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>100</td>
+                        <td>32</td>
+                        <td>32%</td>
+                        <td>7</td>
+                        <td>22%</td>
+                        <td>3</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>100</td>
+                        <td>29</td>
+                        <td>29%</td>
+                        <td>6</td>
+                        <td>21%</td>
+                        <td>2</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>125</td>
+                        <td>43</td>
+                        <td>34%</td>
+                        <td>11</td>
+                        <td>26%</td>
+                        <td>5</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>125</td>
+                        <td>46</td>
+                        <td>37%</td>
+                        <td>12</td>
+                        <td>26%</td>
+                        <td>6</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="recommendation-box">
+            <h2 style="margin-top: 0;">🎯 CONCLUSIÓN</h2>
+            <p><strong>Para Bespoke School of Finance:</strong></p>
+
+            <h3>MES 1: Empezar con ESTRATEGIA A</h3>
+            <ul>
+                <li>Waalaxy 25/día automático</li>
+                <li>30-60 min/día gestión</li>
+                <li>60 €/mes inversión</li>
+                <li>8-12 alumnos esperados</li>
+                <li><strong>ROI: 16,200%</strong></li>
+            </ul>
+
+            <h3>MES 2+: Escalar a ESTRATEGIA B (si funciona)</h3>
+            <ul>
+                <li>Waalaxy 20/día + 5 manual</li>
+                <li>60-90 min/día</li>
+                <li>60 €/mes + tiempo</li>
+                <li>15-20 alumnos esperados</li>
+                <li><strong>ROI: 11,700%</strong></li>
+            </ul>
+
+            <p style="font-size: 1.2em; text-align: center; margin-top: 30px;">
+                <strong>Resultado: Sistema de captación consistente, escalable, y con ROI altísimo.</strong>
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>
