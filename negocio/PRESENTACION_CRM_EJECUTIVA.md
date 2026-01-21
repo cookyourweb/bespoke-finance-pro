@@ -209,9 +209,9 @@ ESTRATEGIA CAPTACIÓN (mientras esperáis):
 Demo: https://bespoke-finance-pro.vercel.app/
 
 ASÍ NO PERDÉIS TIEMPO:
-- Día 0-10: Vosotros captáis en LinkedIn
-- Día 10: CRM operativo
-- Día 11+: LinkedIn + CRM trabajando juntos
+- Día 0-10: Vosotros captáis leads en LinkedIn manualmente
+- Día 10: Sistema listo → Os enviamos acceso al CRM + landing
+- Día 11+: Pasáis los leads captados al CRM y seguís con LinkedIn + sistema automático
 
 ¿Agendamos 15 min?
 

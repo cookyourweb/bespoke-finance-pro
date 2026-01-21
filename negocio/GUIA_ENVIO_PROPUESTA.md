@@ -224,9 +224,9 @@ ESTRATEGIA LINKEDIN (mientras esperáis):
 Demo funcionando: https://bespoke-finance-pro.vercel.app/
 
 ASÍ NO PERDÉIS TIEMPO:
-- Día 0-10: Vosotros captáis en LinkedIn (manual o Waalaxy)
-- Día 10: CRM operativo → Los leads van directamente al sistema
-- Día 11+: LinkedIn + CRM trabajando juntos
+- Día 0-10: Vosotros captáis leads en LinkedIn manualmente (Waalaxy + manual)
+- Día 10: Sistema listo → Os enviamos acceso al CRM + landing
+- Día 11+: Pasáis los leads captados al CRM y seguís con LinkedIn + sistema automático
 
 ¿Agendamos 15 min para resolver dudas?
 
