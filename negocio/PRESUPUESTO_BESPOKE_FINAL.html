@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto - Bespoke Finance Pro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .info-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .info-box.success {
+            border-left-color: #28a745;
+            background: #d4edda;
+        }
+
+        .info-box.warning {
+            border-left-color: #ffc107;
+            background: #fff3cd;
+        }
+
+        .info-box.critical {
+            border-left-color: #dc3545;
+            background: #f8d7da;
+        }
+
+        .progress-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .progress-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .progress-list li:last-child {
+            border-bottom: none;
+        }
+
+        .check {
+            color: #28a745;
+            margin-right: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .pending {
+            color: #ffc107;
+            margin-right: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .timeline {
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .timeline h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item {
+            margin: 15px 0;
+            padding-left: 25px;
+            border-left: 3px solid rgba(255,255,255,0.5);
+        }
+
+        .timeline-item strong {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .pricing-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .pricing-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pricing-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .total-row {
+            background: #f8f9fa;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .conditions {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .conditions h3 {
+            color: #856404;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .conditions ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .conditions ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .conditions ul li:before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 3px solid #667eea;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💼 PRESUPUESTO BESPOKE FINANCE PRO</h1>
+            <p>Finalización y Puesta en Producción del Sistema CRM + Marketing Automation</p>
+            <p style="margin-top: 15px; font-size: 0.95em;">Fecha: 21 de Enero de 2026</p>
+        </div>
+
+        <div class="content">
+            <!-- RESUMEN EJECUTIVO -->
+            <div class="section">
+                <h2>📊 Resumen Ejecutivo</h2>
+                <div class="info-box success">
+                    <h3 style="margin-bottom: 15px;">✅ Estado Actual del Proyecto: <span class="highlight">80% COMPLETADO</span></h3>
+                    <p>El sistema Bespoke Finance Pro se encuentra en fase avanzada de desarrollo con la infraestructura principal completamente funcional. El trabajo restante se centra en configuración de servicios externos, testing exhaustivo y documentación.</p>
+                </div>
+
+                <div class="info-box warning">
+                    <p><strong>🎯 OBJETIVO:</strong> Finalizar el 20% restante para tener el sistema 100% operativo antes del inicio del curso el <strong>10 de Febrero de 2026</strong></p>
+                    <p style="margin-top: 10px;"><strong>📅 PLAZO:</strong> 10 días laborables + 2 días de buffer para preparación del CRM</p>
+                    <p style="margin-top: 10px;"><strong>🚀 ENTREGA:</strong> Sistema completamente funcional y documentado el 6 de Febrero de 2026, dejando 4 días de margen antes del lanzamiento del curso.</p>
+                </div>
+            </div>
+
+            <!-- LO QUE YA ESTÁ COMPLETADO -->
+            <div class="section">
+                <h2>✅ Lo que YA está Completado (80%)</h2>
+
+                <div style="background: #d4edda; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                    <h3 style="color: #155724; margin-bottom: 15px;">1. Frontend Completo</h3>
+                    <ul class="progress-list">
+                        <li><span class="check">✅</span> Landing page profesional con 17 componentes React</li>
+                        <li><span class="check">✅</span> Formulario LeadForm.tsx completamente funcional</li>
+                        <li><span class="check">✅</span> Componentes UI profesionales (shadcn/ui)</li>
+                        <li><span class="check">✅</span> Sistema de routing configurado</li>
+                        <li><span class="check">✅</span> Diseño responsive y profesional implementado</li>
+                    </ul>
+                </div>
+
+                <div style="background: #d4edda; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                    <h3 style="color: #155724; margin-bottom: 15px;">2. Backend y Base de Datos</h3>
+                    <ul class="progress-list">
+                        <li><span class="check">✅</span> Esquema completo de Supabase (001_initial_schema.sql)</li>
+                        <li><span class="check">✅</span> Tablas: leads, courses, conversations, students, events, analytics</li>
+                        <li><span class="check">✅</span> Relaciones y foreign keys configuradas correctamente</li>
+                        <li><span class="check">✅</span> Campos de tracking UTM implementados</li>
+                        <li><span class="check">✅</span> Sistema de autenticación y permisos</li>
+                    </ul>
+                </div>
+
+                <div style="background: #d4edda; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                    <h3 style="color: #155724; margin-bottom: 15px;">3. Servicios e Integraciones</h3>
+                    <ul class="progress-list">
+                        <li><span class="check">✅</span> supabase.service.ts - Operaciones completas del CRM</li>
+                        <li><span class="check">✅</span> brevo.service.ts - Integración con email marketing</li>
+                        <li><span class="check">✅</span> whatsapp.service.ts - Integración con WhatsApp Business</li>
+                        <li><span class="check">✅</span> LeadForm conectado a los 3 servicios principales</li>
+                        <li><span class="check">✅</span> Sistema de tracking y analytics funcional</li>
+                    </ul>
+                </div>
+
+                <div style="background: #d4edda; padding: 20px; border-radius: 8px;">
+                    <h3 style="color: #155724; margin-bottom: 15px;">4. Deployment y Demo</h3>
+                    <ul class="progress-list">
+                        <li><span class="check">✅</span> Vercel configurado y funcionando</li>
+                        <li><span class="check">✅</span> Demo público disponible: https://bespoke-finance-pro.vercel.app/</li>
+                        <li><span class="check">✅</span> Build y deployment pipeline automatizado</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- LO QUE FALTA -->
+            <div class="section">
+                <h2>⚠️ Lo que Falta por Completar (20%)</h2>
+
+                <div style="background: #fff3cd; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                    <h3 style="color: #856404; margin-bottom: 15px;">1. Configuración de Servicios Externos (3-4 días)</h3>
+                    <ul class="progress-list">
+                        <li><span class="pending">⏱️</span> <strong>Brevo API Key:</strong> Configurar con credenciales del cliente</li>
+                        <li><span class="pending">⏱️</span> <strong>WhatsApp Business:</strong> Setup completo (depende de qué API utilice el cliente)</li>
+                        <li><span class="pending">⏱️</span> <strong>Variables de entorno:</strong> Configurar en Vercel Production</li>
+                        <li><span class="pending">⏱️</span> <strong>Supabase Production:</strong> Conectar base de datos de producción</li>
+                    </ul>
+                    <p style="margin-top: 15px; color: #856404;"><strong>⚠️ CRÍTICO:</strong> Esta fase depende de que el cliente proporcione accesos y credenciales en las primeras 48 horas.</p>
+                </div>
+
+                <div style="background: #fff3cd; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                    <h3 style="color: #856404; margin-bottom: 15px;">2. Testing Exhaustivo (2-3 días)</h3>
+                    <ul class="progress-list">
+                        <li><span class="pending">⏱️</span> Test completo: Formulario → Supabase</li>
+                        <li><span class="pending">⏱️</span> Test sincronización: Supabase → Brevo</li>
+                        <li><span class="pending">⏱️</span> Test notificaciones: Supabase → WhatsApp</li>
+                        <li><span class="pending">⏱️</span> Test pipeline completo end-to-end</li>
+                        <li><span class="pending">⏱️</span> Corrección de bugs detectados</li>
+                        <li><span class="pending">⏱️</span> Validación con datos reales del cliente</li>
+                    </ul>
+                </div>
+
+                <div style="background: #fff3cd; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                    <h3 style="color: #856404; margin-bottom: 15px;">3. Documentación Completa (2 días)</h3>
+                    <ul class="progress-list">
+                        <li><span class="pending">⏱️</span> Manual de acceso al CRM (Supabase Dashboard)</li>
+                        <li><span class="pending">⏱️</span> Guía de gestión de leads y seguimiento</li>
+                        <li><span class="pending">⏱️</span> Documentación de workflows y procesos automatizados</li>
+                        <li><span class="pending">⏱️</span> Video tutorial / guía rápida de uso</li>
+                        <li><span class="pending">⏱️</span> FAQ y troubleshooting básico</li>
+                    </ul>
+                </div>
+
+                <div style="background: #d1ecf1; padding: 20px; border-radius: 8px;">
+                    <h3 style="color: #0c5460; margin-bottom: 15px;">4. Preparación del CRM (2 días buffer)</h3>
+                    <ul class="progress-list">
+                        <li><span class="pending">⏱️</span> Configuración inicial de listas y segmentos en Brevo</li>
+                        <li><span class="pending">⏱️</span> Plantillas de emails de bienvenida y seguimiento</li>
+                        <li><span class="pending">⏱️</span> Configuración de automatizaciones básicas</li>
+                        <li><span class="pending">⏱️</span> Testing de flujos de comunicación</li>
+                    </ul>
+                    <p style="margin-top: 15px; color: #0c5460;"><strong>💡 ESTRATÉGICO:</strong> Estos 2 días extra aseguran que el CRM esté listo para recibir leads desde el primer día del curso (10 Feb).</p>
+                </div>
+            </div>
+
+            <!-- TIMELINE -->
+            <div class="section">
+                <h2>📅 Cronograma Detallado</h2>
+
+                <div class="timeline">
+                    <h3>🎯 ESCENARIO REALISTA (10 días laborables + 2 días buffer)</h3>
+
+                    <div class="timeline-item">
+                        <strong>Días 1-3 (22-24 Enero)</strong>
+                        <p>Cliente proporciona accesos y credenciales (Brevo API, WhatsApp Business, Supabase Production)</p>
+                        <p style="opacity: 0.9; font-size: 0.95em;">⚠️ Experiencia muestra que los clientes suelen tardar 2-3 días en proporcionar todos los accesos</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <strong>Día 4 (27 Enero)</strong>
+                        <p>Configuración completa de APIs y variables de entorno en producción</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <strong>Días 5-6 (28-29 Enero)</strong>
+                        <p>Testing exhaustivo de todas las integraciones + corrección de bugs detectados</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <strong>Días 7-8 (30-31 Enero)</strong>
+                        <p>Documentación completa del sistema y creación de guías de usuario</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <strong>Días 9-10 (3-4 Febrero)</strong>
+                        <p>Buffer para problemas inesperados y ajustes finales</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <strong>Días 11-12 (5-6 Febrero)</strong>
+                        <p>Preparación del CRM: configuración de listas, plantillas de emails, automatizaciones</p>
+                    </div>
+
+                    <div class="timeline-item" style="border-left-color: #28a745;">
+                        <strong style="color: #28a745;">✅ 6 Febrero - ENTREGA FINAL</strong>
+                        <p>Sistema 100% funcional, documentado y listo para producción</p>
+                        <p style="opacity: 0.9; font-size: 0.95em;">🎯 4 días de margen antes del inicio del curso (10 Febrero)</p>
+                    </div>
+                </div>
+
+                <div class="info-box success" style="margin-top: 30px;">
+                    <h3 style="margin-bottom: 15px;">🎯 ¿Por qué 10 días + 2 de buffer es el plazo correcto?</h3>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="padding: 8px 0;">✅ <strong>Margen para delays del cliente:</strong> Los accesos nunca llegan en 24h (siempre hay gestiones internas)</li>
+                        <li style="padding: 8px 0;">✅ <strong>Sin presión innecesaria:</strong> Permite testing exhaustivo sin comprometer calidad</li>
+                        <li style="padding: 8px 0;">✅ <strong>Profesional y realista:</strong> Mejor cumplir 12 días que fallar en 5</li>
+                        <li style="padding: 8px 0;">✅ <strong>El código está 80% listo:</strong> Pero ese 20% depende completamente del cliente</li>
+                        <li style="padding: 8px 0;">✅ <strong>Preparación estratégica:</strong> El CRM estará configurado y probado antes del lanzamiento del curso</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONDICIONES IMPORTANTES -->
+            <div class="conditions">
+                <h3>⚠️ CONDICIONES Y DEPENDENCIAS CRÍTICAS</h3>
+                <p style="margin-bottom: 15px;">El cumplimiento del plazo de 12 días (10 laborables + 2 buffer) está sujeto a:</p>
+                <ul>
+                    <li><strong>Accesos y credenciales proporcionados en 48 horas:</strong> API keys de Brevo, acceso a WhatsApp Business, credenciales de Supabase Production</li>
+                    <li><strong>Aprobación de configuraciones en primera revisión:</strong> Sin cambios de alcance o requerimientos nuevos durante la implementación</li>
+                    <li><strong>Disponibilidad para validaciones:</strong> El cliente debe estar disponible para aprobar tests y validar configuraciones durante el período de implementación</li>
+                    <li><strong>Infraestructura del cliente lista:</strong> Cuentas de Brevo y WhatsApp Business ya creadas y con permisos adecuados</li>
+                </ul>
+                <p style="margin-top: 20px; background: white; padding: 15px; border-radius: 4px; color: #856404;">
+                    <strong>📌 NOTA IMPORTANTE:</strong> Si hay delays en la provisión de accesos o cambios en requerimientos, el plazo se ajustará proporcionalmente. Cada día de delay del cliente suma un día al cronograma.
+                </p>
+            </div>
+
+            <!-- DESGLOSE DE INVERSIÓN -->
+            <div class="section">
+                <h2>💰 Desglose de Inversión</h2>
+
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Concepto</th>
+                            <th>Días</th>
+                            <th>Descripción</th>
+                            <th style="text-align: right;">Importe</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Configuración de Servicios</strong></td>
+                            <td>3-4 días</td>
+                            <td>Setup de Brevo, WhatsApp, Supabase Production, variables de entorno</td>
+                            <td style="text-align: right;">€XXX</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Testing y QA Exhaustivo</strong></td>
+                            <td>2-3 días</td>
+                            <td>Tests end-to-end, corrección de bugs, validación con datos reales</td>
+                            <td style="text-align: right;">€XXX</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Documentación Completa</strong></td>
+                            <td>2 días</td>
+                            <td>Manuales de usuario, guías técnicas, video tutoriales, FAQ</td>
+                            <td style="text-align: right;">€XXX</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Preparación del CRM</strong></td>
+                            <td>2 días</td>
+                            <td>Configuración de listas, plantillas de emails, automatizaciones básicas</td>
+                            <td style="text-align: right;">€XXX</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Buffer y Ajustes Finales</strong></td>
+                            <td>2-3 días</td>
+                            <td>Margen para imprevistos, optimizaciones finales, soporte inicial</td>
+                            <td style="text-align: right;">€XXX</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td colspan="3"><strong>TOTAL INVERSIÓN</strong></td>
+                            <td style="text-align: right;"><strong>€X,XXX</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box" style="margin-top: 30px;">
+                    <h3 style="margin-bottom: 15px;">💡 Valor Real del Proyecto</h3>
+                    <p>Este presupuesto cubre únicamente la finalización del 20% restante. El 80% ya desarrollado representa:</p>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Frontend completo con 17 componentes profesionales</li>
+                        <li>Backend robusto con base de datos relacional completa</li>
+                        <li>3 integraciones principales (Supabase, Brevo, WhatsApp)</li>
+                        <li>Sistema de tracking y analytics implementado</li>
+                        <li>Infraestructura de deployment automatizada</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>Valor estimado del trabajo ya realizado: €X,XXX</strong></p>
+                </div>
+            </div>
+
+            <!-- ENTREGABLES -->
+            <div class="section">
+                <h2>📦 Entregables Finales</h2>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div class="info-box">
+                        <h3 style="color: #667eea; margin-bottom: 10px;">🚀 Sistema en Producción</h3>
+                        <ul style="padding-left: 20px;">
+                            <li>Landing page 100% funcional</li>
+                            <li>Formularios conectados y validados</li>
+                            <li>Integraciones activas y testeadas</li>
+                            <li>Base de datos configurada</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h3 style="color: #667eea; margin-bottom: 10px;">📚 Documentación Completa</h3>
+                        <ul style="padding-left: 20px;">
+                            <li>Manual de usuario del CRM</li>
+                            <li>Guías técnicas de administración</li>
+                            <li>Video tutoriales de uso</li>
+                            <li>FAQ y troubleshooting</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h3 style="color: #667eea; margin-bottom: 10px;">🔧 CRM Configurado</h3>
+                        <ul style="padding-left: 20px;">
+                            <li>Listas y segmentos creados</li>
+                            <li>Plantillas de emails diseñadas</li>
+                            <li>Automatizaciones activas</li>
+                            <li>Workflows de seguimiento</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h3 style="color: #667eea; margin-bottom: 10px;">🎯 Soporte Post-Entrega</h3>
+                        <ul style="padding-left: 20px;">
+                            <li>Soporte técnico inicial (X días)</li>
+                            <li>Corrección de bugs críticos</li>
+                            <li>Sesión de capacitación</li>
+                            <li>Asistencia en lanzamiento</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIGUIENTE PASO -->
+            <div class="section">
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; border-radius: 12px; text-align: center;">
+                    <h2 style="color: white; border: none; margin-bottom: 20px; font-size: 2em;">🎯 Siguiente Paso</h2>
+                    <p style="font-size: 1.2em; margin-bottom: 30px;">Para iniciar el proyecto y cumplir con la fecha de entrega del 6 de Febrero:</p>
+
+                    <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 8px; margin: 20px 0;">
+                        <h3 style="color: white; margin-bottom: 15px;">📋 Checklist de Inicio (Primeras 48 horas)</h3>
+                        <ul style="list-style: none; text-align: left; padding-left: 0;">
+                            <li style="padding: 10px 0;">☐ Aprobar presupuesto y cronograma</li>
+                            <li style="padding: 10px 0;">☐ Proporcionar API Key de Brevo</li>
+                            <li style="padding: 10px 0;">☐ Proporcionar acceso a WhatsApp Business (especificar qué API/servicio utilizan)</li>
+                            <li style="padding: 10px 0;">☐ Confirmar acceso a Supabase Production o crear nuevo proyecto</li>
+                            <li style="padding: 10px 0;">☐ Designar persona de contacto para validaciones diarias</li>
+                        </ul>
+                    </div>
+
+                    <p style="font-size: 1.1em; margin-top: 30px; font-style: italic;">
+                        "Cuanto antes recibamos los accesos, antes podemos comenzar a trabajar y mayor margen tendremos antes del 10 de Febrero"
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3 style="color: #667eea; margin-bottom: 15px;">Contacto</h3>
+            <p><strong>Email:</strong> tu-email@ejemplo.com</p>
+            <p><strong>Teléfono:</strong> +34 XXX XXX XXX</p>
+            <p style="margin-top: 20px; color: #666;">
+                Este presupuesto es válido por 15 días desde la fecha de emisión
+            </p>
+            <p style="margin-top: 30px; font-size: 0.9em; color: #999;">
+                Bespoke Finance Pro © 2026 - Presupuesto generado el 21 de Enero de 2026
+            </p>
+        </div>
+    </div>
+</body>
+</html>
