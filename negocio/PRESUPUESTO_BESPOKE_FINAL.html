@@ -3,572 +3,457 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presupuesto - Bespoke Finance Pro</title>
+    <title>Presupuesto Sistema Captación B2C - Bespoke School of Finance</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        @page {
+            margin: 2.5cm;
         }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Calibri', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            max-width: 21cm;
+            margin: 0 auto;
             padding: 20px;
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
-
-        .header h1 {
-            font-size: 2.5em;
+        h1 {
+            color: #1a1a1a;
+            font-size: 24pt;
+            font-weight: bold;
             margin-bottom: 10px;
-        }
-
-        .header p {
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
-
-        .content {
-            padding: 40px;
-        }
-
-        .section {
-            margin-bottom: 40px;
-        }
-
-        .section h2 {
-            color: #667eea;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            border-bottom: 3px solid #667eea;
+            text-align: center;
+            border-bottom: 3px solid #2563eb;
             padding-bottom: 10px;
         }
-
-        .info-box {
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
-            padding: 20px;
+        h2 {
+            color: #2563eb;
+            font-size: 16pt;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #1f2937;
+            font-size: 12pt;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin: 10px 0;
+            text-align: justify;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 30px;
+        }
+        li {
+            margin: 5px 0;
+        }
+        .header-info {
+            text-align: center;
+            color: #6b7280;
+            font-size: 10pt;
+            margin-bottom: 30px;
+        }
+        .highlight-box {
+            background-color: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 15px;
             margin: 20px 0;
-            border-radius: 4px;
         }
-
-        .info-box.success {
-            border-left-color: #28a745;
-            background: #d4edda;
+        .warning-box {
+            background-color: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
         }
-
-        .info-box.warning {
-            border-left-color: #ffc107;
-            background: #fff3cd;
+        .success-box {
+            background-color: #d1fae5;
+            border-left: 4px solid #10b981;
+            padding: 15px;
+            margin: 20px 0;
         }
-
-        .info-box.critical {
-            border-left-color: #dc3545;
-            background: #f8d7da;
-        }
-
-        .progress-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .progress-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-        }
-
-        .progress-list li:last-child {
-            border-bottom: none;
-        }
-
-        .check {
-            color: #28a745;
-            margin-right: 10px;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        .pending {
-            color: #ffc107;
-            margin-right: 10px;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        .timeline {
-            background: linear-gradient(to right, #667eea, #764ba2);
-            color: white;
-            padding: 30px;
-            border-radius: 8px;
-            margin: 30px 0;
-        }
-
-        .timeline h3 {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-        }
-
-        .timeline-item {
-            margin: 15px 0;
-            padding-left: 25px;
-            border-left: 3px solid rgba(255,255,255,0.5);
-        }
-
-        .timeline-item strong {
-            display: block;
-            font-size: 1.1em;
-            margin-bottom: 5px;
-        }
-
         .pricing-table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
         }
-
-        .pricing-table th {
-            background: #667eea;
-            color: white;
-            padding: 15px;
-            text-align: left;
-            font-weight: 600;
-        }
-
         .pricing-table td {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
+            padding: 10px;
+            border-bottom: 1px solid #e5e7eb;
         }
-
-        .pricing-table tr:hover {
-            background: #f8f9fa;
+        .pricing-table td:first-child {
+            width: 70%;
         }
-
-        .total-row {
-            background: #f8f9fa;
+        .pricing-table td:last-child {
+            text-align: right;
             font-weight: bold;
-            font-size: 1.2em;
+            color: #2563eb;
         }
-
-        .conditions {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            padding: 25px;
-            border-radius: 8px;
-            margin: 30px 0;
+        .total-row {
+            background-color: #f9fafb;
+            font-weight: bold;
+            font-size: 14pt;
         }
-
-        .conditions h3 {
-            color: #856404;
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-
-        .conditions ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .conditions ul li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .conditions ul li:before {
-            content: "⚠️";
-            position: absolute;
-            left: 0;
-        }
-
         .footer {
-            background: #f8f9fa;
-            padding: 30px;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #e5e7eb;
             text-align: center;
-            border-top: 3px solid #667eea;
+            color: #6b7280;
+            font-size: 10pt;
         }
-
-        .footer p {
-            margin: 10px 0;
+        .contact-info {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9fafb;
+            border-radius: 8px;
         }
-
-        .highlight {
-            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-weight: 600;
+        .demo-link {
+            color: #2563eb;
+            font-weight: bold;
+            text-decoration: none;
         }
-
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-
-            .container {
-                box-shadow: none;
-            }
+        strong {
+            color: #1f2937;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>💼 PRESUPUESTO BESPOKE FINANCE PRO</h1>
-            <p>Finalización y Puesta en Producción del Sistema CRM + Marketing Automation</p>
-            <p style="margin-top: 15px; font-size: 0.95em;">Fecha: 21 de Enero de 2026</p>
-        </div>
 
-        <div class="content">
-            <!-- RESUMEN EJECUTIVO -->
-            <div class="section">
-                <h2>📊 Resumen Ejecutivo</h2>
-                <div class="info-box success">
-                    <h3 style="margin-bottom: 15px;">✅ Estado Actual del Proyecto: <span class="highlight">80% COMPLETADO</span></h3>
-                    <p>El sistema Bespoke Finance Pro se encuentra en fase avanzada de desarrollo con la infraestructura principal completamente funcional. El trabajo restante se centra en configuración de servicios externos, testing exhaustivo y documentación.</p>
-                </div>
+<h1>PRESUPUESTO<br/>SISTEMA DE CAPTACIÓN B2C<br/>BESPOKE SCHOOL OF FINANCE</h1>
 
-                <div class="info-box warning">
-                    <p><strong>🎯 OBJETIVO:</strong> Finalizar el 20% restante para tener el sistema 100% operativo antes del inicio del curso el <strong>10 de Febrero de 2026</strong></p>
-                    <p style="margin-top: 10px;"><strong>📅 PLAZO:</strong> 10 días laborables + 2 días de buffer para preparación del CRM</p>
-                    <p style="margin-top: 10px;"><strong>🚀 ENTREGA:</strong> Sistema completamente funcional y documentado el 6 de Febrero de 2026, dejando 4 días de margen antes del lanzamiento del curso.</p>
-                </div>
-            </div>
+<div class="header-info">
+    <p><strong>Propuesta elaborada por:</strong> Cookyourweb<br/>
+    <strong>Fecha:</strong> 21 de enero de 2026<br/>
+    <strong>Validez del presupuesto:</strong> 15 días (hasta el 5 de febrero de 2026)</p>
+</div>
 
-            <!-- LO QUE YA ESTÁ COMPLETADO -->
-            <div class="section">
-                <h2>✅ Lo que YA está Completado (80%)</h2>
+<h2>OBJETIVO DEL PROYECTO</h2>
+<p><strong>Implementar y validar un sistema de captación B2C</strong> (alumnos individuales) para el curso actual, dejando todo operativo y preparado para empezar a recoger leads de forma organizada. El sistema quedará listo para reutilizarse en futuras formaciones abiertas al público.</p>
 
-                <div style="background: #d4edda; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                    <h3 style="color: #155724; margin-bottom: 15px;">1. Frontend Completo</h3>
-                    <ul class="progress-list">
-                        <li><span class="check">✅</span> Landing page profesional con 17 componentes React</li>
-                        <li><span class="check">✅</span> Formulario LeadForm.tsx completamente funcional</li>
-                        <li><span class="check">✅</span> Componentes UI profesionales (shadcn/ui)</li>
-                        <li><span class="check">✅</span> Sistema de routing configurado</li>
-                        <li><span class="check">✅</span> Diseño responsive y profesional implementado</li>
-                    </ul>
-                </div>
+<div class="highlight-box">
+    <p style="margin: 0;"><strong>👉 El objetivo es dejar el sistema funcionando y validado, no garantizar un número específico de alumnos.</strong> Los resultados dependerán de la captación activa que realice el equipo de Bespoke.</p>
+</div>
 
-                <div style="background: #d4edda; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                    <h3 style="color: #155724; margin-bottom: 15px;">2. Backend y Base de Datos</h3>
-                    <ul class="progress-list">
-                        <li><span class="check">✅</span> Esquema completo de Supabase (001_initial_schema.sql)</li>
-                        <li><span class="check">✅</span> Tablas: leads, courses, conversations, students, events, analytics</li>
-                        <li><span class="check">✅</span> Relaciones y foreign keys configuradas correctamente</li>
-                        <li><span class="check">✅</span> Campos de tracking UTM implementados</li>
-                        <li><span class="check">✅</span> Sistema de autenticación y permisos</li>
-                    </ul>
-                </div>
+<div class="highlight-box">
+    <p><strong>Este proyecto no interfiere ni sustituye los procesos comerciales B2B existentes.</strong> Se trata de una línea paralela enfocada exclusivamente a personas particulares interesadas en formación financiera.</p>
+</div>
 
-                <div style="background: #d4edda; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                    <h3 style="color: #155724; margin-bottom: 15px;">3. Servicios e Integraciones</h3>
-                    <ul class="progress-list">
-                        <li><span class="check">✅</span> supabase.service.ts - Operaciones completas del CRM</li>
-                        <li><span class="check">✅</span> brevo.service.ts - Integración con email marketing</li>
-                        <li><span class="check">✅</span> whatsapp.service.ts - Integración con WhatsApp Business</li>
-                        <li><span class="check">✅</span> LeadForm conectado a los 3 servicios principales</li>
-                        <li><span class="check">✅</span> Sistema de tracking y analytics funcional</li>
-                    </ul>
-                </div>
+<h2>ENFOQUE DEL PROYECTO</h2>
+<p>Este sistema está diseñado específicamente para <strong>captación B2C</strong> (alumnos particulares):</p>
+<ul>
+    <li><strong>No se utilizan</strong> bases de datos B2B</li>
+    <li><strong>No se realizan</strong> acciones comerciales dirigidas a empresas</li>
+    <li>La captación, cualificación y cierre se realiza sobre <strong>personas individuales</strong></li>
+</ul>
 
-                <div style="background: #d4edda; padding: 20px; border-radius: 8px;">
-                    <h3 style="color: #155724; margin-bottom: 15px;">4. Deployment y Demo</h3>
-                    <ul class="progress-list">
-                        <li><span class="check">✅</span> Vercel configurado y funcionando</li>
-                        <li><span class="check">✅</span> Demo público disponible: https://bespoke-finance-pro.vercel.app/</li>
-                        <li><span class="check">✅</span> Build y deployment pipeline automatizado</li>
-                    </ul>
-                </div>
-            </div>
+<h2>MODELO DE TRABAJO</h2>
+<ul>
+    <li><strong>Consultoría + ejecución por horas</strong></li>
+    <li><strong>Tarifa de referencia:</strong> 50 €/hora</li>
+    <li><strong>Presupuesto cerrado</strong> para la fase inicial</li>
+</ul>
 
-            <!-- LO QUE FALTA -->
-            <div class="section">
-                <h2>⚠️ Lo que Falta por Completar (20%)</h2>
+<h2>FASE 1 – ACTIVACIÓN Y CAPTACIÓN (CURSO ACTUAL)</h2>
 
-                <div style="background: #fff3cd; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                    <h3 style="color: #856404; margin-bottom: 15px;">1. Configuración de Servicios Externos (3-4 días)</h3>
-                    <ul class="progress-list">
-                        <li><span class="pending">⏱️</span> <strong>Brevo API Key:</strong> Configurar con credenciales del cliente</li>
-                        <li><span class="pending">⏱️</span> <strong>WhatsApp Business:</strong> Setup completo (depende de qué API utilice el cliente)</li>
-                        <li><span class="pending">⏱️</span> <strong>Variables de entorno:</strong> Configurar en Vercel Production</li>
-                        <li><span class="pending">⏱️</span> <strong>Supabase Production:</strong> Conectar base de datos de producción</li>
-                    </ul>
-                    <p style="margin-top: 15px; color: #856404;"><strong>⚠️ CRÍTICO:</strong> Esta fase depende de que el cliente proporcione accesos y credenciales en las primeras 48 horas.</p>
-                </div>
+<div class="success-box">
+    <p style="text-align: center; margin: 0;"><strong style="font-size: 18pt;">Inversión total Fase 1: 400 €</strong></p>
+</div>
 
-                <div style="background: #fff3cd; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                    <h3 style="color: #856404; margin-bottom: 15px;">2. Testing Exhaustivo (2-3 días)</h3>
-                    <ul class="progress-list">
-                        <li><span class="pending">⏱️</span> Test completo: Formulario → Supabase</li>
-                        <li><span class="pending">⏱️</span> Test sincronización: Supabase → Brevo</li>
-                        <li><span class="pending">⏱️</span> Test notificaciones: Supabase → WhatsApp</li>
-                        <li><span class="pending">⏱️</span> Test pipeline completo end-to-end</li>
-                        <li><span class="pending">⏱️</span> Corrección de bugs detectados</li>
-                        <li><span class="pending">⏱️</span> Validación con datos reales del cliente</li>
-                    </ul>
-                </div>
+<h3>🔹 Alcance real de Fase 1 (importante)</h3>
 
-                <div style="background: #fff3cd; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                    <h3 style="color: #856404; margin-bottom: 15px;">3. Documentación Completa (2 días)</h3>
-                    <ul class="progress-list">
-                        <li><span class="pending">⏱️</span> Manual de acceso al CRM (Supabase Dashboard)</li>
-                        <li><span class="pending">⏱️</span> Guía de gestión de leads y seguimiento</li>
-                        <li><span class="pending">⏱️</span> Documentación de workflows y procesos automatizados</li>
-                        <li><span class="pending">⏱️</span> Video tutorial / guía rápida de uso</li>
-                        <li><span class="pending">⏱️</span> FAQ y troubleshooting básico</li>
-                    </ul>
-                </div>
+<p>En esta Fase 1 se activa la captación de <strong>un único curso</strong>, utilizando una landing específica ya definida y enfocada a ese programa concreto.</p>
 
-                <div style="background: #d1ecf1; padding: 20px; border-radius: 8px;">
-                    <h3 style="color: #0c5460; margin-bottom: 15px;">4. Preparación del CRM (2 días buffer)</h3>
-                    <ul class="progress-list">
-                        <li><span class="pending">⏱️</span> Configuración inicial de listas y segmentos en Brevo</li>
-                        <li><span class="pending">⏱️</span> Plantillas de emails de bienvenida y seguimiento</li>
-                        <li><span class="pending">⏱️</span> Configuración de automatizaciones básicas</li>
-                        <li><span class="pending">⏱️</span> Testing de flujos de comunicación</li>
-                    </ul>
-                    <p style="margin-top: 15px; color: #0c5460;"><strong>💡 ESTRATÉGICO:</strong> Estos 2 días extra aseguran que el CRM esté listo para recibir leads desde el primer día del curso (10 Feb).</p>
-                </div>
-            </div>
+<p>Sin embargo, el sistema técnico (CRM, pipelines, WhatsApp, tracking y base de datos) queda <strong>preparado desde el inicio para gestionar varios cursos en paralelo</strong>, sin necesidad de rehacer la estructura.</p>
 
-            <!-- TIMELINE -->
-            <div class="section">
-                <h2>📅 Cronograma Detallado</h2>
+<p>Esto permite que, una vez validado el sistema, Bespoke pueda:</p>
+<ul>
+    <li>Activar el segundo curso actual</li>
+    <li>Añadir futuros cursos abiertos al público</li>
+    <li>Diferenciar leads por curso desde el primer contacto</li>
+</ul>
 
-                <div class="timeline">
-                    <h3>🎯 ESCENARIO REALISTA (10 días laborables + 2 días buffer)</h3>
+<div class="highlight-box">
+    <p style="margin: 0;"><strong>👉 En Fase 1 se ejecuta un curso. El sistema se construye para todos.</strong></p>
+</div>
 
-                    <div class="timeline-item">
-                        <strong>Días 1-3 (22-24 Enero)</strong>
-                        <p>Cliente proporciona accesos y credenciales (Brevo API, WhatsApp Business, Supabase Production)</p>
-                        <p style="opacity: 0.9; font-size: 0.95em;">⚠️ Experiencia muestra que los clientes suelen tardar 2-3 días en proporcionar todos los accesos</p>
-                    </div>
+<h3>1. Auditoría y optimización de la landing (incluido)</h3>
+<ul>
+    <li>Revisión del mensaje y estructura de la landing</li>
+    <li>Ajustes de copy orientados a conversión B2C</li>
+    <li>Definición del CTA y flujo de captación</li>
+</ul>
+<p><strong>Landing de captación utilizada:</strong><br/>
+👉 <a href="https://bespoke-finance-pro.vercel.app/" class="demo-link">https://bespoke-finance-pro.vercel.app/</a></p>
 
-                    <div class="timeline-item">
-                        <strong>Día 4 (27 Enero)</strong>
-                        <p>Configuración completa de APIs y variables de entorno en producción</p>
-                    </div>
+<table class="pricing-table">
+    <tr>
+        <td>Coste</td>
+        <td>Incluido / No facturado</td>
+    </tr>
+</table>
 
-                    <div class="timeline-item">
-                        <strong>Días 5-6 (28-29 Enero)</strong>
-                        <p>Testing exhaustivo de todas las integraciones + corrección de bugs detectados</p>
-                    </div>
+<h3>2. Sistema de captación y registro de leads en CRM</h3>
+<ul>
+    <li>Captación de leads desde la landing (WhatsApp y/o email)</li>
+    <li>Registro automático de leads en el CRM</li>
+    <li>Estados básicos del lead (nuevo, en contacto, cerrado, descartado)</li>
+    <li>Registro del origen del lead</li>
+</ul>
 
-                    <div class="timeline-item">
-                        <strong>Días 7-8 (30-31 Enero)</strong>
-                        <p>Documentación completa del sistema y creación de guías de usuario</p>
-                    </div>
+<table class="pricing-table">
+    <tr>
+        <td>3 horas</td>
+        <td>150 €</td>
+    </tr>
+</table>
 
-                    <div class="timeline-item">
-                        <strong>Días 9-10 (3-4 Febrero)</strong>
-                        <p>Buffer para problemas inesperados y ajustes finales</p>
-                    </div>
+<h3>3. Interacción con el lead (dos modalidades)</h3>
+<p>El sistema queda preparado para que el lead interactúe de dos formas, según prefiera el equipo:</p>
 
-                    <div class="timeline-item">
-                        <strong>Días 11-12 (5-6 Febrero)</strong>
-                        <p>Preparación del CRM: configuración de listas, plantillas de emails, automatizaciones</p>
-                    </div>
+<p><strong>Opción A – Asistente de texto (agente automático)</strong></p>
+<ul>
+    <li>Primer contacto automático</li>
+    <li>Recogida de datos básicos</li>
+    <li>Registro de la información en el CRM</li>
+    <li>Posibilidad de agendar llamada</li>
+    <li>Derivación a contacto humano</li>
+</ul>
 
-                    <div class="timeline-item" style="border-left-color: #28a745;">
-                        <strong style="color: #28a745;">✅ 6 Febrero - ENTREGA FINAL</strong>
-                        <p>Sistema 100% funcional, documentado y listo para producción</p>
-                        <p style="opacity: 0.9; font-size: 0.95em;">🎯 4 días de margen antes del inicio del curso (10 Febrero)</p>
-                    </div>
-                </div>
+<p><strong>Opción B – Contacto humano directo</strong></p>
+<ul>
+    <li>Contacto directo por llamada o WhatsApp</li>
+    <li>Seguimiento manual del lead</li>
+</ul>
 
-                <div class="info-box success" style="margin-top: 30px;">
-                    <h3 style="margin-bottom: 15px;">🎯 ¿Por qué 10 días + 2 de buffer es el plazo correcto?</h3>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li style="padding: 8px 0;">✅ <strong>Margen para delays del cliente:</strong> Los accesos nunca llegan en 24h (siempre hay gestiones internas)</li>
-                        <li style="padding: 8px 0;">✅ <strong>Sin presión innecesaria:</strong> Permite testing exhaustivo sin comprometer calidad</li>
-                        <li style="padding: 8px 0;">✅ <strong>Profesional y realista:</strong> Mejor cumplir 12 días que fallar en 5</li>
-                        <li style="padding: 8px 0;">✅ <strong>El código está 80% listo:</strong> Pero ese 20% depende completamente del cliente</li>
-                        <li style="padding: 8px 0;">✅ <strong>Preparación estratégica:</strong> El CRM estará configurado y probado antes del lanzamiento del curso</li>
-                    </ul>
-                </div>
-            </div>
+<div class="highlight-box">
+    <p style="margin: 0;"><strong>El cierre del alumno es siempre humano.</strong></p>
+</div>
 
-            <!-- CONDICIONES IMPORTANTES -->
-            <div class="conditions">
-                <h3>⚠️ CONDICIONES Y DEPENDENCIAS CRÍTICAS</h3>
-                <p style="margin-bottom: 15px;">El cumplimiento del plazo de 12 días (10 laborables + 2 buffer) está sujeto a:</p>
-                <ul>
-                    <li><strong>Accesos y credenciales proporcionados en 48 horas:</strong> API keys de Brevo, acceso a WhatsApp Business, credenciales de Supabase Production</li>
-                    <li><strong>Aprobación de configuraciones en primera revisión:</strong> Sin cambios de alcance o requerimientos nuevos durante la implementación</li>
-                    <li><strong>Disponibilidad para validaciones:</strong> El cliente debe estar disponible para aprobar tests y validar configuraciones durante el período de implementación</li>
-                    <li><strong>Infraestructura del cliente lista:</strong> Cuentas de Brevo y WhatsApp Business ya creadas y con permisos adecuados</li>
-                </ul>
-                <p style="margin-top: 20px; background: white; padding: 15px; border-radius: 4px; color: #856404;">
-                    <strong>📌 NOTA IMPORTANTE:</strong> Si hay delays en la provisión de accesos o cambios en requerimientos, el plazo se ajustará proporcionalmente. Cada día de delay del cliente suma un día al cronograma.
-                </p>
-            </div>
+<table class="pricing-table">
+    <tr>
+        <td>2 horas</td>
+        <td>100 €</td>
+    </tr>
+</table>
 
-            <!-- DESGLOSE DE INVERSIÓN -->
-            <div class="section">
-                <h2>💰 Desglose de Inversión</h2>
+<h3>4. Organización del CRM y preparación para seguimiento</h3>
+<ul>
+    <li>Centralización de contactos</li>
+    <li>Histórico de interacciones</li>
+    <li>Base preparada para email marketing con Brevo (si se decide activar)</li>
+    <li>Preparación del sistema para futuras campañas</li>
+</ul>
 
-                <table class="pricing-table">
-                    <thead>
-                        <tr>
-                            <th>Concepto</th>
-                            <th>Días</th>
-                            <th>Descripción</th>
-                            <th style="text-align: right;">Importe</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Configuración de Servicios</strong></td>
-                            <td>3-4 días</td>
-                            <td>Setup de Brevo, WhatsApp, Supabase Production, variables de entorno</td>
-                            <td style="text-align: right;">€XXX</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Testing y QA Exhaustivo</strong></td>
-                            <td>2-3 días</td>
-                            <td>Tests end-to-end, corrección de bugs, validación con datos reales</td>
-                            <td style="text-align: right;">€XXX</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Documentación Completa</strong></td>
-                            <td>2 días</td>
-                            <td>Manuales de usuario, guías técnicas, video tutoriales, FAQ</td>
-                            <td style="text-align: right;">€XXX</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Preparación del CRM</strong></td>
-                            <td>2 días</td>
-                            <td>Configuración de listas, plantillas de emails, automatizaciones básicas</td>
-                            <td style="text-align: right;">€XXX</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Buffer y Ajustes Finales</strong></td>
-                            <td>2-3 días</td>
-                            <td>Margen para imprevistos, optimizaciones finales, soporte inicial</td>
-                            <td style="text-align: right;">€XXX</td>
-                        </tr>
-                        <tr class="total-row">
-                            <td colspan="3"><strong>TOTAL INVERSIÓN</strong></td>
-                            <td style="text-align: right;"><strong>€X,XXX</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
+<table class="pricing-table">
+    <tr>
+        <td>3 horas</td>
+        <td>150 €</td>
+    </tr>
+</table>
 
-                <div class="info-box" style="margin-top: 30px;">
-                    <h3 style="margin-bottom: 15px;">💡 Valor Real del Proyecto</h3>
-                    <p>Este presupuesto cubre únicamente la finalización del 20% restante. El 80% ya desarrollado representa:</p>
-                    <ul style="margin-top: 10px; padding-left: 20px;">
-                        <li>Frontend completo con 17 componentes profesionales</li>
-                        <li>Backend robusto con base de datos relacional completa</li>
-                        <li>3 integraciones principales (Supabase, Brevo, WhatsApp)</li>
-                        <li>Sistema de tracking y analytics implementado</li>
-                        <li>Infraestructura de deployment automatizada</li>
-                    </ul>
-                    <p style="margin-top: 15px;"><strong>Valor estimado del trabajo ya realizado: €X,XXX</strong></p>
-                </div>
-            </div>
+<h3>TOTAL FASE 1</h3>
+<table class="pricing-table">
+    <tr class="total-row">
+        <td>8 horas</td>
+        <td style="font-size: 18pt; color: #10b981;">400 €</td>
+    </tr>
+</table>
 
-            <!-- ENTREGABLES -->
-            <div class="section">
-                <h2>📦 Entregables Finales</h2>
+<h2>OPCIÓN ADICIONAL EN FASE 1 (NO OBLIGATORIA)</h2>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                    <div class="info-box">
-                        <h3 style="color: #667eea; margin-bottom: 10px;">🚀 Sistema en Producción</h3>
-                        <ul style="padding-left: 20px;">
-                            <li>Landing page 100% funcional</li>
-                            <li>Formularios conectados y validados</li>
-                            <li>Integraciones activas y testeadas</li>
-                            <li>Base de datos configurada</li>
-                        </ul>
-                    </div>
+<h3>Campaña de prueba en Instagram Ads</h3>
+<p>Pensada como <strong>test controlado</strong> para acelerar resultados durante los primeros días.</p>
 
-                    <div class="info-box">
-                        <h3 style="color: #667eea; margin-bottom: 10px;">📚 Documentación Completa</h3>
-                        <ul style="padding-left: 20px;">
-                            <li>Manual de usuario del CRM</li>
-                            <li>Guías técnicas de administración</li>
-                            <li>Video tutoriales de uso</li>
-                            <li>FAQ y troubleshooting</li>
-                        </ul>
-                    </div>
+<p><strong>Incluye:</strong></p>
+<ul>
+    <li>Configuración inicial de campaña</li>
+    <li>Definición del mensaje principal</li>
+    <li>Tráfico a landing o WhatsApp</li>
+    <li>Revisión básica de resultados</li>
+</ul>
 
-                    <div class="info-box">
-                        <h3 style="color: #667eea; margin-bottom: 10px;">🔧 CRM Configurado</h3>
-                        <ul style="padding-left: 20px;">
-                            <li>Listas y segmentos creados</li>
-                            <li>Plantillas de emails diseñadas</li>
-                            <li>Automatizaciones activas</li>
-                            <li>Workflows de seguimiento</li>
-                        </ul>
-                    </div>
+<table class="pricing-table">
+    <tr>
+        <td><strong>Gestión y configuración:</strong> 2 horas</td>
+        <td>100 €</td>
+    </tr>
+</table>
 
-                    <div class="info-box">
-                        <h3 style="color: #667eea; margin-bottom: 10px;">🎯 Soporte Post-Entrega</h3>
-                        <ul style="padding-left: 20px;">
-                            <li>Soporte técnico inicial (X días)</li>
-                            <li>Corrección de bugs críticos</li>
-                            <li>Sesión de capacitación</li>
-                            <li>Asistencia en lanzamiento</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+<div class="warning-box">
+    <p><strong>Inversión publicitaria recomendada (pago directo a Meta Ads):</strong></p>
+    <ul>
+        <li>5–10 € / día</li>
+        <li>10–15 días</li>
+        <li><strong>Total estimado: 50–150 €</strong></li>
+    </ul>
+    <p style="margin-bottom: 0;"><em>Esta inversión publicitaria se paga directamente a Meta (Facebook/Instagram) con tarjeta del cliente.</em></p>
+</div>
 
-            <!-- SIGUIENTE PASO -->
-            <div class="section">
-                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; border-radius: 12px; text-align: center;">
-                    <h2 style="color: white; border: none; margin-bottom: 20px; font-size: 2em;">🎯 Siguiente Paso</h2>
-                    <p style="font-size: 1.2em; margin-bottom: 30px;">Para iniciar el proyecto y cumplir con la fecha de entrega del 6 de Febrero:</p>
+<h2>REQUISITOS TÉCNICOS POR PARTE DEL CLIENTE</h2>
+<p>Para el correcto funcionamiento del sistema será necesario:</p>
+<ul>
+    <li>Número de WhatsApp Business operativo</li>
+    <li>Accesos a Brevo (si se activa email marketing)</li>
+    <li>Permisos necesarios para integraciones técnicas</li>
+    <li>Información del curso (programa, FAQs, fechas, precio)</li>
+</ul>
 
-                    <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 8px; margin: 20px 0;">
-                        <h3 style="color: white; margin-bottom: 15px;">📋 Checklist de Inicio (Primeras 48 horas)</h3>
-                        <ul style="list-style: none; text-align: left; padding-left: 0;">
-                            <li style="padding: 10px 0;">☐ Aprobar presupuesto y cronograma</li>
-                            <li style="padding: 10px 0;">☐ Proporcionar API Key de Brevo</li>
-                            <li style="padding: 10px 0;">☐ Proporcionar acceso a WhatsApp Business (especificar qué API/servicio utilizan)</li>
-                            <li style="padding: 10px 0;">☐ Confirmar acceso a Supabase Production o crear nuevo proyecto</li>
-                            <li style="padding: 10px 0;">☐ Designar persona de contacto para validaciones diarias</li>
-                        </ul>
-                    </div>
+<h2>FASE 2 – CRECIMIENTO Y ESCALADO DEL B2C</h2>
+<p><em>(Una vez validado el sistema de Fase 1)</em></p>
 
-                    <p style="font-size: 1.1em; margin-top: 30px; font-style: italic;">
-                        "Cuanto antes recibamos los accesos, antes podemos comenzar a trabajar y mayor margen tendremos antes del 10 de Febrero"
-                    </p>
-                </div>
-            </div>
-        </div>
+<h3>🎯 OBJETIVO PRINCIPAL</h3>
+<p>Convertir el sistema de captación en una <strong>máquina recurrente de ventas B2C</strong>, empezando por un curso online abierto al público (sin intermediación de empresas) y utilizando ese mismo sistema para escalar progresivamente el resto de la oferta formativa.</p>
 
-        <div class="footer">
-            <h3 style="color: #667eea; margin-bottom: 15px;">Contacto</h3>
-            <p><strong>Email:</strong> tu-email@ejemplo.com</p>
-            <p><strong>Teléfono:</strong> +34 XXX XXX XXX</p>
-            <p style="margin-top: 20px; color: #666;">
-                Este presupuesto es válido por 15 días desde la fecha de emisión
-            </p>
-            <p style="margin-top: 30px; font-size: 0.9em; color: #999;">
-                Bespoke Finance Pro © 2026 - Presupuesto generado el 21 de Enero de 2026
-            </p>
-        </div>
-    </div>
+<p>Esta fase se apoya en que:</p>
+<ul>
+    <li>✅ El CRM ya está creado</li>
+    <li>✅ Los flujos ya funcionan</li>
+    <li>✅ Los leads ya se recopilan correctamente</li>
+    <li>✅ El equipo ya conoce el sistema</li>
+</ul>
+
+<div class="highlight-box">
+    <p style="margin: 0;"><strong>👉 A partir de aquí, no se vuelve a empezar desde cero.</strong></p>
+</div>
+
+<h3>🧭 LÓGICA DE CRECIMIENTO EN FASE 2</h3>
+<p>La Fase 2 no consiste en hacer "más marketing", sino en seguir un <strong>orden estratégico</strong>:</p>
+
+<div class="warning-box">
+    <p><strong>Paso 1 – Activar el curso online abierto</strong></p>
+    <ul>
+        <li>Curso sin límite de plazas</li>
+        <li>Ideal para tráfico frío</li>
+        <li>Menor fricción de entrada</li>
+        <li>Perfecto para validar volumen y mensajes</li>
+    </ul>
+</div>
+
+<div class="warning-box">
+    <p><strong>Paso 2 – Usar el curso online como puerta de entrada</strong></p>
+    <ul>
+        <li>Leads que no compran → se nutren por email</li>
+        <li>Leads interesados → se derivan a cursos más avanzados</li>
+        <li>El CRM permite identificar qué curso interesa a cada lead</li>
+    </ul>
+</div>
+
+<div class="warning-box">
+    <p><strong>Paso 3 – Escalar el sistema completo</strong></p>
+    <ul>
+        <li>Más cursos</li>
+        <li>Más tráfico</li>
+        <li>Más automatización</li>
+        <li>Menor coste por alumno</li>
+    </ul>
+</div>
+
+<div class="success-box">
+    <p style="margin: 0;"><strong>👉 El sistema no solo vende cursos: construye una base de datos propia y activable.</strong></p>
+</div>
+
+<h3>ACCIONES CONCRETAS EN FASE 2</h3>
+
+<p><strong>1. Aplicación del sistema al curso online</strong></p>
+<ul>
+    <li>Configuración de landing específica para curso online</li>
+    <li>Adaptación de mensajes y flujos para ticket bajo</li>
+    <li>Preparación de nurturing para leads fríos</li>
+</ul>
+
+<p><strong>2. Instagram orgánico + Ads</strong></p>
+<ul>
+    <li>Optimización del perfil</li>
+    <li>Contenido educativo y de posicionamiento</li>
+    <li>Campañas escaladas según datos de Fase 1</li>
+    <li>Control de inversión y resultados</li>
+</ul>
+
+<p><strong>3. Captación manual continuada en LinkedIn</strong></p>
+<ul>
+    <li>Búsqueda de perfiles afines (estudiantes de Economía, ADE, Finanzas, Ingeniería)</li>
+    <li>Perfiles junior en consultoría, auditoría, banca o análisis financiero</li>
+    <li>Mensajes personalizados</li>
+    <li>Conversación directa y derivación a WhatsApp</li>
+    <li>Registro de leads en el CRM por curso de interés</li>
+</ul>
+
+<p><strong>4. Email marketing y nurturing</strong></p>
+<ul>
+    <li>Activación de campañas en Brevo</li>
+    <li>Seguimiento de leads existentes</li>
+    <li>Comunicación de nuevos cursos y convocatorias</li>
+    <li>Recuperación de leads fríos</li>
+</ul>
+
+<h3>MODELO DE TRABAJO FASE 2</h3>
+<p>Estas acciones se valorarán <strong>por horas</strong>, tomando como referencia la tarifa de <strong>50 €/hora</strong>, o bien por <strong>proyecto cerrado</strong> según el alcance.</p>
+
+<div class="highlight-box">
+    <p style="margin: 0;"><strong>No se establece ningún compromiso de contratación futura.</strong> La Fase 2 es completamente opcional y se evaluará según resultados de Fase 1.</p>
+</div>
+
+<h2>CONDICIONES COMERCIALES</h2>
+
+<h3>💰 Inversión total Fase 1: 400 €</h3>
+
+<p><strong>Forma de pago:</strong></p>
+<ul>
+    <li>100% al inicio del proyecto</li>
+</ul>
+
+<p><strong>Plazo de ejecución:</strong></p>
+<ul>
+    <li>Sistema operativo en un máximo de <strong>10 días laborables</strong> desde el kick-off</li>
+</ul>
+
+<div class="highlight-box">
+    <p style="margin: 0;"><strong>ℹ️ Estado actual del proyecto:</strong> El sistema está en fase avanzada de desarrollo (80% completado). Los 10 días laborables contemplan: configuración de integraciones con credenciales del cliente, testing exhaustivo, documentación y margen para ajustes. El plazo depende de recibir accesos (Brevo, WhatsApp) en las primeras 48 horas del proyecto.</p>
+</div>
+
+<p><strong>Otras condiciones:</strong></p>
+<ul>
+    <li><strong>Validez de la oferta:</strong> 15 días desde la fecha de emisión</li>
+    <li><strong>IVA:</strong> No incluido (se añadirá según legislación vigente)</li>
+</ul>
+
+<h2>GARANTÍAS</h2>
+<ul>
+    <li>✅ Sistema técnico operativo y funcional al finalizar Fase 1</li>
+    <li>✅ Validación de que los leads se registran correctamente en el CRM</li>
+    <li>✅ Documentación completa del sistema y cómo usarlo</li>
+    <li>✅ Soporte durante el primer mes incluido</li>
+    <li>✅ Ajustes técnicos durante las primeras 8 horas incluidos</li>
+</ul>
+
+<div class="warning-box">
+    <p style="margin: 0;"><strong>⚠️ Importante:</strong> Estas garantías cubren el funcionamiento técnico del sistema (CRM, landing, integraciones). Los resultados de captación (número de leads o alumnos conseguidos) dependen de la estrategia comercial y acciones que realice el equipo de Bespoke.</p>
+</div>
+
+<div class="contact-info">
+    <h2 style="margin-top: 0;">DATOS DEL PROVEEDOR</h2>
+    <p><strong>Cookyourweb</strong><br/>
+    Agencia de Automatización, IA y Sistemas de Captación</p>
+    <p>
+    🌐 Web: <a href="https://cookyourweb.es" class="demo-link">https://cookyourweb.es</a><br/>
+    📧 Email: veronica@usecookyourweb.es<br/>
+    📱 Teléfono: 655 133 839
+    </p>
+</div>
+
+<div class="footer">
+    <p>Este presupuesto tiene una validez de 15 días desde su emisión.<br/>
+    Una vez aceptado, se procederá a la firma del contrato y al inicio del proyecto.</p>
+    <p style="margin-top: 20px; font-size: 8pt; color: #9ca3af;">
+    Documento generado el 21 de enero de 2026<br/>
+    Cookyourweb © 2026 - Todos los derechos reservados
+    </p>
+</div>
+
 </body>
 </html>
