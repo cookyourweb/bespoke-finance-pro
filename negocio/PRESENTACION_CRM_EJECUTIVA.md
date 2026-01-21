@@ -1,622 +1,353 @@
-# 🎯 CRM BESPOKE: DE HERRAMIENTA A ACTIVO ESTRATÉGICO
-## Presentación Ejecutiva
+# 📋 ÍNDICE COMPLETO DOCUMENTACIÓN BESPOKE
+## Dashboard Central - Enlaces Rápidos a Todos los Documentos
+
+**Fecha:** Enero 2026
+**Cliente:** Bespoke School of Finance
+**Proyecto:** CRM + Landing + Automatización + Estrategia Captación
 
 ---
 
-# PARTE 1: EL PROBLEMA
+## 🚀 DOCUMENTOS PARA ENVIAR AL CLIENTE (PRIMER CONTACTO)
+
+### 1. [PRESUPUESTO_BESPOKE_FINAL.html](./PRESUPUESTO_BESPOKE_FINAL.html) ⭐ OBLIGATORIO
+**Qué es:** Presupuesto oficial del sistema CRM
+**Contenido:**
+- Fase 1: 400€ (8 horas) - CRM + Landing + Brevo + WhatsApp
+- Mantenimiento: 100€/mes (escalable según cursos)
+- Condiciones comerciales y garantías
+- Calendario 10 días implementación
+
+**Cuándo enviar:** SIEMPRE - Es el documento principal
+**Formato:** HTML (convertible a PDF/Word desde navegador)
 
 ---
 
-## 📉 Situación Actual de Bespoke
+### 2. [PLAN_CAPTACION_COMPLETO_BESPOKE.html](./PLAN_CAPTACION_COMPLETO_BESPOKE.html) ⭐ OBLIGATORIO
+**Qué es:** Plan completo de captación LinkedIn + Instagram
+**Contenido:**
+- Estrategia LinkedIn híbrida (Waalaxy 15/día + Manual 5/día)
+- Coste real: 19€/mes Waalaxy (300 invitaciones/mes)
+- Instagram Ads opcional (150€/mes desde mes 3)
+- Sección detallada: **"LO QUE TENÉIS QUE HACER"** paso a paso
+- Workflow diario (45-60 min)
+- Resultados esperados: 15-25 alumnos/mes (LinkedIn) + 5-10 (Instagram)
+- ROI: 14,000% (LinkedIn solo) o 12,600% (combinado)
 
+**Cuándo enviar:** SIEMPRE - Mientras desarrollas el CRM (10 días), ellos pueden empezar YA
+**Formato:** HTML optimizado para PDF A4
+
+---
+
+### 3. [LEER_PRIMERO.html](./LEER_PRIMERO.html) ⭐ RECOMENDADO
+**Qué es:** Resumen ejecutivo 1 página
+**Contenido:**
+- Qué les entregas exactamente
+- Calendario 10 días
+- Qué necesitas de ellos
+- Siguientes pasos
+
+**Cuándo enviar:** SIEMPRE - Es el documento de orientación inicial
+**Formato:** HTML convertible a PDF
+
+---
+
+## 📚 DOCUMENTOS DE SOPORTE (ENVIAR SI PIDEN)
+
+### 4. [LINKEDIN_SETUP_PERFIL_WAALAXY.html](./LINKEDIN_SETUP_PERFIL_WAALAXY.html)
+**Qué es:** Guía técnica detallada configuración Waalaxy
+**Contenido:**
+- Paso a paso configuración Waalaxy
+- Optimización perfil LinkedIn
+- Plantillas mensajes personalizables
+- Workflow diario completo
+- Checklist setup
+
+**Cuándo enviar:** ⚠️ Si preguntan "¿Cómo se configura Waalaxy exactamente?"
+**Formato:** HTML optimizado para PDF A4
+
+---
+
+### 5. [LINKEDIN_MANUAL_VS_WAALAXY_COMPARATIVA.html](./LINKEDIN_MANUAL_VS_WAALAXY_COMPARATIVA.html)
+**Qué es:** Análisis comparativo Manual vs Waalaxy
+**Contenido:**
+- Estadísticas reales Manual vs Waalaxy
+- Resultados esperados por método
+- ROI calculado (14,000% vs 3,000%)
+- Modelos de pricing si tú lo haces por ellos
+
+**Cuándo enviar:** ⚠️ Si dudan sobre invertir en Waalaxy (19€/mes)
+**Formato:** HTML optimizado para PDF A4
+
+---
+
+### 6. [ESTRATEGIA_CRM_B2B_B2C.md](./ESTRATEGIA_CRM_B2B_B2C.md)
+**Qué es:** Documento estratégico CRM híbrido
+**Contenido:**
+- Cómo usar el CRM con modelos B2B y B2C
+- Estructura módulos separados
+- Privacy compliance (B2B corporativo)
+- Estrategia de contacto diferenciada
+
+**Cuándo enviar:** ⚠️ Si preguntan "¿Cómo gestionamos B2B y B2C en el mismo CRM?"
+**Formato:** Markdown (convertir a HTML si necesario)
+
+---
+
+### 7. [DISCURSO_ESTRATEGICO_BESPOKE.html](./DISCURSO_ESTRATEGICO_BESPOKE.html)
+**Qué es:** Posicionamiento estratégico del CRM
+**Contenido:**
+- Por qué el CRM es inversión, no gasto
+- Transformación digital vs herramienta
+- Valor a largo plazo
+
+**Cuándo enviar:** ⚠️ Si contacto es CFO o dirección (necesitan ver valor estratégico)
+**Formato:** HTML optimizado para PDF A4
+
+---
+
+### 8. [MEJORAS_PRESUPUESTO_ESTRATEGICO.html](./MEJORAS_PRESUPUESTO_ESTRATEGICO.html)
+**Qué es:** Contexto de las mejoras propuestas
+**Contenido:**
+- Qué cambia en la propuesta
+- Por qué cada cambio
+- Beneficios específicos
+
+**Cuándo enviar:** ⚠️ Solo si piden explicación de cambios respecto a versiones anteriores
+**Formato:** HTML optimizado para PDF A4
+
+---
+
+### 9. [RESUMEN_EJECUTIVO_1_PAGINA.html](./RESUMEN_EJECUTIVO_1_PAGINA.html)
+**Qué es:** Resumen ultra-corto para ejecutivos ocupados
+**Contenido:**
+- Qué + Cuánto + Cuándo en 1 página
+- Sin tecnicismos
+- Directo al grano
+
+**Cuándo enviar:** ⚠️ Si piden "algo muy breve para el CEO/CFO"
+**Formato:** HTML optimizado para 1 página PDF
+
+---
+
+## 🗂️ DOCUMENTOS INTERNOS (NO ENVIAR AL CLIENTE)
+
+### 10. BENEFICIOS_CRM_INTEGRACION.md
+**Qué es:** Documento de valor CRM
+**Contenido:** 10 beneficios concretos, roadmap 12 meses, ROI proyectado
+**Uso:** Solo si CFO pide detalles financieros exhaustivos
+
+### 11. RESUMEN_FINANCIERO_FASES.md
+**Qué es:** Detalle financiero por fases
+**Uso:** Solo si CFO pide breakdown financiero completo
+
+### 12. EMAIL_ENVIO_PRESUPUESTO.md
+**Qué es:** Plantilla email para enviar propuesta
+**Uso:** Copiar y pegar en tu email (no adjuntar)
+
+### 13. GUIA_ENVIO_PROPUESTA.md
+**Qué es:** Guía para ti sobre cómo enviar la propuesta
+**Uso:** Consulta interna antes de enviar
+
+### 14. DOCUMENTACION_PROPUESTA.md
+**Qué es:** Descripción de cada documento
+**Uso:** Referencia interna
+
+---
+
+## ❌ DOCUMENTOS OBSOLETOS (NO USAR)
+
+### PRESUPUESTO_BESPOKE_2026.md
+**Estado:** ❌ OBSOLETO
+**Reemplazado por:** [PRESUPUESTO_BESPOKE_FINAL.html](./PRESUPUESTO_BESPOKE_FINAL.html)
+
+### LINKEDIN_PLAN_ACCION.md
+**Estado:** ❌ OBSOLETO
+**Reemplazado por:** [PLAN_CAPTACION_COMPLETO_BESPOKE.html](./PLAN_CAPTACION_COMPLETO_BESPOKE.html)
+
+### LINKEDIN_QUICK_START (versiones .md y .html)
+**Estado:** ❌ OBSOLETO
+**Reemplazado por:** [PLAN_CAPTACION_COMPLETO_BESPOKE.html](./PLAN_CAPTACION_COMPLETO_BESPOKE.html)
+
+### PLAN_EXPRESS_LINKEDIN_HIBRIDO (versiones .md y .html)
+**Estado:** ❌ OBSOLETO
+**Reemplazado por:** [PLAN_CAPTACION_COMPLETO_BESPOKE.html](./PLAN_CAPTACION_COMPLETO_BESPOKE.html)
+**Nota:** El plan completo incluye toda la info del express + Instagram + más detalles
+
+---
+
+## 📧 CÓMO USAR ESTOS DOCUMENTOS
+
+### Primer Contacto con Cliente:
+
+**Email con adjuntos:**
+1. ✅ [PRESUPUESTO_BESPOKE_FINAL.html](./PRESUPUESTO_BESPOKE_FINAL.html)
+2. ✅ [PLAN_CAPTACION_COMPLETO_BESPOKE.html](./PLAN_CAPTACION_COMPLETO_BESPOKE.html)
+3. ✅ [LEER_PRIMERO.html](./LEER_PRIMERO.html)
+
+**Plantilla email:**
 ```
-┌─────────────────────────────────────────┐
-│  LEADS PERDIDOS EN:                      │
-│  • Emails no organizados                 │
-│  • WhatsApp sin historial                │
-│  • Excel desactualizados                 │
-│  • Memoria del equipo                    │
-└─────────────────────────────────────────┘
-         ↓ RESULTADO ↓
-┌─────────────────────────────────────────┐
-│  • 50% de leads se pierden               │
-│  • Información duplicada                 │
-│  • Sin histórico de conversaciones       │
-│  • Decisiones por intuición              │
-│  • Cada curso empieza de cero            │
-└─────────────────────────────────────────┘
-```
-
-### Coste Real del Caos
-- **Leads perdidos:** ~30-50/año × 2,990 € = **89,700-149,500 €/año**
-- **Tiempo perdido:** 1h/día × 50 €/h × 220 días = **11,000 €/año**
-- **Ineficiencias:** No medibles pero significativas
-
-**Total:** +100,000 €/año en oportunidades perdidas
-
----
-
-# PARTE 2: LA SOLUCIÓN
-
----
-
-## ✨ Qué Es El CRM (En 60 Segundos)
-
-### No Es Solo Software
-Es el **sistema nervioso digital** de Bespoke.
-
-### Una Única Fuente de Verdad
-
-```
-              ┌─────────────────┐
-              │   SUPABASE CRM   │
-              │  (PostgreSQL)    │
-              └────────┬─────────┘
-                       │
-         ┌─────────────┼─────────────┐
-         │             │             │
-    ┌────▼────┐  ┌────▼────┐  ┌────▼────┐
-    │ LEADS   │  │ CONVS.  │  │STUDENTS │
-    │         │  │         │  │         │
-    │ 1,000+  │  │ Multi-  │  │ Ciclo   │
-    │ contacts│  │ canal   │  │ completo│
-    └─────────┘  └─────────┘  └─────────┘
-         │             │             │
-         └─────────────┼─────────────┘
-                       │
-              ┌────────▼─────────┐
-              │   ANALYTICS       │
-              │   Dashboards      │
-              │   Reportes        │
-              └───────────────────┘
-```
-
----
-
-## 🎯 10 Beneficios en 10 Slides
-
----
-
-### 1. VISIBILIDAD TOTAL
-
-#### Antes ❌
-- Leads en emails
-- WhatsApp sin historial
-- "¿Quién era este?"
-
-#### Con CRM ✅
-- Todo en un lugar
-- Búsqueda instantánea
-- Histórico completo
-
-#### Impacto
-**30-60 min/día ahorrados**
-
----
-
-### 2. NINGÚN LEAD SE PIERDE
-
-#### Antes ❌
-- Seguimientos manuales
-- Leads olvidados
-- "¿Le llamamos ya?"
-
-#### Con CRM ✅
-- Alertas automáticas
-- Tareas programadas
-- Emails de seguimiento
-
-#### Impacto
-**+20% conversión**
-
----
-
-### 3. DATOS = DINERO
-
-#### Antes ❌
-- Decisiones por intuición
-- No saber qué funciona
-- Presupuesto mal asignado
-
-#### Con CRM ✅
-- ROI exacto por campaña
-- Mejor perfil de cliente
-- Predicciones de ventas
-
-#### Impacto
-**40% más eficiencia en presupuesto**
-
----
-
-### 4. HABLA SOLO CON LOS BUENOS
-
-#### Antes ❌
-- Llamar a todos
-- Perder tiempo con curiosos
-- No priorizar
-
-#### Con CRM ✅
-- Lead scoring automático
-- Priorización inteligente
-- Filtrado eficiente
-
-#### Impacto
-**50% del tiempo en leads productivos**
-
----
-
-### 5. TODO EL EQUIPO SINCRONIZADO
-
-#### Antes ❌
-- "¿Ya hablaste con este?"
-- Información no compartida
-- Duplicación de esfuerzos
-
-#### Con CRM ✅
-- Visibilidad compartida
-- Asignación clara
-- Traspaso con contexto
-
-#### Impacto
-**+30% satisfacción del cliente**
-
----
-
-### 6. CRECE SIN CONTRATAR
-
-#### Antes ❌
-- Más leads = más gente
-- Límite de capacidad
-- Caos al escalar
-
-#### Con CRM ✅
-- 50% tareas automáticas
-- Gestiona 10x con mismo equipo
-- Crecimiento ordenado
-
-#### Impacto
-**1-2 personas no contratadas = 30,000-60,000 €/año**
-
----
-
-### 7. CADA CURSO ES MÁS FÁCIL
-
-#### Antes ❌
-- Empezar desde cero
-- No aprender de errores
-- Costes fijos altos
-
-#### Con CRM ✅
-- Base de datos acumulativa
-- Aprendizaje continuo
-- Cross-selling fácil
-
-#### Impacto
-**-40% coste de captación por curso**
-
----
-
-### 8. ES TUYO, NO ALQUILADO
-
-#### Comparativa 5 Años
-
-| Software | Coste Total |
-|----------|-------------|
-| HubSpot | 15,000 € |
-| Salesforce | 25,000 € |
-| **Este CRM** | **800-3,400 €** |
-
-#### Impacto
-**Ahorro: 12,000-22,000 €**
-
----
-
-### 9. TODO DOCUMENTADO
-
-#### Antes ❌
-- "Nunca me dijeron eso"
-- Sin registro
-- Problemas legales
-
-#### Con CRM ✅
-- Registro completo
-- Timestamps de todo
-- Trazabilidad RGPD
-
-#### Impacto
-**Protección legal: Invaluable**
-
----
-
-### 10. EXPERIENCIA PREMIUM
-
-#### Antes ❌
-- Cliente repite 3 veces
-- Respuestas inconsistentes
-- Poco profesional
-
-#### Con CRM ✅
-- Contexto siempre disponible
-- Consistencia total
-- Personalización real
-
-#### Impacto
-**+30% tasa de cierre**
-
----
-
-# PARTE 3: INTEGRACIÓN GRADUAL
-
----
-
-## 🗓️ Roadmap de 12 Meses
-
-```
-MES 1-2: B2C CAPTACIÓN ✅
-├─ Landing → CRM
-├─ WhatsApp → CRM
-└─ 2 usuarios (marketing + comercial)
-
-MES 3-4: B2C COMPLETO
-├─ Pipeline completo
-├─ Seguimientos
-└─ 3-4 usuarios (equipo comercial)
-
-MES 5-6: ESTUDIANTES
-├─ Lead → Alumno → Graduado
-├─ Matrículas
-└─ 5-6 usuarios (+admin)
-
-MES 7-9: B2B INTEGRADO
-├─ Empresas cliente
-├─ Propuestas
-└─ 7-10 usuarios (todo comercial)
-
-MES 10-11: MARKETING DATA-DRIVEN
-├─ Campañas integradas
-├─ Atribución
-└─ 10-13 usuarios (+marketing)
-
-MES 12: CENTRO DE OPERACIONES
-├─ Dashboards ejecutivos
-├─ Forecasting
-└─ Toda la empresa (15+ usuarios)
+ASUNTO: Propuesta CRM + Plan de Captación - Bespoke
+
+Hola [Nombre],
+
+Te adjunto:
+1. Propuesta sistema CRM completo (400€)
+2. Plan de captación LinkedIn + Instagram (para empezar YA)
+
+RESUMEN CRM:
+• 400€ una vez (CRM + landing + automatización)
+• Operativo en 10 días
+• 100€/mes mantenimiento (escalable)
+
+ESTRATEGIA CAPTACIÓN (mientras esperáis):
+• LinkedIn: 15 automático + 5 manual/día
+• Waalaxy: 19€/mes (no 60€)
+• Resultados: 15-25 alumnos/mes
+• ROI: 14,000%
+• Podéis empezar HOY MISMO
+
+Demo: https://bespoke-finance-pro.vercel.app/
+
+ASÍ NO PERDÉIS TIEMPO:
+- Día 0-10: Vosotros captáis en LinkedIn
+- Día 10: CRM operativo
+- Día 11+: LinkedIn + CRM trabajando juntos
+
+¿Agendamos 15 min?
+
+Saludos,
+Verónica
+veronica@usecookyourweb.es
+655 133 839
 ```
 
 ---
 
-## 📊 Evolución de Valor
+### Si piden más detalles LinkedIn:
 
-```
-     VALOR
-       ↑
-       │                                    ┌─────
-       │                              ┌─────┘
-       │                        ┌─────┘
-       │                  ┌─────┘
-       │            ┌─────┘
-       │      ┌─────┘
-       │ ┌────┘
-       └─┴────┴────┴────┴────┴────┴────┴────→
-        1   3   5   7   9   11  13  15  MESES
-
-FASE 1: Validación (Mes 1-2)
-FASE 2: Adopción (Mes 3-6)
-FASE 3: Expansión (Mes 7-11)
-FASE 4: Transformación (Mes 12+)
-```
+**Añadir:**
+- [LINKEDIN_SETUP_PERFIL_WAALAXY.html](./LINKEDIN_SETUP_PERFIL_WAALAXY.html) (guía técnica paso a paso)
+- [LINKEDIN_MANUAL_VS_WAALAXY_COMPARATIVA.html](./LINKEDIN_MANUAL_VS_WAALAXY_COMPARATIVA.html) (si dudan del coste)
 
 ---
 
-## 👥 Adopción Por Departamento
+### Si piden ver valor estratégico CRM:
 
-### Mes 1-2: Comercial B2C (Pioneros)
-**2 personas**
-- Demostrar valor
-- Generar evangelistas
-- Quick wins
-
-### Mes 3-6: Comercial Completo + Admin
-**5-6 personas**
-- Pipeline completo
-- Estudiantes gestionados
-- Primeros reportes
-
-### Mes 7-11: B2B + Marketing
-**10-13 personas**
-- Unificación B2B y B2C
-- Marketing data-driven
-- Dashboards avanzados
-
-### Mes 12+: Toda la Empresa
-**15+ personas**
-- Centro de operaciones
-- Decisiones en tiempo real
-- Optimización continua
+**Añadir:**
+- [DISCURSO_ESTRATEGICO_BESPOKE.html](./DISCURSO_ESTRATEGICO_BESPOKE.html) (para CFO/CEO)
+- BENEFICIOS_CRM_INTEGRACION.md (si piden ROI detallado)
 
 ---
 
-# PARTE 4: ROI Y NÚMEROS
+### Si preguntan sobre B2B + B2C:
+
+**Añadir:**
+- [ESTRATEGIA_CRM_B2B_B2C.md](./ESTRATEGIA_CRM_B2B_B2C.md) (explicación completa)
 
 ---
 
-## 💰 ROI Año 1 (Detallado)
+## 🖨️ CÓMO CONVERTIR HTML A PDF
 
-### Inversión
-```
-Setup CRM:              400 €
-Capacitaciones:         0 € (incluido)
-Integraciones:          0 € (incluido)
-─────────────────────────────
-TOTAL INVERSIÓN:        400 €
-```
+Todos los archivos `.html` se pueden convertir directamente a PDF:
 
-### Retorno Año 1
-```
-Ahorro tiempo:          11,000 €
-Software evitado:        3,000 €
-Contratación evitada:   15,000 €
-Leads no perdidos:      23,920 €
-─────────────────────────────
-TOTAL RETORNO:          52,920 €
-```
+### Opción 1: Desde navegador (RECOMENDADO)
+1. Abrir el archivo `.html` en Chrome/Firefox
+2. Presionar `Ctrl+P` (Windows) o `Cmd+P` (Mac)
+3. Seleccionar "Guardar como PDF"
+4. Guardar
 
-### ROI
-```
-52,920 € / 400 € = 13,230%
-```
+**Ventaja:** Mantiene formato optimizado A4 con márgenes correctos
+
+### Opción 2: Desde Word
+1. Abrir archivo `.html` con Microsoft Word
+2. Archivo → Guardar como → Formato: Word (.docx)
+3. Guardar
+
+**Uso:** Si cliente prefiere editar en Word antes de imprimir
 
 ---
 
-## 📈 Proyección 3 Años
+## 📊 RESUMEN DE INVERSIONES
 
-| Año | Inversión | Retorno | ROI Acumulado |
-|-----|-----------|---------|---------------|
-| **1** | 400 € | 52,920 € | 13,230% |
-| **2** | 600 € | 89,500 € | 8,820% |
-| **3** | 800 € | 134,800 € | 7,400% |
+### Sistema CRM (Una vez):
+- Fase 1: **400€** (8 horas)
+- Operativo en: 10 días
+- Incluye: CRM + Landing + Brevo + WhatsApp
 
-### Total 3 Años
-- **Inversión:** 1,800 €
-- **Retorno:** 277,220 €
-- **ROI:** 15,300%
+### Mantenimiento CRM (Mensual):
+- Básico (1 curso): **100€/mes** (2h/mes)
+- Estándar (2 cursos): **150€/mes** (3h/mes)
+- Premium (3+ cursos): **200€/mes** (4h/mes)
 
----
+### Captación LinkedIn (Mensual):
+- Waalaxy Starter: **19€/mes** (300 invitaciones/mes)
+- Tiempo: 45-60 min/día gestión
+- Resultado: 15-25 alumnos/mes
+- ROI: 14,000%
 
-## 🎯 Comparativa: Con CRM vs Sin CRM
-
-### 4 Cursos/Año × 3 Años
-
-|  | Sin CRM | Con CRM | Δ |
-|---|---------|---------|---|
-| **Leads/curso** | 30 | 50 | +67% |
-| **Conversión** | 10% | 20% | +100% |
-| **Alumnos/curso** | 3 | 10 | +233% |
-| **Coste/alumno** | 800 € | 250 € | -69% |
-| **Ingresos 3 años** | 107,640 € | 358,800 € | +233% |
-
-**Diferencia:** +251,160 €
+### Instagram Ads (Opcional - desde Mes 3):
+- Presupuesto ads: **150-300€/mes** (5-10€/día)
+- Tiempo: 30 min/semana optimización
+- Resultado adicional: +5-10 alumnos/mes
+- ROI combinado: 12,600%
 
 ---
 
-# PARTE 5: IMPLEMENTACIÓN
+## 🎯 DATOS CLAVE PARA PRESENTACIÓN
+
+### Problema Actual Bespoke:
+- 50% leads se pierden por desorganización
+- Coste oportunidad: **100,000€/año**
+- Cada curso empieza de cero (no hay histórico)
+
+### Solución Propuesta:
+- CRM profesional: **400€** una vez
+- Mantenimiento: **100€/mes**
+- LinkedIn captación: **19€/mes** + tiempo
+- Sistema operativo en: **10 días**
+
+### Resultados Esperados:
+- **MES 1:** 15-20 alumnos/mes (44,850-59,800€)
+- **MES 2:** 18-22 alumnos/mes (53,820-65,780€)
+- **MES 3+:** 25-30 alumnos/mes con Instagram (74,750-89,700€)
+
+### ROI:
+- CRM amortizado con: **2 alumnos** (5,980€)
+- LinkedIn ROI: **14,000%**
+- Mantenimiento ROI: **2,500-5,000%** (vs pérdidas sin mantenimiento)
 
 ---
 
-## ✅ Fase 1: Los Primeros 10 Días
+## ✅ CHECKLIST ANTES DE ENVIAR
 
-### Semana 1
-```
-DÍA 1-2: Kick-off + Accesos
-├─ Reunión de alineamiento
-├─ Provisión de credenciales
-└─ Información del curso
-
-DÍA 3-5: Construcción
-├─ Setup Supabase
-├─ Integración Brevo
-└─ Configuración WhatsApp
-
-DÍA 6-8: Testing
-├─ Pruebas del sistema
-├─ Ajustes
-└─ Configuración agente IA
-```
-
-### Semana 2
-```
-DÍA 9: Formación
-├─ Tutorial CRM (2h)
-├─ Gestión de leads
-└─ Reportes básicos
-
-DÍA 10: Lanzamiento
-├─ Sistema operativo
-├─ Campaña activa
-└─ Soporte en vivo
-```
+**Verificar:**
+- [ ] PRESUPUESTO_BESPOKE_FINAL.html adjunto
+- [ ] PLAN_CAPTACION_COMPLETO_BESPOKE.html adjunto
+- [ ] LEER_PRIMERO.html adjunto
+- [ ] Demo funcionando: https://bespoke-finance-pro.vercel.app/
+- [ ] Email personalizado con nombre destinatario
+- [ ] Firma completa con teléfono
+- [ ] Revisar ortografía
+- [ ] Enfatizar: "Podéis empezar LinkedIn YA (hoy mismo)"
+- [ ] Call to action: "¿Agendamos 15 min?"
 
 ---
 
-## 👨‍🏫 Capacitación Incluida
+## 🚀 MENSAJE CLAVE PARA CLIENTE
 
-### Para Comercial (2h)
-- Gestión de leads
-- Pipeline de ventas
-- Seguimientos
-- Reportes
+**Lo que tienen que entender:**
 
-### Para Marketing (2h)
-- Segmentación
-- Campañas
-- Analytics
-- ROI
+1. **NO tienen que esperar** → Pueden empezar LinkedIn HOY
+2. **Inversión mínima** → 19€/mes Waalaxy (no 60€)
+3. **Resultados probados** → 15-25 alumnos/mes esperados
+4. **Sistema profesional** → CRM 400€ vs 2,000-3,000€ valor real
+5. **Path incremental** → Pueden empezar solo LinkedIn, añadir CRM después, escalar con Instagram
 
-### Para Admin (1.5h)
-- Estudiantes
-- Matrículas
-- Certificados
-
-### Para Dirección (1h)
-- Dashboards ejecutivos
-- Reportes
-- Forecasting
+**Frase de oro:**
+> "Mientras desarrollo vuestro CRM (10 días), podéis empezar YA a captar en LinkedIn con Waalaxy (19€/mes). Así no perdéis tiempo. Cuando el CRM esté listo, los leads van directamente ahí. Si funciona bien, mes 3 añadís Instagram ads. Sistema completo: LinkedIn + CRM + Instagram = 25-30 alumnos/mes."
 
 ---
 
-## 🎁 Qué Incluye la Fase 1 (400 €)
-
-✅ Setup completo de Supabase
-✅ Integración con Brevo
-✅ WhatsApp Business + Agente IA
-✅ Landing optimizada
-✅ Formación del equipo
-✅ Documentación completa
-✅ Soporte primer mes
-✅ Ajustes y mejoras
-
-### Qué NO Incluye
-❌ Inversión en Ads (opcional +100-225 €)
-❌ Horas adicionales más allá de las 8h
-❌ Desarrollos custom específicos
-
----
-
-# PARTE 6: PREGUNTAS FRECUENTES
-
----
-
-## ❓ FAQ Ejecutivo
-
-### "¿Es muy técnico? ¿Necesitamos IT?"
-**No.** Es tan fácil como usar Excel. Formación de 2h y listo.
-
-### "¿Qué pasa con nuestros datos actuales?"
-**Se migran.** Si están en Excel/email, los importamos al CRM.
-
-### "¿Funciona en móvil?"
-**Sí.** Responsive 100%. Gestiona desde cualquier dispositivo.
-
-### "¿Y si queremos cambios después?"
-**Incluidos.** Primeras 8h de ajustes incluidas. Después, retainer opcional.
-
-### "¿Es seguro? ¿RGPD compliant?"
-**Sí.** Supabase cumple RGPD. Datos en EU. Encriptación completa.
-
-### "¿Podemos usarlo para otros negocios?"
-**Sí.** Es vuestro. Lo adaptáis a lo que queráis.
-
----
-
-# PARTE 7: DECISIÓN
-
----
-
-## 🚦 Semáforo de Decisión
-
-### 🟢 SÍ, si...
-- ✅ Perdéis leads regularmente
-- ✅ No tenéis visibilidad del pipeline
-- ✅ Queréis crecer sin contratar
-- ✅ Necesitáis datos para decidir
-- ✅ Tenéis múltiples cursos/año
-
-### 🟡 QUIZÁS, si...
-- ⚠️ Solo hacéis 1 curso/año
-- ⚠️ Tenéis menos de 10 leads/mes
-- ⚠️ El equipo es muy pequeño (<2 personas)
-
-### 🔴 NO, si...
-- ❌ Ya tenéis un CRM funcionando bien
-- ❌ No queréis crecer
-- ❌ No valoráis los datos
-
----
-
-## ✅ Checklist de Aprobación
-
-### Para aprobar Fase 1 necesitáis:
-
-- [ ] Presupuesto: 400 € (o 600-725 € con Ads)
-- [ ] Punto de contacto disponible (10 días)
-- [ ] Accesos técnicos (WhatsApp, email)
-- [ ] Información del curso (programa, FAQs, precio)
-- [ ] Compromiso de formación (2h para el equipo)
-
-### NO necesitáis:
-
-- ❌ Conocimientos técnicos
-- ❌ Desarrolladores
-- ❌ Software adicional
-- ❌ Equipo dedicado
-
----
-
-## 🎯 Propuesta de Valor Final
-
-```
-┌─────────────────────────────────────────┐
-│  INVERTÍS:         400 €                 │
-├─────────────────────────────────────────┤
-│  RECIBÍS:                                │
-│  • CRM profesional    (2,000-3,000 €)   │
-│  • Sistema reutilizable  (∞)             │
-│  • Base de datos         (acumulativo)   │
-│  • Formación             (incluida)      │
-│  • Soporte 1 mes         (incluido)      │
-├─────────────────────────────────────────┤
-│  AHORRAIS/AÑO:     52,920 €              │
-├─────────────────────────────────────────┤
-│  ROI AÑO 1:        13,230%               │
-└─────────────────────────────────────────┘
-```
-
-### La Pregunta No Es "¿Es Caro?"
-### La Pregunta Es "¿Cuánto Nos Está Costando NO Tenerlo?"
-
----
-
-## 🚀 Próximo Paso
-
-### 3 Opciones:
-
-#### 1️⃣ EMPEZAR YA (Recomendado)
-- Aprobamos Fase 1
-- Kick-off esta semana
-- Operativo en 10 días
-
-#### 2️⃣ REUNIÓN DE 30 MIN
-- Resolvemos dudas
-- Vemos casos de uso
-- Decidimos después
-
-#### 3️⃣ PENSARLO MÁS
-- Os enviamos documentación completa
-- Seguimiento en 1 semana
-
----
-
-## 📞 CONTACTO
-
-**Verónica - Cookyourweb**
-
-📧 veronica@usecookyourweb.es
-📱 655 133 839
-🌐 https://cookyourweb.es
-
-**Demo del sistema:**
-👉 https://bespoke-finance-pro.vercel.app/
-
----
-
-**Propuesta válida:** 15 días
-
----
-
-# GRACIAS
-
-## ¿Preguntas?
-
-**¿Empezamos?**
-
-🚀
+**Última actualización:** 2026-01-21
+**Versión pricing Waalaxy:** 19€/mes (300 invitaciones/mes) - CORRECTO ✅
+**Status documentos:** Todos los HTMLs con CSS print A4 optimizado ✅

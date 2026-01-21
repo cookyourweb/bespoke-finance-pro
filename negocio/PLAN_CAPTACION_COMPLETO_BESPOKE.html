@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Captación Completo - Bespoke School of Finance</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: #333;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #0a66c2;
+            border-bottom: 3px solid #0a66c2;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        h2 {
+            color: #004182;
+            margin-top: 40px;
+            border-left: 4px solid #0a66c2;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #003159;
+            margin-top: 30px;
+        }
+        h4 {
+            color: #1e3a8a;
+            margin-top: 20px;
+        }
+        .hero-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .hero-box h2 {
+            color: white;
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+        .strategy-card {
+            background: #f0f9ff;
+            border: 2px solid #0ea5e9;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        .strategy-recommended {
+            background: #ecfdf5;
+            border: 2px solid #10b981;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #e5e7eb;
+        }
+        .comparison-table th {
+            background: #f3f4f6;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        .comparison-table tr:nth-child(even) {
+            background: #f9fafb;
+        }
+        .highlight-row {
+            background: #fef3c7 !important;
+            font-weight: 600;
+        }
+        .advantages {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .disadvantages {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .warning-box {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+        .info-box {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+        .success-box {
+            background: #ecfdf5;
+            border: 2px solid #10b981;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+        .checklist {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .checklist ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .checklist li:before {
+            content: "☐ ";
+            font-size: 1.2em;
+            margin-right: 10px;
+            color: #10b981;
+        }
+        .roi-highlight {
+            background: #fef3c7;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            text-align: center;
+            font-size: 1.2em;
+            border: 2px solid #f59e0b;
+        }
+        .path-step {
+            background: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .star {
+            color: #f59e0b;
+            font-size: 1.2em;
+        }
+        .price-tag {
+            background: #10b981;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+        }
+        ul, ol {
+            line-height: 1.8;
+        }
+
+        /* Estilos de impresión para PDF A4 */
+        @media print {
+            @page {
+                size: A4;
+                margin: 2cm 1.5cm;
+            }
+
+            body {
+                background: white;
+                max-width: 100%;
+                padding: 0;
+                margin: 0;
+                font-size: 10pt;
+                line-height: 1.4;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 0;
+                border-radius: 0;
+            }
+
+            h1 {
+                font-size: 18pt;
+                page-break-after: avoid;
+                margin-top: 0;
+            }
+
+            h2 {
+                font-size: 14pt;
+                page-break-after: avoid;
+                margin-top: 20pt;
+            }
+
+            h3 {
+                font-size: 12pt;
+                page-break-after: avoid;
+                margin-top: 15pt;
+            }
+
+            h4 {
+                font-size: 11pt;
+                page-break-after: avoid;
+            }
+
+            .hero-box, .strategy-card, .comparison-table,
+            .advantages, .disadvantages, .warning-box,
+            .info-box, .success-box, .checklist,
+            .roi-highlight, .path-step {
+                page-break-inside: avoid;
+            }
+
+            .hero-box {
+                background: white !important;
+                color: #333 !important;
+                border: 2px solid #667eea;
+            }
+
+            .hero-box h2 {
+                color: #667eea !important;
+            }
+
+            .strategy-card {
+                background: white !important;
+                border: 1px solid #0ea5e9;
+            }
+
+            .strategy-recommended {
+                border: 2px solid #10b981 !important;
+            }
+
+            .advantages {
+                background: white !important;
+                border: 1px solid #10b981;
+            }
+
+            .disadvantages {
+                background: white !important;
+                border: 1px solid #ef4444;
+            }
+
+            .warning-box {
+                background: white !important;
+                border: 1px solid #ef4444;
+            }
+
+            .info-box {
+                background: white !important;
+                border: 1px solid #3b82f6;
+            }
+
+            .success-box {
+                background: white !important;
+                border: 2px solid #10b981;
+            }
+
+            .code-block {
+                background: #f5f5f5 !important;
+                color: #000 !important;
+                border: 1px solid #ddd;
+                font-size: 8pt;
+                page-break-inside: avoid;
+            }
+
+            .comparison-table {
+                font-size: 8pt;
+            }
+
+            .comparison-table th, .comparison-table td {
+                border: 1px solid #333;
+                padding: 6px 4px;
+            }
+
+            .comparison-table th {
+                background: #f0f0f0 !important;
+            }
+
+            .comparison-table tr:nth-child(even) {
+                background: #f9f9f9 !important;
+            }
+
+            .highlight-row {
+                background: #ffffcc !important;
+            }
+
+            .roi-highlight {
+                background: white !important;
+                border: 2px solid #f59e0b;
+            }
+
+            .path-step {
+                background: white !important;
+                border: 1px solid #0ea5e9;
+            }
+
+            .price-tag {
+                background: #10b981 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            ul, ol {
+                page-break-inside: avoid;
+            }
+
+            li {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 PLAN DE CAPTACIÓN COMPLETO</h1>
+        <p style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 30px;">
+            <strong>Bespoke School of Finance</strong><br>
+            Estrategia Híbrida: LinkedIn + Instagram
+        </p>
+
+        <div class="hero-box">
+            <h2>🎯 OBJETIVO: 20-30 ALUMNOS/MES</h2>
+            <p style="margin: 15px 0 0 0; font-size: 1.1em;">
+                LinkedIn Orgánico (Principal) + Instagram Ads (Opcional)
+            </p>
+        </div>
+
+        <h2>📊 COMPARATIVA DE ESTRATEGIAS</h2>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Métrica</th>
+                    <th>Solo LinkedIn</th>
+                    <th>LinkedIn + Instagram</th>
+                    <th>Solo Instagram</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Inversión/mes</strong></td>
+                    <td><span class="price-tag">319 €</span></td>
+                    <td><span class="price-tag">519-669 €</span></td>
+                    <td><span class="price-tag">200-350 €</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Tiempo/día</strong></td>
+                    <td>45-60 min</td>
+                    <td>60-90 min</td>
+                    <td>30 min</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>Alumnos/mes</strong></td>
+                    <td>15-25</td>
+                    <td>20-35</td>
+                    <td>3-10</td>
+                </tr>
+                <tr>
+                    <td><strong>Ingresos/mes</strong></td>
+                    <td>44,850-74,750 €</td>
+                    <td>59,800-104,650 €</td>
+                    <td>8,970-29,900 €</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>ROI</strong></td>
+                    <td><span class="star">⭐⭐⭐⭐⭐</span> 14,000%</td>
+                    <td><span class="star">⭐⭐⭐⭐</span> 11,500%</td>
+                    <td><span class="star">⭐⭐⭐</span> 4,300%</td>
+                </tr>
+                <tr>
+                    <td><strong>Recomendación</strong></td>
+                    <td style="background: #d1fae5;"><strong>EMPEZAR AQUÍ</strong></td>
+                    <td>Escalar mes 3+</td>
+                    <td>Probar después</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>✅ ESTRATEGIA RECOMENDADA: LINKEDIN HÍBRIDO</h2>
+
+        <div class="strategy-card strategy-recommended">
+            <h3 style="margin-top: 0;">Canal Principal: LinkedIn (Waalaxy + Manual)</h3>
+
+            <p><strong>Configuración:</strong></p>
+            <ul>
+                <li>Waalaxy: <strong>15 invitaciones/día automático</strong> (L-V)</li>
+                <li>Manual: <strong>5 invitaciones/día</strong> (L-V) - Perfiles TOP</li>
+                <li>Total: <strong>20 invitaciones/día = 100/semana</strong> ✅ SEGURO</li>
+            </ul>
+
+            <p><strong>Coste:</strong></p>
+            <ul>
+                <li>Waalaxy Plan Starter: <span class="price-tag">19 €/mes</span> (300 invitaciones/mes)</li>
+                <li>Tiempo: 45-60 min/día (30 min Waalaxy + 15-30 min manual)</li>
+            </ul>
+
+            <div class="advantages">
+                <h4>✅ Ventajas:</h4>
+                <ul>
+                    <li>Inversión mínima (solo 19€/mes herramienta)</li>
+                    <li>Alcanza límite seguro LinkedIn (100/semana)</li>
+                    <li>Combina automatización + personalización</li>
+                    <li>No dependes de ads (orgánico)</li>
+                    <li>Escalable sin coste adicional</li>
+                </ul>
+            </div>
+
+            <div class="roi-highlight">
+                <p style="margin: 0; font-size: 1.3em;">
+                    <strong>Resultados esperados:</strong> 15-25 alumnos/mes<br>
+                    <strong>Ingresos:</strong> 44,850-74,750 €/mes<br>
+                    <strong>ROI:</strong> <span style="color: #10b981; font-size: 1.4em;">14,000%</span>
+                </p>
+            </div>
+        </div>
+
+        <h2>🔧 SETUP: LINKEDIN HÍBRIDO (LO QUE TENÉIS QUE HACER)</h2>
+
+        <div class="path-step">
+            <h3>ANTES DE EMPEZAR: Setup Inicial (3 horas - una vez)</h3>
+
+            <h4>1. Optimizar Perfil LinkedIn (1 hora)</h4>
+            <div class="checklist">
+                <ul>
+                    <li>Foto profesional actualizada</li>
+                    <li>Titular optimizado: "Ayudo a profesionales junior a dominar finanzas corporativas | Fundador Bespoke School of Finance"</li>
+                    <li>Sobre mí completo (credenciales + por qué creaste Bespoke + CTA)</li>
+                    <li>Experiencia actualizada con logros específicos</li>
+                    <li>Pedir 3-5 recomendaciones a ex-alumnos</li>
+                    <li>Publicar 3 posts de valor ANTES de empezar captación</li>
+                </ul>
+            </div>
+
+            <h4>2. Crear Cuenta Waalaxy (30 min)</h4>
+            <div class="checklist">
+                <ul>
+                    <li>Ir a https://www.waalaxy.com/</li>
+                    <li>Crear cuenta (7 días gratis)</li>
+                    <li>Elegir plan <strong>Starter 19€/mes</strong> (300 invitaciones/mes)</li>
+                    <li>Instalar extensión Chrome</li>
+                    <li>Conectar con LinkedIn</li>
+                    <li>Configurar límite: 15 invitaciones/día</li>
+                    <li>Configurar horario: 9:00-18:00 (L-V)</li>
+                </ul>
+            </div>
+
+            <h4>3. Configurar Secuencia Waalaxy (1 hora)</h4>
+            <div class="code-block">DÍA 0: Visitar perfil
+   ↓ (2 días)
+DÍA 2: Enviar conexión SIN nota
+   ↓ (3 días si acepta)
+DÍA 5: Mensaje 1 - Apertura suave
+   ↓ (4 días si no responde)
+DÍA 9: Mensaje 2 - Valor + oferta
+   ↓ (5 días si no responde)
+DÍA 14: Mensaje 3 - Último intento</div>
+
+            <p><strong>Plantillas de mensajes:</strong></p>
+
+            <p><em>Mensaje 1 (Día 5):</em></p>
+            <div class="code-block">Hola {firstName},
+
+Gracias por conectar! Vi que estás en {company} como {jobTitle}.
+
+Ayudo a profesionales junior en finanzas a dominar modelización
+financiera y valoración práctica.
+
+¿Cómo va todo en {company}?
+
+Saludos,
+[Tu nombre]</div>
+
+            <p><em>Mensaje 2 (Día 9):</em></p>
+            <div class="code-block">Hola {firstName},
+
+Por si te interesa: tenemos un programa intensivo de finanzas
+corporativas diseñado para perfiles como el tuyo.
+
+8 semanas prácticas: modelización, valoración, Excel avanzado.
+
+¿Te gustaría más info?
+
+Saludos!</div>
+
+            <p><em>Mensaje 3 (Día 14):</em></p>
+            <div class="code-block">Hola {firstName},
+
+Última oportunidad para info del programa.
+
+Si no es para ti, sin problema! Pero si quieres acelerar tu carrera,
+aquí estoy.
+
+Éxito en {company}!</div>
+        </div>
+
+        <div class="path-step">
+            <h3>CADA DÍA: Workflow Diario (45-60 min)</h3>
+
+            <h4>Mañana (30 min)</h4>
+            <ol>
+                <li>Abrir Waalaxy dashboard (5 min)</li>
+                <li>Revisar respuestas nuevas (10 min)</li>
+                <li>Responder a interesados (15 min)</li>
+            </ol>
+
+            <h4>Tarde (15-30 min)</h4>
+            <ol>
+                <li>Buscar 5 perfiles TOP en LinkedIn (10 min)</li>
+                <li>Enviar 5 conexiones manuales personalizadas (10 min)</li>
+                <li>Derivar leads a WhatsApp/landing (5-10 min)</li>
+            </ol>
+
+            <div class="info-box">
+                <p><strong>Perfiles TOP para conexiones manuales:</strong></p>
+                <ul>
+                    <li>✅ Ha publicado en últimos 30 días (activo)</li>
+                    <li>✅ Tiene conexiones en común</li>
+                    <li>✅ Perfil completo con recomendaciones</li>
+                    <li>✅ Trabaja en Big 4, banca, consultoría</li>
+                    <li>✅ Puesto: Financial Analyst, Consultor Junior</li>
+                </ul>
+            </div>
+
+            <p><strong>Mensaje conexión PERSONALIZADO:</strong></p>
+            <div class="code-block">Hola {nombre},
+
+Vi tu post sobre {tema específico} y me pareció muy interesante.
+
+Ayudo a profesionales en finanzas a acelerar su carrera con
+formación práctica en modelización y valoración.
+
+Me encantaría conectar.
+
+Saludos,
+[Tu nombre]</div>
+        </div>
+
+        <div class="path-step">
+            <h3>CADA VIERNES: Revisión Semanal (1 hora)</h3>
+
+            <div class="checklist">
+                <ul>
+                    <li>Revisar métricas: invitaciones (objetivo 100), tasa aceptación (>35%), tasa respuesta (>20%)</li>
+                    <li>Registrar leads cualificados en CRM (cuando esté listo)</li>
+                    <li>Ajustar mensajes si conversión baja</li>
+                    <li>Planificar semana siguiente</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>📊 RESULTADOS ESPERADOS MES 1</h2>
+
+        <div class="success-box">
+            <h3>Actividad LinkedIn (Solo Híbrido):</h3>
+            <ul>
+                <li>Waalaxy: 75 invitaciones/semana (15/día x 5 días)</li>
+                <li>Manual: 25 invitaciones/semana (5/día x 5 días)</li>
+                <li><strong>Total: 100 invitaciones/semana</strong></li>
+            </ul>
+
+            <h3>Resultados Semana 1:</h3>
+            <ul>
+                <li>100 invitaciones enviadas</li>
+                <li>35-38 aceptadas (35-38%)</li>
+                <li>8-10 respuestas (23-26%)</li>
+                <li>3-4 interesados reales</li>
+            </ul>
+
+            <h3>Resultados Mes 1 (4 semanas):</h3>
+            <ul>
+                <li>400 invitaciones totales</li>
+                <li>140-152 aceptaciones</li>
+                <li>32-40 respuestas</li>
+                <li>15-20 leads cualificados</li>
+                <li><strong>15-20 alumnos conseguidos</strong></li>
+                <li>Conversión: 3.75-5% (de invitación a alumno)</li>
+            </ul>
+
+            <div class="roi-highlight" style="margin-top: 20px;">
+                <p style="margin: 0;">
+                    <strong>Ingresos Mes 1:</strong> 15 alumnos x 2,990€ = <strong>44,850 €</strong><br>
+                    <strong>Inversión:</strong> 319€ (19€ Waalaxy + 300€ tiempo)<br>
+                    <strong>ROI:</strong> <span style="color: #10b981; font-size: 1.5em;">14,000%</span>
+                </p>
+            </div>
+        </div>
+
+        <h2>🚀 OPCIONAL: AÑADIR INSTAGRAM ADS (MES 3+)</h2>
+
+        <div class="strategy-card">
+            <h3 style="margin-top: 0;">Canal Complementario: Instagram Ads</h3>
+
+            <p><strong>Configuración:</strong></p>
+            <ul>
+                <li>Presupuesto: <strong>5€/día</strong> (150€/mes inicial)</li>
+                <li>Objetivo: Tráfico al formulario landing</li>
+                <li>Audiencia: Profesionales 25-35 años, interés finanzas/consultoría</li>
+                <li>Formato: Carrusel + Stories</li>
+            </ul>
+
+            <p><strong>Resultados esperados (conservador):</strong></p>
+            <ul>
+                <li>10,000 impresiones/mes</li>
+                <li>150 clics (CTR 1.5%)</li>
+                <li>20 leads (conversión 13%)</li>
+                <li><strong>5 alumnos/mes</strong> (conversión 25%)</li>
+            </ul>
+
+            <div class="info-box">
+                <p><strong>Métricas objetivo Instagram:</strong></p>
+                <ul>
+                    <li>CPM: < 10€ (coste por 1000 impresiones)</li>
+                    <li>CTR: > 1% (tasa de clic)</li>
+                    <li>CPC: < 1.5€ (coste por clic)</li>
+                    <li><strong>CPA: < 50€/lead</strong> (coste por lead cualificado)</li>
+                </ul>
+                <p><strong>Cuándo escalar:</strong></p>
+                <ul>
+                    <li>Si CPA < 30€ → Subir a 10€/día</li>
+                    <li>Si CPA < 20€ → Subir a 15€/día</li>
+                    <li>Si CPA > 50€ → Pausar y optimizar</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>🎯 PATH RECOMENDADO (PASO A PASO)</h2>
+
+        <div class="path-step">
+            <h3>MES 1: VALIDAR LINKEDIN</h3>
+            <p><strong>Objetivo:</strong> Probar que funciona sin gastar en ads</p>
+            <p><strong>Meta:</strong> 15-20 alumnos conseguidos</p>
+            <p><strong>Inversión:</strong> <span class="price-tag">359€</span> (19€ + tiempo)</p>
+            <p><strong>Ingresos:</strong> 44,850-59,800€</p>
+        </div>
+
+        <div class="path-step">
+            <h3>MES 2: OPTIMIZAR LINKEDIN</h3>
+            <p><strong>Objetivo:</strong> Mejorar conversión antes de añadir Instagram</p>
+            <p><strong>Meta:</strong> 18-22 alumnos (subir conversión a 4-5.5%)</p>
+            <p><strong>Inversión:</strong> <span class="price-tag">359€</span></p>
+            <p><strong>Ingresos:</strong> 53,820-65,780€</p>
+        </div>
+
+        <div class="path-step">
+            <h3>MES 3: AÑADIR INSTAGRAM (OPCIONAL)</h3>
+            <p><strong>Objetivo:</strong> Escalar con segundo canal</p>
+            <p><strong>Meta:</strong> 21-25 alumnos (LinkedIn 18-20 + Instagram 3-5)</p>
+            <p><strong>Inversión:</strong> <span class="price-tag">749€</span> (19€ + 150€ ads + tiempo)</p>
+            <p><strong>Ingresos:</strong> 62,790-74,750€</p>
+        </div>
+
+        <div class="path-step">
+            <h3>MES 4+: MODO CRUCERO</h3>
+            <p><strong>Objetivo:</strong> Sistema estable y predecible</p>
+            <p><strong>Meta:</strong> 25-30 alumnos/mes consistente</p>
+            <p><strong>Inversión:</strong> <span class="price-tag">749-899€</span></p>
+            <p><strong>Ingresos:</strong> 74,750-89,700€</p>
+        </div>
+
+        <h2>🚨 ADVERTENCIAS IMPORTANTES</h2>
+
+        <div class="warning-box">
+            <h3>❌ NO HACER:</h3>
+            <ul>
+                <li><strong>NO enviar más de 100 invitaciones/semana LinkedIn</strong> (riesgo baneo)</li>
+                <li><strong>NO usar misma nota de conexión para todos</strong> (spam detection)</li>
+                <li><strong>NO conectar con perfiles fuera de target</strong> (baja conversión)</li>
+                <li><strong>NO aumentar presupuesto Instagram si CPA >50€</strong> (perderás dinero)</li>
+                <li><strong>NO olvidar responder en <24h</strong> (conversión baja mucho)</li>
+            </ul>
+        </div>
+
+        <div class="success-box">
+            <h3>✅ SÍ HACER:</h3>
+            <ul>
+                <li><strong>Personalizar mínimo las 5 manuales/día</strong> (mejor conversión)</li>
+                <li><strong>Responder rápido a interesados</strong> (<24h)</li>
+                <li><strong>Derivar pronto a WhatsApp</strong> (no saturar LinkedIn)</li>
+                <li><strong>Trackear métricas semanalmente</strong> (optimizar)</li>
+                <li><strong>Testear mensajes constantemente</strong> (mejorar conversión)</li>
+            </ul>
+        </div>
+
+        <h2>💡 RESUMEN EJECUTIVO</h2>
+
+        <div class="hero-box">
+            <h2>LO QUE TENÉIS QUE HACER</h2>
+
+            <div style="text-align: left; margin-top: 20px;">
+                <p><strong>MES 1-2: SOLO LINKEDIN</strong></p>
+                <ul style="color: white;">
+                    <li>Configurar Waalaxy (3 horas una vez)</li>
+                    <li>Gestionar 45-60 min/día</li>
+                    <li>Inversión: <span style="background: white; color: #667eea; padding: 3px 10px; border-radius: 15px;">19€/mes</span> + tiempo</li>
+                    <li>Resultado: 15-20 alumnos/mes</li>
+                    <li>ROI: 14,000%</li>
+                </ul>
+
+                <p><strong>MES 3+: AÑADIR INSTAGRAM (OPCIONAL)</strong></p>
+                <ul style="color: white;">
+                    <li>Setup Instagram ads (4 horas una vez)</li>
+                    <li>Optimizar 30 min/semana</li>
+                    <li>Inversión adicional: <span style="background: white; color: #667eea; padding: 3px 10px; border-radius: 15px;">150€/mes</span></li>
+                    <li>Resultado adicional: +5-10 alumnos/mes</li>
+                    <li>ROI combinado: 12,600%</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="roi-highlight" style="margin-top: 30px;">
+            <h3 style="margin-top: 0;">INVERSIÓN TOTAL</h3>
+            <p style="font-size: 1.2em; margin: 15px 0;">
+                <strong>Mes 1-2:</strong> 19€/mes Waalaxy<br>
+                <strong>Mes 3+:</strong> 169€/mes (19€ Waalaxy + 150€ Instagram)
+            </p>
+            <h3>RESULTADO ESPERADO</h3>
+            <p style="font-size: 1.2em; margin: 15px 0;">
+                <strong>Mes 1-2:</strong> 15-20 alumnos/mes (44,850-59,800€)<br>
+                <strong>Mes 3+:</strong> 25-30 alumnos/mes (74,750-89,700€)
+            </p>
+        </div>
+
+        <p style="text-align: center; margin-top: 40px; font-size: 1.1em; color: #666;">
+            <strong>¿Necesitas ayuda con algún paso? Cualquier duda, pregúntame.</strong> 🚀
+        </p>
+
+    </div>
+</body>
+</html>
